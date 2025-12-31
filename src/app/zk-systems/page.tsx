@@ -2,9 +2,9 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Shield, Lock, Key, Fingerprint, Cpu, Database, Zap, Brain, Users } from 'lucide-react'
+import { ArrowLeft, Shield, Lock, Eye, Key, Zap, CheckCircle, Brain, Cpu, Database, Users } from 'lucide-react'
 
-export default function CryptographicAuthPage() {
+export default function ZKSystemsPage() {
   return (
     <div className="min-h-screen" style={{backgroundColor: '#f8f9fa'}}>
       {/* NYT-Style Header */}
@@ -26,7 +26,7 @@ export default function CryptographicAuthPage() {
       {/* Hero Section */}
       <section style={{
         minHeight: '100vh',
-        backgroundColor: 'var(--nyt-accent)',
+        backgroundColor: 'var(--nyt-black)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -39,14 +39,14 @@ export default function CryptographicAuthPage() {
             <div style={{
               width: '120px',
               height: '120px',
-              backgroundColor: 'white',
+              backgroundColor: 'var(--nyt-accent)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 40px',
-              color: 'var(--nyt-accent)'
+              color: 'white'
             }}>
-              <Fingerprint style={{width: '60px', height: '60px'}} />
+              <Key style={{width: '60px', height: '60px'}} />
             </div>
             
             <h1 className="nyt-headline large" style={{
@@ -54,16 +54,16 @@ export default function CryptographicAuthPage() {
               marginBottom: '30px',
               color: 'white'
             }}>
-              Cryptographic Authentication
+              Zero-Knowledge Systems
             </h1>
             
             <div className="nyt-content" style={{marginBottom: '50px'}}>
               <p style={{fontSize: '1.8rem', marginBottom: '30px', fontWeight: '500'}}>
-                Secure identity verification without compromising privacy
+                Prove you know something without revealing what you know
               </p>
-              <p style={{color: 'rgba(255,255,255,0.9)', fontSize: '1.3rem', lineHeight: '1.6'}}>
-                Advanced cryptographic protocols that authenticate your identity and credentials 
-                while maintaining complete anonymity and privacy protection.
+              <p style={{color: 'var(--nyt-light-gray)', fontSize: '1.3rem', lineHeight: '1.6'}}>
+                Revolutionary cryptographic technology that allows you to verify your Medicare status 
+                and healthcare credentials without exposing any personal information.
               </p>
             </div>
 
@@ -75,30 +75,20 @@ export default function CryptographicAuthPage() {
               marginTop: '50px'
             }}>
               <Link href="/earning" className="nyt-button" style={{
-                backgroundColor: 'white',
-                color: 'var(--nyt-accent)',
+                backgroundColor: 'var(--nyt-accent)',
                 padding: '20px 40px',
                 fontSize: '1.2rem',
                 transform: 'translateY(0)',
                 transition: 'all 0.3s ease'
               }}>
-                Start Authentication
-              </Link>
-              <Link href="/zk-proofs" className="nyt-button" style={{
-                backgroundColor: 'rgba(255,255,255,0.2)',
-                color: 'white',
-                padding: '20px 40px',
-                fontSize: '1.2rem',
-                border: '2px solid white'
-              }}>
-                Learn More
+                Start Using ZK Systems
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* How ZK Proofs Work */}
       <section style={{
         minHeight: '100vh',
         backgroundColor: 'var(--nyt-white)',
@@ -113,7 +103,7 @@ export default function CryptographicAuthPage() {
               marginBottom: '30px',
               color: 'var(--nyt-black)'
             }}>
-              How Cryptographic Authentication Works
+              How Zero-Knowledge Systems Work
             </h2>
             <p style={{
               fontSize: '1.3rem',
@@ -121,7 +111,7 @@ export default function CryptographicAuthPage() {
               maxWidth: '700px',
               margin: '0 auto'
             }}>
-              Multi-layered security protocols that verify identity without exposing personal data
+              A mathematical breakthrough that enables verification without disclosure
             </p>
           </div>
           
@@ -147,7 +137,7 @@ export default function CryptographicAuthPage() {
                 margin: '0 auto 30px',
                 color: 'white'
               }}>
-                <Key style={{width: '40px', height: '40px'}} />
+                <Brain style={{width: '40px', height: '40px'}} />
               </div>
               <h3 style={{
                 fontSize: '1.5rem',
@@ -155,15 +145,15 @@ export default function CryptographicAuthPage() {
                 marginBottom: '20px',
                 color: 'var(--nyt-black)'
               }}>
-                Key Generation
+                Mathematical Proof
               </h3>
               <p style={{
                 fontSize: '1.1rem',
                 color: 'var(--nyt-gray)',
                 lineHeight: '1.6'
               }}>
-                Generate unique cryptographic keys that serve as your digital identity 
-                without revealing any personal information.
+                Create a cryptographic proof that you possess certain information 
+                without revealing the information itself.
               </p>
             </div>
             
@@ -191,15 +181,15 @@ export default function CryptographicAuthPage() {
                 marginBottom: '20px',
                 color: 'var(--nyt-black)'
               }}>
-                Secure Verification
+                Verification
               </h3>
               <p style={{
                 fontSize: '1.1rem',
                 color: 'var(--nyt-gray)',
                 lineHeight: '1.6'
               }}>
-                Advanced algorithms verify your credentials and identity while maintaining 
-                complete anonymity and privacy protection.
+                The system verifies your proof is valid without learning anything 
+                about your underlying data or identity.
               </p>
             </div>
             
@@ -227,25 +217,25 @@ export default function CryptographicAuthPage() {
                 marginBottom: '20px',
                 color: 'var(--nyt-black)'
               }}>
-                Privacy Protection
+                Privacy Preserved
               </h3>
               <p style={{
                 fontSize: '1.1rem',
                 color: 'var(--nyt-gray)',
                 lineHeight: '1.6'
               }}>
-                Your personal information remains encrypted and anonymous while still 
-                proving your identity and credentials.
+                Your personal information remains completely private while 
+                still proving you meet the required criteria.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Security Features */}
+      {/* ZK Proofs in Healthcare */}
       <section style={{
         minHeight: '100vh',
-        backgroundColor: 'var(--nyt-black)',
+        backgroundColor: 'var(--nyt-accent)',
         display: 'flex',
         alignItems: 'center',
         padding: '80px 0',
@@ -264,17 +254,17 @@ export default function CryptographicAuthPage() {
                 marginBottom: '30px',
                 color: 'white'
               }}>
-                Advanced Security Features
+                ZK Systems in Healthcare
               </h2>
               
               <div className="nyt-content" style={{fontSize: '1.2rem', lineHeight: '1.8'}}>
                 <p style={{marginBottom: '25px'}}>
-                  Our cryptographic authentication system employs cutting-edge security protocols 
-                  to ensure your identity is verified without compromising your privacy.
+                  Zero-knowledge proofs revolutionize healthcare privacy by allowing you to prove 
+                  your Medicare eligibility and healthcare credentials without revealing any personal information.
                 </p>
-                <p style={{color: 'var(--nyt-light-gray)', fontSize: '1.1rem'}}>
-                  Multi-factor authentication, biometric verification, and zero-knowledge proofs 
-                  work together to create an unbreakable security framework.
+                <p style={{color: 'rgba(255,255,255,0.9)', fontSize: '1.1rem'}}>
+                  This technology ensures that healthcare providers and insurance companies can verify 
+                  your status while maintaining complete anonymity and privacy protection.
                 </p>
               </div>
 
@@ -289,12 +279,12 @@ export default function CryptographicAuthPage() {
                   backgroundColor: 'rgba(255,255,255,0.1)',
                   textAlign: 'center'
                 }}>
-                  <Cpu style={{width: '32px', height: '32px', color: 'var(--nyt-accent)', margin: '0 auto 15px'}} />
+                  <CheckCircle style={{width: '32px', height: '32px', color: 'white', margin: '0 auto 15px'}} />
                   <h4 style={{fontSize: '1.1rem', fontWeight: '600', marginBottom: '8px'}}>
-                    Multi-Factor Auth
+                    HIPAA Compliant
                   </h4>
                   <p style={{fontSize: '0.9rem', opacity: 0.9}}>
-                    Multiple verification layers for maximum security
+                    Meets federal healthcare data protection standards
                   </p>
                 </div>
                 <div style={{
@@ -302,20 +292,21 @@ export default function CryptographicAuthPage() {
                   backgroundColor: 'rgba(255,255,255,0.1)',
                   textAlign: 'center'
                 }}>
-                  <Brain style={{width: '32px', height: '32px', color: 'var(--nyt-accent)', margin: '0 auto 15px'}} />
+                  <Eye style={{width: '32px', height: '32px', color: 'white', margin: '0 auto 15px'}} />
                   <h4 style={{fontSize: '1.1rem', fontWeight: '600', marginBottom: '8px'}}>
-                    AI-Powered
+                    Anonymous
                   </h4>
                   <p style={{fontSize: '0.9rem', opacity: 0.9}}>
-                    Machine learning enhances security detection
+                    No personal information is ever revealed
                   </p>
                 </div>
               </div>
             </div>
             
             <div style={{
-              backgroundColor: 'var(--nyt-accent)',
-              padding: '60px'
+              backgroundColor: 'rgba(255,255,255,0.1)',
+              padding: '60px',
+              backdropFilter: 'blur(10px)'
             }}>
               <h3 style={{
                 fontSize: '2rem',
@@ -323,59 +314,62 @@ export default function CryptographicAuthPage() {
                 marginBottom: '30px',
                 color: 'white'
               }}>
-                Security Protocols
+                Real-World Applications
               </h3>
               
               <div style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '20px'
+                gap: '25px'
               }}>
                 <div style={{
-                  padding: '20px',
-                  backgroundColor: 'rgba(255,255,255,0.2)'
+                  padding: '25px',
+                  backgroundColor: 'rgba(255,255,255,0.2)',
+                  backdropFilter: 'blur(10px)'
                 }}>
                   <h4 style={{
                     fontSize: '1.2rem',
                     fontWeight: '600',
                     marginBottom: '10px'
                   }}>
-                    End-to-End Encryption
+                    Medicare Verification
                   </h4>
-                  <p style={{fontSize: '0.95rem', opacity: 0.9}}>
-                    All data is encrypted from source to destination using military-grade algorithms
+                  <p style={{fontSize: '1rem', opacity: 0.9}}>
+                    Prove you have Medicare coverage without revealing your plan details or personal information
                   </p>
                 </div>
                 
                 <div style={{
-                  padding: '20px',
-                  backgroundColor: 'rgba(255,255,255,0.2)'
+                  padding: '25px',
+                  backgroundColor: 'rgba(255,255,255,0.2)',
+                  backdropFilter: 'blur(10px)'
                 }}>
                   <h4 style={{
                     fontSize: '1.2rem',
                     fontWeight: '600',
                     marginBottom: '10px'
                   }}>
-                    Biometric Verification
+                    Age Verification
                   </h4>
-                  <p style={{fontSize: '0.95rem', opacity: 0.9}}>
-                    Advanced biometric authentication ensures only you can access your account
+                  <p style={{fontSize: '1rem', opacity: 0.9}}>
+                    Confirm you meet age requirements without disclosing your actual age or birth date
                   </p>
                 </div>
                 
                 <div style={{
-                  padding: '20px',
-                  backgroundColor: 'rgba(255,255,255,0.2)'
+                  padding: '25px',
+                  backgroundColor: 'rgba(255,255,255,0.2)',
+                  backdropFilter: 'blur(10px)'
                 }}>
                   <h4 style={{
                     fontSize: '1.2rem',
                     fontWeight: '600',
                     marginBottom: '10px'
                   }}>
-                    Zero-Knowledge Architecture
+                    Healthcare Credentials
                   </h4>
-                  <p style={{fontSize: '0.95rem', opacity: 0.9}}>
-                    System never stores or accesses your personal information
+                  <p style={{fontSize: '1rem', opacity: 0.9}}>
+                    Verify medical qualifications and certifications while maintaining complete anonymity
                   </p>
                 </div>
               </div>
@@ -384,7 +378,7 @@ export default function CryptographicAuthPage() {
         </div>
       </section>
 
-      {/* Healthcare Applications */}
+      {/* Technical Benefits */}
       <section style={{
         minHeight: '100vh',
         backgroundColor: '#f8f9fa',
@@ -399,7 +393,7 @@ export default function CryptographicAuthPage() {
               marginBottom: '30px',
               color: 'var(--nyt-black)'
             }}>
-              Healthcare Applications
+              Technical Benefits
             </h2>
             <p style={{
               fontSize: '1.3rem',
@@ -407,7 +401,7 @@ export default function CryptographicAuthPage() {
               maxWidth: '700px',
               margin: '0 auto'
             }}>
-              Secure authentication for healthcare providers, patients, and insurance systems
+              Advanced cryptographic properties that ensure security and privacy
             </p>
           </div>
           
@@ -432,7 +426,7 @@ export default function CryptographicAuthPage() {
                 margin: '0 auto 30px',
                 color: 'white'
               }}>
-                <Users style={{width: '40px', height: '40px'}} />
+                <Cpu style={{width: '40px', height: '40px'}} />
               </div>
               <h3 style={{
                 fontSize: '1.8rem',
@@ -440,15 +434,15 @@ export default function CryptographicAuthPage() {
                 marginBottom: '20px',
                 color: 'var(--nyt-black)'
               }}>
-                Patient Authentication
+                Computational Efficiency
               </h3>
               <p style={{
                 fontSize: '1.1rem',
                 color: 'var(--nyt-gray)',
                 lineHeight: '1.6'
               }}>
-                Secure patient identity verification for medical appointments, 
-                prescription access, and healthcare services without compromising privacy.
+                Modern ZK proof systems are computationally efficient, allowing for 
+                real-time verification without compromising security or privacy.
               </p>
             </div>
             
@@ -476,15 +470,15 @@ export default function CryptographicAuthPage() {
                 marginBottom: '20px',
                 color: 'var(--nyt-black)'
               }}>
-                Provider Verification
+                Scalable Architecture
               </h3>
               <p style={{
                 fontSize: '1.1rem',
                 color: 'var(--nyt-gray)',
                 lineHeight: '1.6'
               }}>
-                Verify healthcare provider credentials and qualifications while 
-                maintaining complete anonymity and protecting sensitive information.
+                Designed to handle millions of verifications simultaneously while 
+                maintaining the highest standards of privacy and security.
               </p>
             </div>
           </div>
@@ -494,7 +488,7 @@ export default function CryptographicAuthPage() {
       {/* Call to Action */}
       <section style={{
         minHeight: '100vh',
-        backgroundColor: 'var(--nyt-accent)',
+        backgroundColor: 'var(--nyt-black)',
         display: 'flex',
         alignItems: 'center',
         padding: '80px 0',
@@ -507,7 +501,7 @@ export default function CryptographicAuthPage() {
               marginBottom: '30px',
               color: 'white'
             }}>
-              Secure Your Healthcare Identity
+              Experience the Future of Privacy
             </h2>
             
             <p style={{
@@ -516,7 +510,7 @@ export default function CryptographicAuthPage() {
               opacity: 0.9,
               lineHeight: '1.6'
             }}>
-              Experience the future of secure, private healthcare authentication.
+              Join the revolution in healthcare privacy with zero-knowledge systems technology.
             </p>
             
             <div style={{
@@ -527,22 +521,13 @@ export default function CryptographicAuthPage() {
               marginBottom: '60px'
             }}>
               <Link href="/earning" className="nyt-button" style={{
-                backgroundColor: 'white',
-                color: 'var(--nyt-accent)',
+                backgroundColor: 'var(--nyt-accent)',
+                color: 'white',
                 padding: '20px 40px',
                 fontSize: '1.2rem',
                 fontWeight: '600'
               }}>
-                Start Authentication
-              </Link>
-              <Link href="/zk-proofs" className="nyt-button" style={{
-                backgroundColor: 'rgba(255,255,255,0.2)',
-                color: 'white',
-                padding: '20px 40px',
-                fontSize: '1.2rem',
-                border: '2px solid white'
-              }}>
-                Learn More
+                Start Using ZK Systems
               </Link>
             </div>
             
@@ -552,6 +537,28 @@ export default function CryptographicAuthPage() {
               gap: '40px',
               marginTop: '60px'
             }}>
+              <div style={{
+                padding: '30px',
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                textAlign: 'center'
+              }}>
+                <Users style={{width: '40px', height: '40px', color: 'white', margin: '0 auto 20px'}} />
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  marginBottom: '15px'
+                }}>
+                  Privacy First
+                </h3>
+                <p style={{
+                  fontSize: '1rem',
+                  opacity: 0.9,
+                  lineHeight: '1.5'
+                }}>
+                  Your personal information is never exposed or stored
+                </p>
+              </div>
+              
               <div style={{
                 padding: '30px',
                 backgroundColor: 'rgba(255,255,255,0.1)',
@@ -579,28 +586,6 @@ export default function CryptographicAuthPage() {
                 backgroundColor: 'rgba(255,255,255,0.1)',
                 textAlign: 'center'
               }}>
-                <Lock style={{width: '40px', height: '40px', color: 'white', margin: '0 auto 20px'}} />
-                <h3 style={{
-                  fontSize: '1.3rem',
-                  fontWeight: '600',
-                  marginBottom: '15px'
-                }}>
-                  Military-Grade Security
-                </h3>
-                <p style={{
-                  fontSize: '1rem',
-                  opacity: 0.9,
-                  lineHeight: '1.5'
-                }}>
-                  Advanced encryption protects your identity and data
-                </p>
-              </div>
-              
-              <div style={{
-                padding: '30px',
-                backgroundColor: 'rgba(255,255,255,0.1)',
-                textAlign: 'center'
-              }}>
                 <Zap style={{width: '40px', height: '40px', color: 'white', margin: '0 auto 20px'}} />
                 <h3 style={{
                   fontSize: '1.3rem',
@@ -614,7 +599,7 @@ export default function CryptographicAuthPage() {
                   opacity: 0.9,
                   lineHeight: '1.5'
                 }}>
-                  Real-time authentication without compromising privacy
+                  Real-time verification without compromising privacy
                 </p>
               </div>
             </div>
@@ -655,7 +640,7 @@ export default function CryptographicAuthPage() {
                 marginBottom: '10px',
                 fontSize: '0.9rem'
               }}>
-                The premier platform for anonymous healthcare reviews powered by zero-knowledge proof technology.
+                The premier platform for anonymous healthcare reviews powered by zero-knowledge systems technology.
               </p>
               <p style={{
                 color: 'var(--nyt-light-gray)',
@@ -684,23 +669,13 @@ export default function CryptographicAuthPage() {
                 margin: 0
               }}>
                 <li style={{marginBottom: '6px'}}>
-                  <Link href="/zk-proofs" style={{
+                  <Link href="/zk-systems" style={{
                     color: 'var(--nyt-light-gray)',
                     fontSize: '0.85rem',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease'
                   }}>
-                    Zero-Knowledge Proofs
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/cryptographic-auth" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Cryptographic Authentication
+                    Zero-Knowledge Systems
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>

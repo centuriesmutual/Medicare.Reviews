@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Plus, Scale } from 'lucide-react'
+import { Plus, Scale, Newspaper } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PostReview from '@/components/PostReview'
 import ZKAuth from '@/components/ZKAuth'
@@ -62,9 +62,12 @@ export default function Home() {
       <header className="nyt-header">
         <div className="nyt-container">
           <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-            <div>
-              <Link href="/" className="nyt-logo">Medicare Reviews</Link>
-              <div className="nyt-tagline">Anonymous Reviews & Community Stories</div>
+            <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+              <Newspaper style={{width: '32px', height: '32px', color: 'var(--nyt-red)'}} />
+              <div>
+                <Link href="/" className="nyt-logo">Medicare Reviews</Link>
+                <div className="nyt-tagline">Anonymous Reviews & Community Stories</div>
+              </div>
             </div>
             <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
               <Link href="/login" className="nyt-button" style={{padding: '8px 16px', fontSize: '0.85rem'}}>
@@ -98,7 +101,7 @@ export default function Home() {
                 Anonymous Reviews Revolutionize Community Feedback
               </motion.h1>
               <div className="nyt-byline">
-                Reviews by Centuries Mutual • {getCurrentDate()}
+                By Centuries Mutual • {getCurrentDate()}
               </div>
               <div className="nyt-content">
                 <p>
@@ -355,20 +358,6 @@ export default function Home() {
                     alignItems: 'center',
                     gap: '6px',
                     padding: '6px 12px',
-                    backgroundColor: '#1e40af',
-                    borderRadius: '20px',
-                    color: 'white',
-                    fontSize: '0.8rem',
-                    fontWeight: '600',
-                    textTransform: 'uppercase'
-                  }}>
-                    <span>Blue</span>
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '6px 12px',
                     backgroundColor: '#dc2626',
                     borderRadius: '20px',
                     color: 'white',
@@ -392,6 +381,20 @@ export default function Home() {
                     textTransform: 'uppercase'
                   }}>
                     <span>White</span>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '6px 12px',
+                    backgroundColor: '#1e40af',
+                    borderRadius: '20px',
+                    color: 'white',
+                    fontSize: '0.8rem',
+                    fontWeight: '600',
+                    textTransform: 'uppercase'
+                  }}>
+                    <span>Blue</span>
                   </div>
                 </div>
                 <div style={{marginBottom: '15px'}}>
@@ -441,17 +444,20 @@ export default function Home() {
             marginBottom: '25px'
           }}>
             <div>
-              <h3 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.4rem',
-                fontWeight: '700',
-                color: 'var(--nyt-cream)',
-                marginBottom: '15px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Medicare Reviews
-              </h3>
+              <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px'}}>
+                <Newspaper style={{width: '32px', height: '32px', color: 'var(--nyt-cream)'}} />
+                <h3 style={{
+                  fontFamily: 'Playfair Display, serif',
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: 'var(--nyt-cream)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  margin: 0
+                }}>
+                  Medicare Reviews
+                </h3>
+              </div>
               <p style={{
                 color: 'var(--nyt-light-gray)',
                 lineHeight: '1.5',
@@ -487,23 +493,13 @@ export default function Home() {
                 margin: 0
               }}>
                 <li style={{marginBottom: '6px'}}>
-                  <Link href="/zk-proofs" style={{
+                  <Link href="/zk-systems" style={{
                     color: 'var(--nyt-light-gray)',
                     fontSize: '0.85rem',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease'
                   }}>
-                    Zero-Knowledge Proofs
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/cryptographic-auth" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Cryptographic Authentication
+                    Zero-Knowledge Systems
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>
@@ -586,26 +582,6 @@ export default function Home() {
                 padding: 0,
                 margin: 0
               }}>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/privacy" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/terms" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Terms of Service
-                  </Link>
-                </li>
                 <li style={{marginBottom: '6px'}}>
                   <Link href="/do-not-sell" style={{
                     color: 'var(--nyt-light-gray)',
