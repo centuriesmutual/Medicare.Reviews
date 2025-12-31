@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Shield } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 
 interface ZKAuthProps {
   onAuthenticated: () => void
@@ -22,7 +22,7 @@ export default function ZKAuth({ onAuthenticated }: ZKAuthProps) {
           textDecoration: 'none'
         }}
       >
-        <Shield style={{width: '16px', height: '16px', flexShrink: 0}} />
+        <CheckCircle style={{width: '16px', height: '16px', flexShrink: 0}} />
         <span>Verify Medicare Eligibility</span>
       </Link>
     </div>

@@ -85,8 +85,7 @@ export default function Home() {
           <div className="nyt-main">
             {/* Lead Story */}
             <motion.article 
-              className="nyt-article featured" 
-              style={{position: 'relative', paddingBottom: '50px'}}
+              className="nyt-article featured"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -105,42 +104,26 @@ export default function Home() {
               </div>
               <div className="nyt-content">
                 <p>
-                  In a groundbreaking development for online communities, Medicare Reviews has introduced 
-                  a revolutionary platform that allows users to share honest, anonymous reviews while 
-                  maintaining complete privacy through zero-knowledge proof technology. This innovative 
-                  approach addresses the growing need for authentic feedback in healthcare and other 
-                  sensitive sectors.
+                  Medicare Reviews operates as a Zero Knowledge System designed to deliver targeted advertising 
+                  while protecting user privacy from insurers, advertisers, and potential malfeasance. Our 
+                  revolutionary platform leverages advanced cryptographic technology to ensure that personal 
+                  information remains completely private while enabling secure, privacy-preserving ad delivery 
+                  to verified Medicare beneficiaries.
                 </p>
                 <p>
-                  The platform combines the familiar layout of traditional newspapers with cutting-edge 
-                  cryptographic technology, creating an environment where users can share their experiences 
-                  without fear of retribution or privacy breaches. Each review is cryptographically 
-                  verified while maintaining complete anonymity.
+                  The Zero Knowledge System architecture ensures that advertisers and insurers cannot access, 
+                  track, or exploit user data. By using zero-knowledge proofs, we verify Medicare eligibility 
+                  and deliver relevant advertisements without revealing any personal information, medical history, 
+                  or identity details. This cryptographic approach protects users from data breaches, identity 
+                  theft, and unauthorized access by malicious actors.
                 </p>
                 <p>
-                  &ldquo;This represents a paradigm shift in how we think about online privacy and community 
-                  feedback,&rdquo; said a spokesperson for the platform. &ldquo;Users can now share their stories 
-                  with confidence, knowing their identity is protected by mathematical certainty.&rdquo;
+                  &ldquo;Our Zero Knowledge System represents a fundamental shift in how advertising can be delivered 
+                  while maintaining absolute privacy,&rdquo; said a spokesperson for the platform. &ldquo;Users can 
+                  participate in our ad network and earn rewards with complete confidence, knowing their personal 
+                  information is protected by mathematical certainty from insurers, advertisers, and any form 
+                  of malfeasance.&rdquo;
                 </p>
-              </div>
-              <div style={{
-                position: 'absolute',
-                bottom: '10px',
-                right: '20px'
-              }}>
-                <Link 
-                  href="/read-more"
-                  className="nyt-button"
-                  style={{
-                    backgroundColor: 'var(--nyt-red)',
-                    padding: '14px 24px',
-                    fontSize: '0.9rem',
-                    textDecoration: 'none',
-                    display: 'inline-block'
-                  }}
-                >
-                  Read More
-                </Link>
               </div>
             </motion.article>
 
