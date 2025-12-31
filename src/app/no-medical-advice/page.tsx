@@ -16,8 +16,8 @@ export default function NoMedicalAdvicePage() {
               <div className="nyt-tagline">Anonymous Reviews & Community Stories</div>
             </div>
             <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
-              <Link href="/login" className="nyt-button" style={{padding: '8px 16px', fontSize: '0.85rem'}}>
-                Login
+              <Link href="/download" className="nyt-button" style={{padding: '8px 16px', fontSize: '0.85rem'}}>
+                Download App
               </Link>
             </div>
           </div>
@@ -27,26 +27,26 @@ export default function NoMedicalAdvicePage() {
       {/* Hero Section */}
       <div className="nyt-container" style={{marginTop: '40px', marginBottom: '60px'}}>
         <div style={{
-          background: 'linear-gradient(135deg, var(--nyt-black) 0%, var(--nyt-accent) 100%)',
+          backgroundColor: 'var(--nyt-white)',
           padding: '80px 60px',
           borderRadius: '12px',
-          color: 'var(--nyt-white)',
+          color: 'var(--nyt-black)',
           textAlign: 'center',
-          position: 'relative',
-          overflow: 'hidden'
+          border: '2px solid var(--nyt-border)'
         }}>
           <FileX style={{
             width: '80px',
             height: '80px',
             margin: '0 auto 30px',
-            opacity: '0.9'
+            color: 'var(--nyt-accent)'
           }} />
           <h1 style={{
             fontFamily: 'Playfair Display, serif',
             fontSize: '3.5rem',
             fontWeight: '700',
             marginBottom: '20px',
-            lineHeight: '1.2'
+            lineHeight: '1.2',
+            color: 'var(--nyt-black)'
           }}>
             No Medical or Insurance Advice
           </h1>
@@ -54,18 +54,32 @@ export default function NoMedicalAdvicePage() {
             fontSize: '1.3rem',
             lineHeight: '1.6',
             maxWidth: '800px',
-            margin: '0 auto',
-            opacity: '0.95'
+            margin: '0 auto 30px',
+            color: 'var(--nyt-gray)'
           }}>
             Important disclaimer regarding medical advice, insurance guidance, and healthcare information on our platform.
           </p>
+          <Link href="/earning" className="nyt-button" style={{
+            backgroundColor: 'var(--nyt-accent)',
+            padding: '14px 28px',
+            fontSize: '1rem',
+            textDecoration: 'none',
+            display: 'inline-block'
+          }}>
+            Start Earning
+          </Link>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="nyt-container">
-        <div className="nyt-grid">
-          <div className="nyt-main">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '2fr 1fr',
+          gap: '40px',
+          marginTop: '40px'
+        }}>
+          <div>
             <motion.article 
               className="nyt-article featured"
               initial={{ opacity: 0, y: 50 }}
@@ -219,46 +233,102 @@ export default function NoMedicalAdvicePage() {
             </motion.article>
           </div>
 
-          {/* Sidebar */}
-          <motion.div 
-            className="nyt-sidebar"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="nyt-sidebar-section">
-              <h3 className="nyt-sidebar-title">Related Information</h3>
-              <div className="nyt-sidebar-item">
-                <Link href="/medicare-disclaimer" style={{
-                  color: 'var(--nyt-accent)',
-                  textDecoration: 'none',
-                  fontWeight: '600'
-                }}>
-                  Medicare Disclaimer →
-                </Link>
-              </div>
-              <div className="nyt-sidebar-item">
-                <Link href="/advertising-disclosure" style={{
-                  color: 'var(--nyt-accent)',
-                  textDecoration: 'none',
-                  fontWeight: '600'
-                }}>
-                  Advertising Disclosure →
-                </Link>
-              </div>
-              <div className="nyt-sidebar-item">
-                <Link href="/terms" style={{
-                  color: 'var(--nyt-accent)',
-                  textDecoration: 'none',
-                  fontWeight: '600'
-                }}>
-                  Terms of Service →
-                </Link>
+          {/* Right Column - Related Information */}
+          <div>
+            <div className="nyt-sidebar" style={{position: 'sticky', top: '20px'}}>
+              <div className="nyt-sidebar-section">
+                <h3 className="nyt-sidebar-title">Related Information</h3>
+                <div className="nyt-sidebar-item">
+                  <Link href="/medicare-disclaimer" style={{
+                    color: 'var(--nyt-accent)',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    display: 'block',
+                    marginBottom: '12px'
+                  }}>
+                    Medicare Disclaimer →
+                  </Link>
+                </div>
+                <div className="nyt-sidebar-item">
+                  <Link href="/advertising-disclosure" style={{
+                    color: 'var(--nyt-accent)',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    display: 'block',
+                    marginBottom: '12px'
+                  }}>
+                    Advertising Disclosure →
+                  </Link>
+                </div>
+                <div className="nyt-sidebar-item">
+                  <Link href="/terms" style={{
+                    color: 'var(--nyt-accent)',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    display: 'block',
+                    marginBottom: '12px'
+                  }}>
+                    Terms of Service →
+                  </Link>
+                </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
+
+      {/* Minimal Footer */}
+      <footer style={{
+        backgroundColor: 'var(--nyt-black)',
+        color: 'var(--nyt-cream)',
+        padding: '30px 0',
+        marginTop: '60px',
+        borderTop: '1px solid var(--nyt-border)'
+      }}>
+        <div className="nyt-container">
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '20px'
+          }}>
+            <div style={{
+              color: 'var(--nyt-light-gray)',
+              fontSize: '0.85rem'
+            }}>
+              © 2025 Medicare Reviews. All rights reserved.
+            </div>
+            <div style={{
+              display: 'flex',
+              gap: '20px',
+              fontSize: '0.85rem'
+            }}>
+              <Link href="/privacy" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Privacy Policy
+              </Link>
+              <Link href="/terms" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Terms of Service
+              </Link>
+              <Link href="/accessibility" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Accessibility
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

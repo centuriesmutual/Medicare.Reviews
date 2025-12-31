@@ -202,6 +202,12 @@ body {
   div[style*="display: 'flex'"][style*="flexDirection: 'column'"] {
     gap: 20px !important;
   }
+  
+  /* Two column layout responsive */
+  div[style*="gridTemplateColumns: '2fr 1fr'"] {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
 }
 
 /* NYT Articles */
