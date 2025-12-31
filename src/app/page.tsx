@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Plus } from 'lucide-react'
+import { Plus, Scale } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PostReview from '@/components/PostReview'
 import ZKAuth from '@/components/ZKAuth'
@@ -204,6 +204,9 @@ export default function Home() {
               <div className="nyt-sidebar-section" style={{borderBottom: 'none', marginBottom: '0'}}>
                 <h3 className="nyt-sidebar-title">Your Benefits Are Never Touched</h3>
                 <div className="nyt-sidebar-item">
+                  <div className="nyt-sidebar-item-content" style={{marginBottom: '20px'}}>
+                    We only verify your Medicare enrollment status. Your Medicare benefits, coverage, and personal information remain completely private and are never accessed or modified.
+                  </div>
                   <div style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -216,9 +219,13 @@ export default function Home() {
                       fontSize: '0.9rem',
                       textAlign: 'center',
                       textDecoration: 'none',
-                      display: 'block'
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '8px'
                     }}>
-                      Privacy & Compliance
+                      <Scale style={{width: '16px', height: '16px', flexShrink: 0}} />
+                      <span>Privacy & Compliance</span>
                     </Link>
                   </div>
                 </div>
@@ -337,6 +344,41 @@ export default function Home() {
                 }}>
                   Earn Within Our HIPAA-Compliant Ad Network
                 </h3>
+                <div style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '10px',
+                  marginBottom: '15px'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '6px 12px',
+                    backgroundColor: '#1e40af',
+                    borderRadius: '20px',
+                    color: 'white',
+                    fontSize: '0.8rem',
+                    fontWeight: '600',
+                    textTransform: 'uppercase'
+                  }}>
+                    <span>Blue</span>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '6px 12px',
+                    backgroundColor: '#dc2626',
+                    borderRadius: '20px',
+                    color: 'white',
+                    fontSize: '0.8rem',
+                    fontWeight: '600',
+                    textTransform: 'uppercase'
+                  }}>
+                    <span>Red</span>
+                  </div>
+                </div>
                 <div style={{marginBottom: '15px'}}>
                   <div style={{
                     fontWeight: '600',
@@ -459,16 +501,6 @@ export default function Home() {
                     Anonymous Reviews
                   </Link>
                 </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/privacy-first" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Privacy-First Design
-                  </Link>
-                </li>
               </ul>
             </div>
             
@@ -497,16 +529,6 @@ export default function Home() {
                     transition: 'color 0.2s ease'
                   }}>
                     About Us
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/careers" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Careers
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>
@@ -579,16 +601,6 @@ export default function Home() {
                     Do Not Sell My Data
                   </Link>
                 </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/compliance" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    HIPAA Compliance
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
@@ -626,6 +638,13 @@ export default function Home() {
                 transition: 'color 0.2s ease'
               }}>
                 Accessibility
+              </Link>
+              <Link href="/whitepaper" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Whitepaper
               </Link>
             </div>
           </div>
