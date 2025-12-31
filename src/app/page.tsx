@@ -146,90 +146,107 @@ export default function Home() {
           </div>
 
           {/* Sidebar */}
-          <motion.div 
-            className="nyt-sidebar"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            style={{alignSelf: 'start'}}
-          >
+          <div style={{display: 'flex', flexDirection: 'column', gap: '30px'}}>
             {/* Ad Network Call-to-Action Section */}
-            <div className="nyt-sidebar-section" style={{borderBottom: 'none', marginBottom: '0'}}>
-              <h3 className="nyt-sidebar-title">Join Our HIPAA-Compliant Ad Network</h3>
-              <div className="nyt-sidebar-item">
-                <div className="nyt-sidebar-item-content" style={{marginBottom: '20px'}}>
-                  Partner with us to reach healthcare communities through our secure, 
-                  privacy-preserving advertising platform.
-                </div>
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                  marginTop: '20px'
-                }}>
-                  <Link href="/ad-network" className="nyt-button" style={{
-                    backgroundColor: 'var(--nyt-accent)',
-                    padding: '12px 20px',
-                    fontSize: '0.9rem',
-                    textAlign: 'center',
-                    textDecoration: 'none',
-                    display: 'block'
+            <motion.div 
+              className="nyt-sidebar"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              style={{alignSelf: 'start'}}
+            >
+              <div className="nyt-sidebar-section" style={{borderBottom: 'none', marginBottom: '0'}}>
+                <h3 className="nyt-sidebar-title">Join Our HIPAA-Compliant Ad Network</h3>
+                <div className="nyt-sidebar-item">
+                  <div className="nyt-sidebar-item-content" style={{marginBottom: '20px'}}>
+                    Partner with us to reach healthcare communities through our secure, 
+                    privacy-preserving advertising platform.
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px',
+                    marginTop: '20px'
                   }}>
-                    Learn More About Ad Network
-                  </Link>
-                  <Link href="/earning" className="nyt-button" style={{
-                    backgroundColor: 'var(--nyt-gray)',
-                    padding: '12px 20px',
-                    fontSize: '0.9rem',
-                    textAlign: 'center',
-                    textDecoration: 'none',
-                    display: 'block'
-                  }}>
-                    Start Earning
-                  </Link>
+                    <Link href="/ad-network" className="nyt-button" style={{
+                      backgroundColor: 'var(--nyt-accent)',
+                      padding: '12px 20px',
+                      fontSize: '0.9rem',
+                      textAlign: 'center',
+                      textDecoration: 'none',
+                      display: 'block'
+                    }}>
+                      Learn More About Ad Network
+                    </Link>
+                    <Link href="/earning" className="nyt-button" style={{
+                      backgroundColor: 'var(--nyt-gray)',
+                      padding: '12px 20px',
+                      fontSize: '0.9rem',
+                      textAlign: 'center',
+                      textDecoration: 'none',
+                      display: 'block'
+                    }}>
+                      Start Earning
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Your Benefits Are Never Touched Section */}
-            <div className="nyt-sidebar-section" style={{marginTop: '40px', borderTop: '2px solid var(--nyt-border)', paddingTop: '30px', borderBottom: 'none'}}>
-              <h3 className="nyt-sidebar-title">Your Benefits Are Never Touched</h3>
-              <div className="nyt-sidebar-item">
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                  marginTop: '20px'
-                }}>
-                  <Link href="/privacy" className="nyt-button" style={{
-                    backgroundColor: 'var(--nyt-accent)',
-                    padding: '12px 20px',
-                    fontSize: '0.9rem',
-                    textAlign: 'center',
-                    textDecoration: 'none',
-                    display: 'block'
+            <motion.div 
+              className="nyt-sidebar"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              style={{alignSelf: 'start'}}
+            >
+              <div className="nyt-sidebar-section" style={{borderBottom: 'none', marginBottom: '0'}}>
+                <h3 className="nyt-sidebar-title">Your Benefits Are Never Touched</h3>
+                <div className="nyt-sidebar-item">
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px',
+                    marginTop: '20px'
                   }}>
-                    Privacy & Compliance
-                  </Link>
+                    <Link href="/privacy" className="nyt-button" style={{
+                      backgroundColor: 'var(--nyt-accent)',
+                      padding: '12px 20px',
+                      fontSize: '0.9rem',
+                      textAlign: 'center',
+                      textDecoration: 'none',
+                      display: 'block'
+                    }}>
+                      Privacy & Compliance
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Post Review Section */}
             {isAuthenticated && (
-              <div className="nyt-sidebar-section">
-                <button
-                  onClick={() => setShowPostForm(true)}
-                  className="nyt-button"
-                  style={{width: '100%', marginTop: '20px'}}
-                >
-                  <Plus style={{marginRight: '8px', width: '16px', height: '16px'}} />
-                  Post Review
-                </button>
-              </div>
+              <motion.div 
+                className="nyt-sidebar"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                style={{alignSelf: 'start'}}
+              >
+                <div className="nyt-sidebar-section" style={{borderBottom: 'none', marginBottom: '0'}}>
+                  <button
+                    onClick={() => setShowPostForm(true)}
+                    className="nyt-button"
+                    style={{width: '100%', marginTop: '20px'}}
+                  >
+                    <Plus style={{marginRight: '8px', width: '16px', height: '16px'}} />
+                    Post Review
+                  </button>
+                </div>
+              </motion.div>
             )}
-
-          </motion.div>
+          </div>
         </div>
 
         {/* Medicare Verification Section - Full Width End-to-End */}
