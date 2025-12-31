@@ -512,6 +512,16 @@ export default function Home() {
                     Anonymous Reviews
                   </Link>
                 </li>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/no-medical-advice" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    No Medical or Insurance Advice
+                  </Link>
+                </li>
               </ul>
             </div>
             
