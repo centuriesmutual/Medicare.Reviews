@@ -2,9 +2,24 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FileText, Shield, Lock, Users, Award } from 'lucide-react'
+import { FileText, Download, ExternalLink } from 'lucide-react'
 
 export default function WhitepaperPage() {
+  // Replace this with your actual Dropbox file link
+  // Instructions to get a Dropbox embed link:
+  // 1. Upload your PDF file to Dropbox
+  // 2. Right-click the file and select "Share" > "Create a link"
+  // 3. Copy the share link (format: https://www.dropbox.com/s/abc123/filename.pdf?dl=0)
+  // 4. For viewing: Replace "?dl=0" with "?raw=1" (e.g., https://www.dropbox.com/s/abc123/filename.pdf?raw=1)
+  // 5. For downloading: Replace "?dl=0" with "?dl=1" (e.g., https://www.dropbox.com/s/abc123/filename.pdf?dl=1)
+  // 
+  // Alternative: Use Dropbox's embed feature
+  // 1. Get share link: https://www.dropbox.com/s/abc123/filename.pdf?dl=0
+  // 2. For embed: https://www.dropbox.com/s/abc123/filename.pdf?raw=1
+  
+  const dropboxFileUrl = 'https://www.dropbox.com/s/your-file-id/your-filename.pdf?raw=1' // Replace with your actual Dropbox link
+  const dropboxDownloadUrl = dropboxFileUrl.replace('?raw=1', '?dl=1').replace('?raw=0', '?dl=1')
+  
   return (
     <div className="min-h-screen">
       {/* NYT-Style Header */}
@@ -16,8 +31,8 @@ export default function WhitepaperPage() {
               <div className="nyt-tagline">Anonymous Reviews & Community Stories</div>
             </div>
             <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
-              <Link href="/login" className="nyt-button" style={{padding: '8px 16px', fontSize: '0.85rem'}}>
-                Login
+              <Link href="/download" className="nyt-button" style={{padding: '8px 16px', fontSize: '0.85rem'}}>
+                Download App
               </Link>
             </div>
           </div>
@@ -58,7 +73,7 @@ export default function WhitepaperPage() {
             marginBottom: '20px',
             lineHeight: '1.2'
           }}>
-            Medicare Reviews Whitepaper
+            Platform Architecture Whitepaper
           </h1>
           <p style={{
             fontSize: '1.3rem',
@@ -67,282 +82,495 @@ export default function WhitepaperPage() {
             margin: '0 auto',
             opacity: '0.95'
           }}>
-            A comprehensive guide to our zero-knowledge proof architecture, privacy-preserving technology, 
-            and HIPAA-compliant ad network for Medicare beneficiaries.
+            Explore the patented zero-knowledge architecture that powers our privacy-preserving 
+            healthcare advertising platform and Medicare eligibility verification system.
           </p>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="nyt-container">
-        <div className="nyt-grid">
-          <div className="nyt-main">
-            {/* Executive Summary */}
-            <motion.article 
-              className="nyt-article featured"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h2 className="nyt-headline large">Executive Summary</h2>
-              <div className="nyt-content">
-                <p>
-                  Medicare Reviews represents a paradigm shift in how healthcare communities share feedback 
-                  and participate in privacy-preserving advertising networks. Our platform leverages 
-                  zero-knowledge proof technology to enable Medicare beneficiaries to verify their 
-                  eligibility and earn within our HIPAA-compliant ad network without compromising their 
-                  personal information or Medicare benefits.
-                </p>
-                <p>
-                  This whitepaper outlines our technical architecture, privacy guarantees, compliance 
-                  framework, and the innovative approach we've developed to bridge the gap between 
-                  healthcare privacy requirements and modern digital advertising needs.
-                </p>
+        <motion.article 
+          className="nyt-article featured"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h2 className="nyt-headline large">Technical Whitepaper</h2>
+          <div className="nyt-content">
+            <p style={{marginBottom: '30px'}}>
+              This whitepaper details the patented architecture of the Medicare Reviews platform, 
+              including our zero-knowledge proof system, HIPAA-compliant ad network infrastructure, 
+              and privacy-preserving Medicare eligibility verification process.
+            </p>
+            
+            {/* Dropbox File Viewer */}
+            <div style={{
+              marginTop: '40px',
+              marginBottom: '40px',
+              border: '2px solid var(--nyt-border)',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+              backgroundColor: 'var(--nyt-white)'
+            }}>
+              <div style={{
+                backgroundColor: 'var(--nyt-cream)',
+                padding: '20px',
+                borderBottom: '1px solid var(--nyt-border)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '15px'
+              }}>
+                <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+                  <FileText style={{width: '24px', height: '24px', color: 'var(--nyt-accent)'}} />
+                  <div>
+                    <h3 style={{
+                      fontFamily: 'Playfair Display, serif',
+                      fontSize: '1.2rem',
+                      fontWeight: '600',
+                      color: 'var(--nyt-black)',
+                      margin: 0,
+                      marginBottom: '4px'
+                    }}>
+                      Platform Architecture Whitepaper
+                    </h3>
+                    <p style={{
+                      fontSize: '0.85rem',
+                      color: 'var(--nyt-gray)',
+                      margin: 0
+                    }}>
+                      Read-only document • Patented Technology
+                    </p>
+                  </div>
+                </div>
+                <div style={{display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
+                  <a
+                    href={dropboxDownloadUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      padding: '10px 20px',
+                      backgroundColor: 'var(--nyt-accent)',
+                      color: 'white',
+                      textDecoration: 'none',
+                      borderRadius: '6px',
+                      fontSize: '0.9rem',
+                      fontWeight: '600',
+                      transition: 'background-color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#1565c0'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--nyt-accent)'
+                    }}
+                  >
+                    <Download style={{width: '16px', height: '16px'}} />
+                    <span>Download PDF</span>
+                  </a>
+                  <a
+                    href={dropboxFileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      padding: '10px 20px',
+                      backgroundColor: 'var(--nyt-gray)',
+                      color: 'white',
+                      textDecoration: 'none',
+                      borderRadius: '6px',
+                      fontSize: '0.9rem',
+                      fontWeight: '600',
+                      transition: 'background-color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#555'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--nyt-gray)'
+                    }}
+                  >
+                    <ExternalLink style={{width: '16px', height: '16px'}} />
+                    <span>Open in New Tab</span>
+                  </a>
+                </div>
               </div>
-            </motion.article>
-
-            <div className="nyt-divider"></div>
-
-            {/* Zero-Knowledge Architecture */}
-            <motion.article 
-              className="nyt-article"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div style={{display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px'}}>
-                <Shield style={{width: '40px', height: '40px', color: 'var(--nyt-accent)'}} />
-                <h2 className="nyt-headline medium">Zero-Knowledge Proof Architecture</h2>
+              
+              {/* PDF Viewer */}
+              <div style={{
+                width: '100%',
+                minHeight: '800px',
+                position: 'relative',
+                backgroundColor: '#f5f5f5',
+                borderTop: '1px solid var(--nyt-border)'
+              }}>
+                {/* Check if Dropbox URL is still placeholder */}
+                {dropboxFileUrl.includes('your-file-id') ? (
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    padding: '60px 40px',
+                    textAlign: 'center'
+                  }}>
+                    <FileText style={{width: '64px', height: '64px', color: 'var(--nyt-gray)'}} />
+                    <div>
+                      <h3 style={{
+                        fontFamily: 'Playfair Display, serif',
+                        fontSize: '1.4rem',
+                        fontWeight: '600',
+                        color: 'var(--nyt-black)',
+                        marginBottom: '15px'
+                      }}>
+                        Configure Dropbox Link
+                      </h3>
+                      <p style={{
+                        fontSize: '1rem',
+                        color: 'var(--nyt-gray)',
+                        lineHeight: '1.6',
+                        maxWidth: '600px',
+                        margin: '0 auto 20px'
+                      }}>
+                        To view the whitepaper, please update the Dropbox file URL in the page code.
+                      </p>
+                      <div style={{
+                        backgroundColor: 'var(--nyt-cream)',
+                        padding: '20px',
+                        borderRadius: '8px',
+                        textAlign: 'left',
+                        maxWidth: '600px',
+                        margin: '0 auto'
+                      }}>
+                        <strong style={{color: 'var(--nyt-black)'}}>Instructions:</strong>
+                        <ol style={{
+                          paddingLeft: '20px',
+                          color: 'var(--nyt-black)',
+                          lineHeight: '1.8',
+                          marginTop: '10px'
+                        }}>
+                          <li>Upload your PDF file to Dropbox</li>
+                          <li>Right-click the file and select "Share" → "Create a link"</li>
+                          <li>Copy the share link (format: https://www.dropbox.com/s/abc123/filename.pdf?dl=0)</li>
+                          <li>Replace "?dl=0" with "?raw=1" for viewing</li>
+                          <li>Update the <code style={{backgroundColor: '#e0e0e0', padding: '2px 6px', borderRadius: '3px'}}>dropboxFileUrl</code> variable in the code</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <iframe
+                      src={`${dropboxFileUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+                      style={{
+                        width: '100%',
+                        height: '800px',
+                        border: 'none',
+                        display: 'block'
+                      }}
+                      title="Platform Architecture Whitepaper"
+                      onError={() => {
+                        // Fallback if iframe fails
+                        console.error('Failed to load PDF in iframe')
+                      }}
+                    />
+                    <div style={{
+                      padding: '15px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      borderTop: '1px solid var(--nyt-border)',
+                      textAlign: 'center'
+                    }}>
+                      <p style={{
+                        fontSize: '0.85rem',
+                        color: 'var(--nyt-gray)',
+                        margin: 0
+                      }}>
+                        Having trouble viewing?{' '}
+                        <a
+                          href={dropboxFileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            color: 'var(--nyt-accent)',
+                            textDecoration: 'none',
+                            fontWeight: '600'
+                          }}
+                        >
+                          Open in new tab
+                        </a>
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
-              <div className="nyt-content">
-                <p>
-                  Our platform utilizes advanced cryptographic zero-knowledge proofs to verify Medicare 
-                  enrollment status without accessing or storing personal information. This technology 
-                  allows us to confirm that a user has active Medicare Part A and Part B coverage 
-                  without revealing their identity, Social Security number, or any other sensitive data.
-                </p>
-                <p>
-                  The zero-knowledge proof system works by generating cryptographic proofs that demonstrate 
-                  knowledge of valid Medicare enrollment credentials without revealing the credentials 
-                  themselves. This mathematical certainty ensures privacy while maintaining verification 
-                  integrity.
-                </p>
-                <h3 className="nyt-headline small" style={{marginTop: '30px', marginBottom: '15px'}}>
-                  Key Features
-                </h3>
-                <ul style={{paddingLeft: '20px', lineHeight: '1.8'}}>
-                  <li>No personal information is stored or transmitted</li>
-                  <li>Medicare benefits remain completely untouched</li>
-                  <li>Cryptographic verification ensures authenticity</li>
-                  <li>HIPAA-compliant privacy-preserving protocols</li>
-                </ul>
-              </div>
-            </motion.article>
+            </div>
 
-            <div className="nyt-divider"></div>
-
-            {/* Medicare Verification Process */}
-            <motion.article 
-              className="nyt-article"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <div style={{display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px'}}>
-                <Lock style={{width: '40px', height: '40px', color: 'var(--nyt-accent)'}} />
-                <h2 className="nyt-headline medium">Medicare Verification Process</h2>
-              </div>
-              <div className="nyt-content">
-                <p>
-                  The verification process for Medicare Part A and Part B enrollment is designed with 
-                  privacy and security as foundational principles. Users initiate verification through 
-                  our secure interface, which generates a zero-knowledge proof of their Medicare status.
-                </p>
-                <h3 className="nyt-headline small" style={{marginTop: '30px', marginBottom: '15px'}}>
-                  Verification Steps
-                </h3>
-                <ol style={{paddingLeft: '20px', lineHeight: '1.8'}}>
-                  <li>User initiates verification request</li>
-                  <li>System generates cryptographic parameters</li>
-                  <li>Zero-knowledge proof is created without revealing personal data</li>
-                  <li>Proof is verified against Medicare enrollment database</li>
-                  <li>Eligibility status is confirmed without storing sensitive information</li>
-                </ol>
-                <p style={{marginTop: '20px'}}>
-                  Throughout this process, Medicare benefits, coverage details, and personal 
-                  information remain completely private and are never accessed or modified.
-                </p>
-              </div>
-            </motion.article>
-
-            <div className="nyt-divider"></div>
-
-            {/* HIPAA-Compliant Ad Network */}
-            <motion.article 
-              className="nyt-article"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <div style={{display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px'}}>
-                <Users style={{width: '40px', height: '40px', color: 'var(--nyt-accent)'}} />
-                <h2 className="nyt-headline medium">HIPAA-Compliant Ad Network</h2>
-              </div>
-              <div className="nyt-content">
-                <p>
-                  Our advertising network operates under strict HIPAA compliance standards, ensuring that 
-                  all healthcare-related interactions are processed through certified privacy-preserving 
-                  protocols that meet federal healthcare data protection standards.
-                </p>
-                <h3 className="nyt-headline small" style={{marginTop: '30px', marginBottom: '15px'}}>
-                  Eligibility Requirements
-                </h3>
-                <p>
-                  To participate in our ad network and earn rewards, users must have active Medicare 
-                  Part A and Part B coverage. Our secure verification process confirms enrollment status 
-                  without compromising personal information, ensuring participants meet requirements 
-                  while maintaining complete privacy.
-                </p>
-                <h3 className="nyt-headline small" style={{marginTop: '30px', marginBottom: '15px'}}>
-                  Privacy Guarantees
-                </h3>
-                <ul style={{paddingLeft: '20px', lineHeight: '1.8'}}>
-                  <li>Medicare benefits are never touched or accessed</li>
-                  <li>No personal health information is collected or stored</li>
-                  <li>All interactions use privacy-preserving protocols</li>
-                  <li>Compliance with federal healthcare data protection standards</li>
-                </ul>
-              </div>
-            </motion.article>
-
-            <div className="nyt-divider"></div>
-
-            {/* Technical Specifications */}
-            <motion.article 
-              className="nyt-article"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-            >
-              <div style={{display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px'}}>
-                <Award style={{width: '40px', height: '40px', color: 'var(--nyt-accent)'}} />
-                <h2 className="nyt-headline medium">Technical Specifications</h2>
-              </div>
-              <div className="nyt-content">
-                <p>
-                  Our platform is built on modern cryptographic primitives and follows industry best 
-                  practices for security and privacy. The system architecture is designed to be 
-                  scalable, secure, and compliant with all relevant regulations.
-                </p>
-                <h3 className="nyt-headline small" style={{marginTop: '30px', marginBottom: '15px'}}>
-                  Cryptographic Standards
-                </h3>
-                <ul style={{paddingLeft: '20px', lineHeight: '1.8'}}>
-                  <li>Zero-knowledge proof protocols (zk-SNARKs)</li>
-                  <li>End-to-end encryption for all communications</li>
-                  <li>Secure multi-party computation where applicable</li>
-                  <li>Regular security audits and compliance reviews</li>
-                </ul>
-                <h3 className="nyt-headline small" style={{marginTop: '30px', marginBottom: '15px'}}>
-                  Compliance Framework
-                </h3>
-                <ul style={{paddingLeft: '20px', lineHeight: '1.8'}}>
-                  <li>HIPAA compliance for healthcare data protection</li>
-                  <li>Federal healthcare data protection standards</li>
-                  <li>Privacy-preserving protocol certifications</li>
-                  <li>Regular compliance audits and assessments</li>
-                </ul>
-              </div>
-            </motion.article>
-
-            <div className="nyt-divider"></div>
-
-            {/* Conclusion */}
-            <motion.article 
-              className="nyt-article"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-            >
-              <h2 className="nyt-headline medium">Conclusion</h2>
-              <div className="nyt-content">
-                <p>
-                  Medicare Reviews represents a new paradigm in healthcare community engagement and 
-                  privacy-preserving digital advertising. By leveraging zero-knowledge proof technology, 
-                  we enable Medicare beneficiaries to participate in our ad network while maintaining 
-                  complete privacy and ensuring their benefits remain untouched.
-                </p>
-                <p>
-                  Our commitment to HIPAA compliance, cryptographic security, and user privacy positions 
-                  us as a leader in the intersection of healthcare technology and privacy-preserving 
-                  digital platforms. We continue to innovate and improve our systems to better serve 
-                  the Medicare community while maintaining the highest standards of privacy and security.
-                </p>
-                <p style={{marginTop: '30px', fontStyle: 'italic', color: 'var(--nyt-gray)'}}>
-                  For technical questions or partnership inquiries, please contact our team through 
-                  our contact page.
-                </p>
-              </div>
-            </motion.article>
+            <div style={{
+              backgroundColor: 'var(--nyt-cream)',
+              padding: '30px',
+              borderRadius: '8px',
+              border: '1px solid var(--nyt-border)',
+              marginTop: '40px'
+            }}>
+              <h3 style={{
+                fontFamily: 'Playfair Display, serif',
+                fontSize: '1.4rem',
+                fontWeight: '600',
+                color: 'var(--nyt-black)',
+                marginBottom: '15px'
+              }}>
+                About This Document
+              </h3>
+              <p style={{color: 'var(--nyt-black)', lineHeight: '1.6', marginBottom: '15px'}}>
+                This whitepaper provides comprehensive technical documentation of our patented 
+                zero-knowledge architecture, including:
+              </p>
+              <ul style={{
+                paddingLeft: '20px',
+                color: 'var(--nyt-black)',
+                lineHeight: '1.8'
+              }}>
+                <li>Zero-knowledge proof implementation for Medicare eligibility verification</li>
+                <li>HIPAA-compliant ad network infrastructure</li>
+                <li>Privacy-preserving cryptographic protocols</li>
+                <li>System architecture and security measures</li>
+                <li>Patent information and technical specifications</li>
+              </ul>
+              <p style={{
+                color: 'var(--nyt-gray)',
+                fontSize: '0.9rem',
+                marginTop: '20px',
+                fontStyle: 'italic'
+              }}>
+                This document is provided for informational purposes only. All technology described 
+                is protected by applicable patents and intellectual property rights.
+              </p>
+            </div>
           </div>
-
-          {/* Sidebar */}
-          <motion.div 
-            className="nyt-sidebar"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="nyt-sidebar-section">
-              <h3 className="nyt-sidebar-title">Document Information</h3>
-              <div className="nyt-sidebar-item">
-                <div className="nyt-sidebar-item-title">Version</div>
-                <div className="nyt-sidebar-item-content">1.0</div>
-              </div>
-              <div className="nyt-sidebar-item">
-                <div className="nyt-sidebar-item-title">Last Updated</div>
-                <div className="nyt-sidebar-item-content">January 2025</div>
-              </div>
-              <div className="nyt-sidebar-item">
-                <div className="nyt-sidebar-item-title">Status</div>
-                <div className="nyt-sidebar-item-content">Current</div>
-              </div>
-            </div>
-
-            <div className="nyt-sidebar-section">
-              <h3 className="nyt-sidebar-title">Quick Links</h3>
-              <div className="nyt-sidebar-item">
-                <Link href="/verify-medicare-eligibility" style={{
-                  color: 'var(--nyt-accent)',
-                  textDecoration: 'none',
-                  fontWeight: '600'
-                }}>
-                  Verify Medicare Eligibility →
-                </Link>
-              </div>
-              <div className="nyt-sidebar-item">
-                <Link href="/privacy" style={{
-                  color: 'var(--nyt-accent)',
-                  textDecoration: 'none',
-                  fontWeight: '600'
-                }}>
-                  Privacy Policy →
-                </Link>
-              </div>
-              <div className="nyt-sidebar-item">
-                <Link href="/contact" style={{
-                  color: 'var(--nyt-accent)',
-                  textDecoration: 'none',
-                  fontWeight: '600'
-                }}>
-                  Contact Us →
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        </motion.article>
       </div>
+
+      {/* Footer */}
+      <motion.footer 
+        style={{
+          backgroundColor: 'var(--nyt-black)',
+          color: 'var(--nyt-cream)',
+          padding: '40px 0',
+          marginTop: '60px',
+          borderTop: '3px solid var(--nyt-accent)'
+        }}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        <div className="nyt-container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '30px',
+            marginBottom: '25px'
+          }}>
+            <div>
+              <h3 style={{
+                fontFamily: 'Playfair Display, serif',
+                fontSize: '1.4rem',
+                fontWeight: '700',
+                color: 'var(--nyt-cream)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                margin: 0,
+                marginBottom: '15px'
+              }}>
+                Medicare Reviews
+              </h3>
+              <p style={{
+                color: 'var(--nyt-light-gray)',
+                lineHeight: '1.5',
+                marginBottom: '10px',
+                fontSize: '0.9rem'
+              }}>
+                The premier platform for anonymous healthcare reviews powered by zero-knowledge proof technology.
+              </p>
+            </div>
+            
+            <div>
+              <h4 style={{
+                fontFamily: 'Playfair Display, serif',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                color: 'var(--nyt-cream)',
+                marginBottom: '12px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Platform
+              </h4>
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0
+              }}>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/no-medical-advice" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    No Medical or Insurance Advice
+                  </Link>
+                </li>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/zk-systems" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    Zero-Knowledge Systems
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 style={{
+                fontFamily: 'Playfair Display, serif',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                color: 'var(--nyt-cream)',
+                marginBottom: '12px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Company
+              </h4>
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0
+              }}>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/whitepaper" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    Whitepaper
+                  </Link>
+                </li>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/contact" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    Contact
+                  </Link>
+                </li>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/press" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    Press
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 style={{
+                fontFamily: 'Playfair Display, serif',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                color: 'var(--nyt-cream)',
+                marginBottom: '12px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}>
+                Legal
+              </h4>
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0
+              }}>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/hipaa-privacy-notice" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    HIPAA Privacy Notice
+                  </Link>
+                </li>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/medicare-disclaimer" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    Medicare Disclaimer
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div style={{
+            borderTop: '1px solid var(--nyt-border)',
+            paddingTop: '20px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '20px'
+          }}>
+            <div style={{
+              color: 'var(--nyt-light-gray)',
+              fontSize: '0.85rem'
+            }}>
+              © 2025 Medicare Reviews. All rights reserved.
+            </div>
+            <div style={{
+              display: 'flex',
+              gap: '20px',
+              fontSize: '0.85rem'
+            }}>
+              <Link href="/privacy" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Privacy Policy
+              </Link>
+              <Link href="/terms" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.footer>
     </div>
   )
 }
-

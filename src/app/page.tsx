@@ -549,23 +549,13 @@ export default function Home() {
                 margin: 0
               }}>
                 <li style={{marginBottom: '6px'}}>
-                  <Link href="/about" style={{
+                  <Link href="/whitepaper" style={{
                     color: 'var(--nyt-light-gray)',
                     fontSize: '0.85rem',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease'
                   }}>
-                    About Us
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/press" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Press
+                    Whitepaper
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>
@@ -576,6 +566,16 @@ export default function Home() {
                     transition: 'color 0.2s ease'
                   }}>
                     Contact
+                  </Link>
+                </li>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/press" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    Press
                   </Link>
                 </li>
               </ul>
