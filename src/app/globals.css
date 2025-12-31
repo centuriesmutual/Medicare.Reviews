@@ -106,6 +106,7 @@ body {
   grid-template-columns: 2fr 1fr;
   gap: 40px;
   margin-top: 40px;
+  align-items: start;
 }
 
 @media (max-width: 768px) {
@@ -192,6 +193,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   height: fit-content;
+  margin-bottom: 0;
 }
 
 .nyt-sidebar-section {
