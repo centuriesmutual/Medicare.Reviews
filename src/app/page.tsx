@@ -241,66 +241,9 @@ export default function Home() {
             
             <div className="nyt-content" style={{textAlign: 'center', maxWidth: '1200px', margin: '0 auto'}}>
               <div style={{marginBottom: '30px'}}>
-                <h3 style={{
-                  fontFamily: 'Playfair Display, serif',
-                  fontSize: '1.3rem',
-                  fontWeight: '700',
-                  margin: '0 0 10px 0',
-                  color: 'var(--nyt-black)'
-                }}>
-                  Verify Your Medicare Part A & Part B Eligibility
-                </h3>
                 <p style={{fontSize: '1.1rem', marginBottom: '20px', color: 'var(--nyt-gray)'}}>
                   Confirm your Medicare enrollment to become eligible to earn within our HIPAA-compliant ad network
                 </p>
-                
-                <div style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'center',
-                  gap: '15px',
-                  marginBottom: '30px'
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '10px 16px',
-                    backgroundColor: 'var(--nyt-bg)',
-                    borderRadius: '25px',
-                    border: '1px solid var(--nyt-border)'
-                  }}>
-                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Medicare Part A
-                    </span>
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '10px 16px',
-                    backgroundColor: 'var(--nyt-bg)',
-                    borderRadius: '25px',
-                    border: '1px solid var(--nyt-border)'
-                  }}>
-                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Medicare Part B
-                    </span>
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '10px 16px',
-                    backgroundColor: 'var(--nyt-bg)',
-                    borderRadius: '25px',
-                    border: '1px solid var(--nyt-border)'
-                  }}>
-                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Verified Eligibility
-                    </span>
-                  </div>
-                </div>
                 
                 {!isAuthenticated ? (
                   <div style={{marginBottom: '20px'}}>
