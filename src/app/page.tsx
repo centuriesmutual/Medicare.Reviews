@@ -345,57 +345,53 @@ export default function Home() {
                   Earn Within Our HIPAA-Compliant Ad Network
                 </h3>
                 <div style={{
-                  marginBottom: '20px',
                   display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center'
+                  flexWrap: 'wrap',
+                  gap: '10px',
+                  marginBottom: '15px'
                 }}>
                   <div style={{
-                    width: '100%',
-                    maxWidth: '400px',
-                    height: '250px',
-                    background: 'linear-gradient(to bottom, #1e40af 0%, #1e40af 50%, #dc2626 50%, #dc2626 100%)',
-                    borderRadius: '12px',
-                    border: '2px solid #000',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                    position: 'relative',
-                    padding: '20px',
                     display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '6px 12px',
+                    backgroundColor: '#1e40af',
+                    borderRadius: '20px',
                     color: 'white',
-                    fontFamily: 'Arial, sans-serif'
+                    fontSize: '0.8rem',
+                    fontWeight: '600',
+                    textTransform: 'uppercase'
                   }}>
-                    <div style={{
-                      fontSize: '1.5rem',
-                      fontWeight: '700',
-                      letterSpacing: '2px',
-                      textAlign: 'center',
-                      marginBottom: '10px'
-                    }}>
-                      MEDICARE
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      marginTop: 'auto'
-                    }}>
-                      <div>
-                        <div style={{fontSize: '0.7rem', opacity: 0.9, marginBottom: '4px'}}>PART A</div>
-                        <div style={{fontSize: '0.7rem', opacity: 0.9}}>HOSPITAL</div>
-                      </div>
-                      <div style={{
-                        width: '2px',
-                        height: '60px',
-                        backgroundColor: 'white',
-                        opacity: 0.3
-                      }}></div>
-                      <div>
-                        <div style={{fontSize: '0.7rem', opacity: 0.9, marginBottom: '4px'}}>PART B</div>
-                        <div style={{fontSize: '0.7rem', opacity: 0.9}}>MEDICAL</div>
-                      </div>
-                    </div>
+                    <span>Blue</span>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '6px 12px',
+                    backgroundColor: '#dc2626',
+                    borderRadius: '20px',
+                    color: 'white',
+                    fontSize: '0.8rem',
+                    fontWeight: '600',
+                    textTransform: 'uppercase'
+                  }}>
+                    <span>Red</span>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '6px 12px',
+                    backgroundColor: '#ffffff',
+                    borderRadius: '20px',
+                    color: '#000000',
+                    border: '1px solid #e5e7eb',
+                    fontSize: '0.8rem',
+                    fontWeight: '600',
+                    textTransform: 'uppercase'
+                  }}>
+                    <span>White</span>
                   </div>
                 </div>
                 <div style={{marginBottom: '15px'}}>
