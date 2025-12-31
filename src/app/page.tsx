@@ -6,6 +6,7 @@ import { Plus, Scale, Newspaper, CreditCard } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PostReview from '@/components/PostReview'
 import ZKAuth from '@/components/ZKAuth'
+import MedicareCardModal from '@/components/MedicareCardModal'
 
 interface Review {
   id: string
@@ -20,6 +21,7 @@ export default function Home() {
   const [reviews, setReviews] = useState<Review[]>([])
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [showPostForm, setShowPostForm] = useState(false)
+  const [showMedicareCardModal, setShowMedicareCardModal] = useState(false)
 
   useEffect(() => {
     // Load reviews from localStorage or API
@@ -337,7 +339,26 @@ export default function Home() {
                   gap: '10px',
                   marginBottom: '15px'
                 }}>
-                  <CreditCard style={{width: '24px', height: '24px', color: 'var(--nyt-accent)', flexShrink: 0}} />
+                  <button
+                    onClick={() => setShowMedicareCardModal(true)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      padding: '4px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      transition: 'transform 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.1)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'
+                    }}
+                  >
+                    <CreditCard style={{width: '24px', height: '24px', color: 'var(--nyt-accent)', flexShrink: 0}} />
+                  </button>
                   <div style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -674,6 +695,12 @@ export default function Home() {
           onCancel={() => setShowPostForm(false)}
         />
       )}
+
+      {/* Medicare Card Modal */}
+      <MedicareCardModal 
+        isOpen={showMedicareCardModal}
+        onClose={() => setShowMedicareCardModal(false)}
+      />
     </div>
   )
 }
