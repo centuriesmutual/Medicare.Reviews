@@ -191,6 +191,30 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Your Benefits Are Never Touched Section */}
+            <div className="nyt-sidebar-section">
+              <h3 className="nyt-sidebar-title">Your Benefits Are Never Touched</h3>
+              <div className="nyt-sidebar-item">
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  marginTop: '20px'
+                }}>
+                  <Link href="/privacy" className="nyt-button" style={{
+                    backgroundColor: 'var(--nyt-accent)',
+                    padding: '12px 20px',
+                    fontSize: '0.9rem',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    display: 'block'
+                  }}>
+                    Privacy & Compliance
+                  </Link>
+                </div>
+              </div>
+            </div>
+
             {/* Post Review Section */}
             {isAuthenticated && (
               <div className="nyt-sidebar-section">
@@ -208,11 +232,11 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Authentication Section - Full Width End-to-End */}
+        {/* Medicare Verification Section - Full Width End-to-End */}
         <div style={{width: '100%', marginTop: '40px'}}>
           <article className="nyt-article" style={{maxWidth: 'none', width: '100%', margin: '0'}}>
             <h2 className="nyt-headline medium" style={{marginBottom: '20px', textAlign: 'center'}}>
-              Authentication
+              Medicare Verification & Eligibility
             </h2>
             
             <div className="nyt-content" style={{textAlign: 'center', maxWidth: '1200px', margin: '0 auto'}}>
@@ -224,10 +248,10 @@ export default function Home() {
                   margin: '0 0 10px 0',
                   color: 'var(--nyt-black)'
                 }}>
-                  Zero-Knowledge Authentication
+                  Verify Your Medicare Part A & Part B Eligibility
                 </h3>
                 <p style={{fontSize: '1.1rem', marginBottom: '20px', color: 'var(--nyt-gray)'}}>
-                  Prove your identity without revealing personal information
+                  Confirm your Medicare enrollment to become eligible to earn within our HIPAA-compliant ad network
                 </p>
                 
                 <div style={{
@@ -247,7 +271,7 @@ export default function Home() {
                     border: '1px solid var(--nyt-border)'
                   }}>
                     <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Privacy First
+                      Medicare Part A
                     </span>
                   </div>
                   <div style={{
@@ -260,7 +284,7 @@ export default function Home() {
                     border: '1px solid var(--nyt-border)'
                   }}>
                     <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Anonymous
+                      Medicare Part B
                     </span>
                   </div>
                   <div style={{
@@ -273,7 +297,7 @@ export default function Home() {
                     border: '1px solid var(--nyt-border)'
                   }}>
                     <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      ZK Protected
+                      Verified Eligibility
                     </span>
                   </div>
                 </div>
@@ -292,7 +316,7 @@ export default function Home() {
                     marginBottom: '20px',
                     display: 'inline-block'
                   }}>
-                    ✓ Authenticated with ZK Proofs
+                    ✓ Medicare Verified - Eligible to Earn
                   </div>
                 )}
                 
@@ -302,7 +326,7 @@ export default function Home() {
                   color: 'var(--nyt-light-gray)',
                   fontFamily: 'Georgia, serif'
                 }}>
-                  Your identity will be verified using zero-knowledge proofs
+                  Your Medicare Part A and Part B enrollment will be verified securely to determine your eligibility to participate in our ad network
                 </p>
               </div>
               
@@ -318,7 +342,7 @@ export default function Home() {
                   margin: '0 0 15px 0',
                   color: 'var(--nyt-black)'
                 }}>
-                  HIPAA-Compliant Ad Network
+                  Earn Within Our HIPAA-Compliant Ad Network
                 </h3>
                 <div style={{
                   textAlign: 'left',
@@ -332,15 +356,17 @@ export default function Home() {
                       color: 'var(--nyt-black)',
                       fontSize: '1rem'
                     }}>
-                      Federal Standards
+                      Eligibility Requirements
                     </div>
                     <div style={{
                       color: 'var(--nyt-gray)',
                       lineHeight: '1.6',
                       fontSize: '0.95rem'
                     }}>
-                      All healthcare-related interactions are processed through certified 
-                      privacy-preserving protocols that meet federal healthcare data protection standards.
+                      To earn within our ad network, you must have active Medicare Part A and Part B coverage. 
+                      Our secure verification process confirms your enrollment status without compromising your 
+                      personal information, ensuring you meet the requirements to participate in our privacy-preserving 
+                      advertising platform.
                     </div>
                   </div>
                 </div>
