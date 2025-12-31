@@ -116,6 +116,22 @@ body {
   }
 }
 
+/* Two Column Verification Layout */
+.verification-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .verification-two-column {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
 /* NYT Articles */
 .nyt-article {
   margin-bottom: 40px;

@@ -249,15 +249,16 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Medicare Verification Section - Full Width End-to-End */}
+        {/* Medicare Verification Section - Two Column Layout */}
         <div style={{width: '100%', marginTop: '40px'}}>
           <article className="nyt-article" style={{maxWidth: 'none', width: '100%', margin: '0'}}>
             <h2 className="nyt-headline medium" style={{marginBottom: '20px', textAlign: 'center'}}>
               Medicare Verification & Eligibility
             </h2>
             
-            <div className="nyt-content" style={{textAlign: 'center', maxWidth: '1200px', margin: '0 auto'}}>
-              <div style={{marginBottom: '30px'}}>
+            <div className="verification-two-column">
+              {/* Left Column - Medicare Verification */}
+              <div className="nyt-content" style={{textAlign: 'center'}}>
                 <p style={{fontSize: '1.1rem', marginBottom: '20px', color: 'var(--nyt-gray)'}}>
                   Confirm your Medicare enrollment to become eligible to earn within our HIPAA-compliant ad network
                 </p>
@@ -325,11 +326,8 @@ export default function Home() {
                 </p>
               </div>
               
-              <div style={{
-                borderTop: '1px solid var(--nyt-border)',
-                paddingTop: '30px',
-                marginTop: '40px'
-              }}>
+              {/* Right Column - Earn Within Ad Network */}
+              <div className="nyt-content" style={{textAlign: 'left'}}>
                 <h3 style={{
                   fontFamily: 'Playfair Display, serif',
                   fontSize: '1.2rem',
@@ -339,30 +337,24 @@ export default function Home() {
                 }}>
                   Earn Within Our HIPAA-Compliant Ad Network
                 </h3>
-                <div style={{
-                  textAlign: 'left',
-                  maxWidth: '800px',
-                  margin: '0 auto'
-                }}>
-                  <div style={{marginBottom: '15px'}}>
-                    <div style={{
-                      fontWeight: '600',
-                      marginBottom: '8px',
-                      color: 'var(--nyt-black)',
-                      fontSize: '1rem'
-                    }}>
-                      Eligibility Requirements
-                    </div>
-                    <div style={{
-                      color: 'var(--nyt-gray)',
-                      lineHeight: '1.6',
-                      fontSize: '0.95rem'
-                    }}>
-                      To earn within our ad network, you must have active Medicare Part A and Part B coverage. 
-                      Our secure verification process confirms your enrollment status without compromising your 
-                      personal information, ensuring you meet the requirements to participate in our privacy-preserving 
-                      advertising platform.
-                    </div>
+                <div style={{marginBottom: '15px'}}>
+                  <div style={{
+                    fontWeight: '600',
+                    marginBottom: '8px',
+                    color: 'var(--nyt-black)',
+                    fontSize: '1rem'
+                  }}>
+                    Eligibility Requirements
+                  </div>
+                  <div style={{
+                    color: 'var(--nyt-gray)',
+                    lineHeight: '1.6',
+                    fontSize: '0.95rem'
+                  }}>
+                    To earn within our ad network, you must have active Medicare Part A and Part B coverage. 
+                    Our secure verification process confirms your enrollment status without compromising your 
+                    personal information, ensuring you meet the requirements to participate in our privacy-preserving 
+                    advertising platform.
                   </div>
                 </div>
               </div>
