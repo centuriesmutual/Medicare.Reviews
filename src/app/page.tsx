@@ -154,7 +154,7 @@ export default function Home() {
             style={{alignSelf: 'start'}}
           >
             {/* Ad Network Call-to-Action Section */}
-            <div className="nyt-sidebar-section">
+            <div className="nyt-sidebar-section" style={{borderBottom: 'none', marginBottom: '0'}}>
               <h3 className="nyt-sidebar-title">Join Our HIPAA-Compliant Ad Network</h3>
               <div className="nyt-sidebar-item">
                 <div className="nyt-sidebar-item-content" style={{marginBottom: '20px'}}>
@@ -192,7 +192,7 @@ export default function Home() {
             </div>
 
             {/* Your Benefits Are Never Touched Section */}
-            <div className="nyt-sidebar-section">
+            <div className="nyt-sidebar-section" style={{marginTop: '40px', borderTop: '2px solid var(--nyt-border)', paddingTop: '30px', borderBottom: 'none'}}>
               <h3 className="nyt-sidebar-title">Your Benefits Are Never Touched</h3>
               <div className="nyt-sidebar-item">
                 <div style={{
@@ -244,6 +244,41 @@ export default function Home() {
                 <p style={{fontSize: '1.1rem', marginBottom: '20px', color: 'var(--nyt-gray)'}}>
                   Confirm your Medicare enrollment to become eligible to earn within our HIPAA-compliant ad network
                 </p>
+                
+                <div style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'center',
+                  gap: '15px',
+                  marginBottom: '30px'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '10px 16px',
+                    backgroundColor: 'var(--nyt-bg)',
+                    borderRadius: '25px',
+                    border: '1px solid var(--nyt-border)'
+                  }}>
+                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
+                      Part A
+                    </span>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '10px 16px',
+                    backgroundColor: 'var(--nyt-bg)',
+                    borderRadius: '25px',
+                    border: '1px solid var(--nyt-border)'
+                  }}>
+                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
+                      Part B
+                    </span>
+                  </div>
+                </div>
                 
                 {!isAuthenticated ? (
                   <div style={{marginBottom: '20px'}}>
