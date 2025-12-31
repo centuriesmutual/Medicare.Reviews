@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Plus, Scale, Newspaper } from 'lucide-react'
+import { Plus, Scale, Newspaper, CreditCard } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PostReview from '@/components/PostReview'
 import ZKAuth from '@/components/ZKAuth'
@@ -333,9 +333,11 @@ export default function Home() {
                 <div style={{
                   display: 'flex',
                   flexWrap: 'wrap',
+                  alignItems: 'center',
                   gap: '10px',
                   marginBottom: '15px'
                 }}>
+                  <CreditCard style={{width: '24px', height: '24px', color: 'var(--nyt-accent)', flexShrink: 0}} />
                   <div style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -476,6 +478,16 @@ export default function Home() {
                 margin: 0
               }}>
                 <li style={{marginBottom: '6px'}}>
+                  <Link href="/no-medical-advice" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    No Medical or Insurance Advice
+                  </Link>
+                </li>
+                <li style={{marginBottom: '6px'}}>
                   <Link href="/zk-systems" style={{
                     color: 'var(--nyt-light-gray)',
                     fontSize: '0.85rem',
@@ -493,16 +505,6 @@ export default function Home() {
                     transition: 'color 0.2s ease'
                   }}>
                     Anonymous Reviews
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/no-medical-advice" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    No Medical or Insurance Advice
                   </Link>
                 </li>
               </ul>
