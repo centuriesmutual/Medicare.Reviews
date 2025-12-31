@@ -70,7 +70,7 @@ export default function Home() {
               </div>
             </div>
             <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
-              <Link href="/login" className="nyt-button" style={{padding: '8px 16px', fontSize: '0.85rem'}}>
+              <Link href="/download" className="nyt-button" style={{padding: '8px 16px', fontSize: '0.85rem'}}>
                 Download App
               </Link>
             </div>

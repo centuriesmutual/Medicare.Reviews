@@ -130,6 +130,78 @@ body {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+  
+  /* Sidebar cards spacing on mobile */
+  .nyt-sidebar-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+  
+  /* Labels and badges responsive */
+  .verification-two-column .nyt-content > div:first-child > div {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .verification-two-column .nyt-content > div:first-child > div > div {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+  
+  /* Hero sections responsive */
+  .nyt-container > div[style*="padding: '80px 60px'"] {
+    padding: 40px 20px !important;
+  }
+  
+  .nyt-container > div[style*="padding: '80px 60px'"] h1 {
+    font-size: 2rem !important;
+  }
+  
+  .nyt-container > div[style*="padding: '80px 60px'"] p {
+    font-size: 1rem !important;
+  }
+  
+  /* Footer bottom links responsive */
+  footer .nyt-container > div:last-child {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 15px !important;
+  }
+  
+  footer .nyt-container > div:last-child > div:last-child {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  /* Credit card icon and labels responsive */
+  .verification-two-column .nyt-content svg[style*="CreditCard"] {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  /* Article padding responsive */
+  .nyt-article.featured {
+    padding-bottom: 30px !important;
+  }
+  
+  /* Button groups responsive */
+  .nyt-button {
+    white-space: nowrap;
+  }
+  
+  /* Grid items responsive */
+  .nyt-grid .nyt-main {
+    order: 1;
+  }
+  
+  .nyt-grid .nyt-sidebar {
+    order: 2;
+  }
+  
+  /* Sidebar cards container responsive */
+  div[style*="display: 'flex'"][style*="flexDirection: 'column'"] {
+    gap: 20px !important;
+  }
 }
 
 /* NYT Articles */
@@ -261,15 +333,23 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .nyt-logo {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  
+  .nyt-tagline {
+    font-size: 0.75rem;
   }
   
   .nyt-headline.large {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .nyt-headline.medium {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .nyt-headline.small {
+    font-size: 1.2rem;
   }
   
   .nyt-container {
@@ -282,6 +362,41 @@ body {
   
   .nyt-sidebar {
     padding: 20px;
+  }
+  
+  .nyt-content {
+    font-size: 1rem;
+  }
+  
+  .nyt-button {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .nyt-header {
+    padding: 15px 0;
+  }
+  
+  .nyt-quote {
+    font-size: 3rem;
+  }
+  
+  /* Footer responsive */
+  footer .nyt-container > div:first-child {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  /* Header responsive */
+  .nyt-header .nyt-container > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .nyt-header .nyt-container > div > div:last-child {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 
