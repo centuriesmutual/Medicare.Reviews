@@ -163,30 +163,26 @@ export default function SelfAttestationModal({ isOpen, onClose, onComplete }: Se
               justifyContent: 'center',
               padding: '20px'
             }}
-          />
-          
-          {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            style={{
-              position: 'fixed',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              backgroundColor: 'var(--nyt-white)',
-              borderRadius: '12px',
-              padding: '30px',
-              maxWidth: '600px',
-              width: '100%',
-              maxHeight: '90vh',
-              overflowY: 'auto',
-              zIndex: 9999,
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
-            }}
-            onClick={(e) => e.stopPropagation()}
           >
+            {/* Modal */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              style={{
+                backgroundColor: 'var(--nyt-white)',
+                borderRadius: '12px',
+                padding: '30px',
+                maxWidth: '600px',
+                width: '100%',
+                maxHeight: '90vh',
+                overflowY: 'auto',
+                zIndex: 9999,
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+                position: 'relative'
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
             {/* Close Button */}
             {!isProcessing && !isComplete && (
               <button
@@ -401,6 +397,7 @@ export default function SelfAttestationModal({ isOpen, onClose, onComplete }: Se
                 </div>
               )}
             </div>
+            </motion.div>
           </motion.div>
         </>
       )}
