@@ -98,7 +98,7 @@ export default function Home() {
                 Anonymous Reviews Revolutionize Community Feedback
               </motion.h1>
               <div className="nyt-byline">
-                By Medicare Reviews Editorial Staff • {getCurrentDate()}
+                Reviews by Centuries Mutual • {getCurrentDate()}
               </div>
               <div className="nyt-content">
                 <p>
@@ -345,38 +345,57 @@ export default function Home() {
                   Earn Within Our HIPAA-Compliant Ad Network
                 </h3>
                 <div style={{
+                  marginBottom: '20px',
                   display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '10px',
-                  marginBottom: '15px'
+                  justifyContent: 'center',
+                  alignItems: 'center'
                 }}>
                   <div style={{
+                    width: '100%',
+                    maxWidth: '400px',
+                    height: '250px',
+                    background: 'linear-gradient(to bottom, #1e40af 0%, #1e40af 50%, #dc2626 50%, #dc2626 100%)',
+                    borderRadius: '12px',
+                    border: '2px solid #000',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                    position: 'relative',
+                    padding: '20px',
                     display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '6px 12px',
-                    backgroundColor: '#1e40af',
-                    borderRadius: '20px',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
                     color: 'white',
-                    fontSize: '0.8rem',
-                    fontWeight: '600',
-                    textTransform: 'uppercase'
+                    fontFamily: 'Arial, sans-serif'
                   }}>
-                    <span>Blue</span>
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '6px 12px',
-                    backgroundColor: '#dc2626',
-                    borderRadius: '20px',
-                    color: 'white',
-                    fontSize: '0.8rem',
-                    fontWeight: '600',
-                    textTransform: 'uppercase'
-                  }}>
-                    <span>Red</span>
+                    <div style={{
+                      fontSize: '1.5rem',
+                      fontWeight: '700',
+                      letterSpacing: '2px',
+                      textAlign: 'center',
+                      marginBottom: '10px'
+                    }}>
+                      MEDICARE
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      marginTop: 'auto'
+                    }}>
+                      <div>
+                        <div style={{fontSize: '0.7rem', opacity: 0.9, marginBottom: '4px'}}>PART A</div>
+                        <div style={{fontSize: '0.7rem', opacity: 0.9}}>HOSPITAL</div>
+                      </div>
+                      <div style={{
+                        width: '2px',
+                        height: '60px',
+                        backgroundColor: 'white',
+                        opacity: 0.3
+                      }}></div>
+                      <div>
+                        <div style={{fontSize: '0.7rem', opacity: 0.9, marginBottom: '4px'}}>PART B</div>
+                        <div style={{fontSize: '0.7rem', opacity: 0.9}}>MEDICAL</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div style={{marginBottom: '15px'}}>
@@ -601,6 +620,36 @@ export default function Home() {
                     Do Not Sell My Data
                   </Link>
                 </li>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/hipaa-privacy-notice" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    HIPAA Privacy Notice
+                  </Link>
+                </li>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/medicare-disclaimer" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    Medicare Disclaimer
+                  </Link>
+                </li>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/advertising-disclosure" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    Advertising Disclosure
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -625,12 +674,19 @@ export default function Home() {
               gap: '20px',
               fontSize: '0.85rem'
             }}>
-              <Link href="/sitemap" style={{
+              <Link href="/privacy" style={{
                 color: 'var(--nyt-light-gray)',
                 textDecoration: 'none',
                 transition: 'color 0.2s ease'
               }}>
-                Sitemap
+                Privacy Policy
+              </Link>
+              <Link href="/terms" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Terms of Service
               </Link>
               <Link href="/accessibility" style={{
                 color: 'var(--nyt-light-gray)',
@@ -638,13 +694,6 @@ export default function Home() {
                 transition: 'color 0.2s ease'
               }}>
                 Accessibility
-              </Link>
-              <Link href="/whitepaper" style={{
-                color: 'var(--nyt-light-gray)',
-                textDecoration: 'none',
-                transition: 'color 0.2s ease'
-              }}>
-                Whitepaper
               </Link>
             </div>
           </div>
