@@ -273,6 +273,54 @@ export default function Home() {
                   Your exact age remains completely private.
                 </p>
                 
+                <div style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'center',
+                  gap: '15px',
+                  marginBottom: '30px'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '10px 16px',
+                    backgroundColor: 'var(--nyt-bg)',
+                    borderRadius: '25px',
+                    border: '1px solid var(--nyt-border)'
+                  }}>
+                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
+                      Age 65+
+                    </span>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '10px 16px',
+                    backgroundColor: 'var(--nyt-bg)',
+                    borderRadius: '25px',
+                    border: '1px solid var(--nyt-border)'
+                  }}>
+                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
+                      Privacy Protected
+                    </span>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '10px 16px',
+                    backgroundColor: 'var(--nyt-bg)',
+                    borderRadius: '25px',
+                    border: '1px solid var(--nyt-border)'
+                  }}>
+                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
+                      HIPAA Compliant
+                    </span>
+                  </div>
+                </div>
+                
                 {!isAuthenticated ? (
                   <div style={{marginBottom: '20px'}}>
                     <button 
@@ -289,7 +337,7 @@ export default function Home() {
                         border: 'none'
                       }}
                     >
-                      Our Zero Knowledge System
+                      Zero Knowledge Check
                     </button>
                   </div>
                 ) : (
