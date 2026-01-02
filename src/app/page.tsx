@@ -126,6 +126,19 @@ export default function Home() {
                   information is protected by mathematical certainty from insurers, advertisers, and any form 
                   of malfeasance.&rdquo;
                 </p>
+                <div style={{marginTop: '25px'}}>
+                  <Link href="/read-more" className="nyt-button" style={{
+                    backgroundColor: 'var(--nyt-accent)',
+                    padding: '12px 24px',
+                    fontSize: '0.95rem',
+                    textDecoration: 'none',
+                    display: 'inline-block',
+                    borderRadius: '6px',
+                    fontWeight: '600'
+                  }}>
+                    Read More
+                  </Link>
+                </div>
               </div>
             </motion.article>
 
@@ -164,7 +177,7 @@ export default function Home() {
                       textDecoration: 'none',
                       display: 'block'
                     }}>
-                      Learn More About Ad Network
+                      Our Ad Network
                     </Link>
                     <Link href="/earning" className="nyt-button" style={{
                       backgroundColor: 'var(--nyt-gray)',
@@ -244,18 +257,19 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Medicare Verification Section - Two Column Layout */}
+        {/* Age Verification Section - Two Column Layout */}
         <div style={{width: '100%', marginTop: '40px'}}>
           <article className="nyt-article" style={{maxWidth: 'none', width: '100%', margin: '0'}}>
             <h2 className="nyt-headline medium" style={{marginBottom: '20px', textAlign: 'center'}}>
-              Medicare Verification & Eligibility
+              Age Verification & Eligibility
             </h2>
             
             <div className="verification-two-column">
-              {/* Left Column - Medicare Verification */}
+              {/* Left Column - Age Verification */}
               <div className="nyt-content" style={{textAlign: 'center'}}>
                 <p style={{fontSize: '1.1rem', marginBottom: '20px', color: 'var(--nyt-gray)'}}>
-                  Confirm your Medicare enrollment to become eligible to earn within our HIPAA-compliant ad network
+                  Verify that you are 65 or older to become eligible to earn within our HIPAA-compliant ad network. 
+                  Your exact age remains completely private.
                 </p>
                 
                 <div style={{
@@ -275,7 +289,7 @@ export default function Home() {
                     border: '1px solid var(--nyt-border)'
                   }}>
                     <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Part A
+                      Privacy
                     </span>
                   </div>
                   <div style={{
@@ -288,14 +302,41 @@ export default function Home() {
                     border: '1px solid var(--nyt-border)'
                   }}>
                     <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Part B
+                      HIPAA Compliant
+                    </span>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '10px 16px',
+                    backgroundColor: 'var(--nyt-bg)',
+                    borderRadius: '25px',
+                    border: '1px solid var(--nyt-border)'
+                  }}>
+                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
+                      Zero-Knowledge Proofs
                     </span>
                   </div>
                 </div>
                 
                 {!isAuthenticated ? (
                   <div style={{marginBottom: '20px'}}>
-                    <ZKAuth onAuthenticated={() => setIsAuthenticated(true)} />
+                    <Link 
+                      href="/verify-age" 
+                      className="nyt-button" 
+                      style={{
+                        backgroundColor: 'var(--nyt-accent)',
+                        padding: '14px 28px',
+                        fontSize: '1rem',
+                        textDecoration: 'none',
+                        display: 'inline-block',
+                        borderRadius: '6px',
+                        fontWeight: '600'
+                      }}
+                    >
+                      Verify Your Age Securely
+                    </Link>
                   </div>
                 ) : (
                   <div style={{
@@ -307,7 +348,7 @@ export default function Home() {
                     marginBottom: '20px',
                     display: 'inline-block'
                   }}>
-                    ✓ Medicare Verified - Eligible to Earn
+                    ✓ Age Verified - Eligible to Earn
                   </div>
                 )}
                 
@@ -317,11 +358,11 @@ export default function Home() {
                   color: 'var(--nyt-light-gray)',
                   fontFamily: 'Georgia, serif'
                 }}>
-                  Your Medicare Part A and Part B enrollment will be verified securely to determine your eligibility to participate in our ad network
+                  Our privacy-preserving verification confirms you are 65+ without revealing your exact age or any personal information
                 </p>
               </div>
               
-              {/* Right Column - Earn Within Ad Network */}
+              {/* Right Column - Verification Details */}
               <div className="nyt-content" style={{textAlign: 'left'}}>
                 <h3 style={{
                   fontFamily: 'Playfair Display, serif',
@@ -330,97 +371,107 @@ export default function Home() {
                   margin: '0 0 15px 0',
                   color: 'var(--nyt-black)'
                 }}>
-                  Earn Within Our HIPAA-Compliant Ad Network
+                  Privacy-Preserving Age Verification
                 </h3>
-                <div style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'center',
-                  gap: '10px',
-                  marginBottom: '15px'
-                }}>
-                  <button
-                    onClick={() => setShowMedicareCardModal(true)}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      cursor: 'pointer',
-                      padding: '4px',
+                <div style={{marginBottom: '20px'}}>
+                  <p style={{
+                    color: 'var(--nyt-gray)',
+                    lineHeight: '1.6',
+                    fontSize: '0.95rem',
+                    marginBottom: '15px'
+                  }}>
+                    Our zero-knowledge proof system verifies that you are 65 or older using secure signals 
+                    such as Social Security deposits and retirement income patterns—without ever accessing 
+                    or exposing your actual account information, exact age, or personal details.
+                  </p>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px',
+                    marginTop: '20px'
+                  }}>
+                    <div style={{
                       display: 'flex',
                       alignItems: 'center',
-                      transition: 'transform 0.2s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'scale(1.1)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'scale(1)'
-                    }}
-                  >
-                    <CreditCard style={{width: '24px', height: '24px', color: 'var(--nyt-accent)', flexShrink: 0}} />
-                  </button>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '6px 12px',
-                    backgroundColor: '#dc2626',
-                    borderRadius: '20px',
-                    color: 'white',
-                    fontSize: '0.8rem',
-                    fontWeight: '600',
-                    textTransform: 'uppercase'
-                  }}>
-                    <span>Red</span>
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '6px 12px',
-                    backgroundColor: '#ffffff',
-                    borderRadius: '20px',
-                    color: '#000000',
-                    border: '1px solid #e5e7eb',
-                    fontSize: '0.8rem',
-                    fontWeight: '600',
-                    textTransform: 'uppercase'
-                  }}>
-                    <span>White</span>
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '6px 12px',
-                    backgroundColor: '#1e40af',
-                    borderRadius: '20px',
-                    color: 'white',
-                    fontSize: '0.8rem',
-                    fontWeight: '600',
-                    textTransform: 'uppercase'
-                  }}>
-                    <span>Blue</span>
+                      gap: '10px',
+                      padding: '12px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      borderRadius: '8px',
+                      border: '1px solid var(--nyt-border)'
+                    }}>
+                      <span style={{fontSize: '1.2rem'}}>🔒</span>
+                      <div>
+                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                          Privacy Protected
+                        </div>
+                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                          Your exact age and personal information remain completely private
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      padding: '12px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      borderRadius: '8px',
+                      border: '1px solid var(--nyt-border)'
+                    }}>
+                      <span style={{fontSize: '1.2rem'}}>🛡️</span>
+                      <div>
+                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                          HIPAA Compliant
+                        </div>
+                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                          Full compliance with healthcare privacy regulations
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      padding: '12px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      borderRadius: '8px',
+                      border: '1px solid var(--nyt-border)'
+                    }}>
+                      <span style={{fontSize: '1.2rem'}}>🔐</span>
+                      <div>
+                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                          Zero-Knowledge Proofs
+                        </div>
+                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                          Mathematical certainty protects your privacy
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div style={{marginBottom: '15px'}}>
+                <div style={{
+                  marginTop: '20px',
+                  padding: '15px',
+                  backgroundColor: 'var(--nyt-cream)',
+                  borderRadius: '8px',
+                  border: '1px solid var(--nyt-border)'
+                }}>
                   <div style={{
                     fontWeight: '600',
                     marginBottom: '8px',
                     color: 'var(--nyt-black)',
-                    fontSize: '1rem'
+                    fontSize: '0.95rem'
                   }}>
-                    Eligibility Requirements
+                    How It Works
                   </div>
                   <div style={{
                     color: 'var(--nyt-gray)',
                     lineHeight: '1.6',
-                    fontSize: '0.95rem'
+                    fontSize: '0.9rem'
                   }}>
-                    To earn within our ad network, you must have active Medicare Part A and Part B coverage. 
-                    Our secure verification process confirms your enrollment status without compromising your 
-                    personal information, ensuring you meet the requirements to participate in our privacy-preserving 
-                    advertising platform.
+                    We use cryptographic zero-knowledge proofs to verify your age eligibility through secure 
+                    signals like Social Security deposit patterns and retirement income indicators. 
+                    No account numbers, balances, or personal details are ever accessed or stored.
                   </div>
                 </div>
               </div>
@@ -516,6 +567,16 @@ export default function Home() {
                     transition: 'color 0.2s ease'
                   }}>
                     Zero-Knowledge Systems
+                  </Link>
+                </li>
+                <li style={{marginBottom: '6px'}}>
+                  <Link href="/zk-systems" style={{
+                    color: 'var(--nyt-light-gray)',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}>
+                    Zero-Knowledge Proofs
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>
