@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { ArrowLeft, Shield, CheckCircle, Award, FileText, Lock, Users } from 'lucide-react'
 
 export default function QualifiedEntityCertificationPage() {
@@ -120,32 +121,41 @@ export default function QualifiedEntityCertificationPage() {
         backgroundColor: 'var(--nyt-white)'
       }}>
         <div className="nyt-container">
-          <div style={{maxWidth: '900px', margin: '0 auto'}}>
-            <div style={{textAlign: 'center', marginBottom: '60px'}}>
-              <h2 className="nyt-headline large" style={{
-                fontSize: '2.8rem',
-                marginBottom: '20px',
-                color: 'var(--nyt-black)'
-              }}>
-                What is a Qualified Entity?
-              </h2>
-              <p style={{
-                fontSize: '1.2rem',
-                color: 'var(--nyt-gray)',
-                maxWidth: '700px',
-                margin: '0 auto'
-              }}>
-                A federally recognized designation that enables secure access to healthcare data
-              </p>
-            </div>
-
-            <div style={{
-              padding: '40px',
-              backgroundColor: 'var(--nyt-cream)',
-              borderRadius: '12px',
-              border: '2px solid var(--nyt-accent)',
-              marginBottom: '40px'
+          <div style={{textAlign: 'center', marginBottom: '60px'}}>
+            <h2 className="nyt-headline large" style={{
+              fontSize: '2.8rem',
+              marginBottom: '20px',
+              color: 'var(--nyt-black)'
             }}>
+              What is a Qualified Entity?
+            </h2>
+            <p style={{
+              fontSize: '1.2rem',
+              color: 'var(--nyt-gray)',
+              maxWidth: '700px',
+              margin: '0 auto'
+            }}>
+              A federally recognized designation that enables secure access to healthcare data
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '30px',
+            gridAutoRows: 'minmax(200px, auto)'
+          }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{
+                gridColumn: 'span 12',
+                padding: '40px',
+                backgroundColor: 'var(--nyt-cream)',
+                borderRadius: '12px',
+                border: '2px solid var(--nyt-accent)'
+              }}>
               <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.8',
@@ -167,7 +177,7 @@ export default function QualifiedEntityCertificationPage() {
                 commitment to privacy-preserving healthcare data analysis and our compliance with 
                 federal regulations governing healthcare information access.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -198,18 +208,22 @@ export default function QualifiedEntityCertificationPage() {
           
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(12, 1fr)',
             gap: '30px',
-            maxWidth: '1200px',
-            margin: '0 auto'
+            gridAutoRows: 'minmax(200px, auto)'
           }}>
-            <div style={{
-              padding: '35px',
-              backgroundColor: 'white',
-              borderRadius: '12px',
-              border: '2px solid var(--nyt-accent)',
-              textAlign: 'center'
-            }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{
+                gridColumn: 'span 4',
+                padding: '35px',
+                backgroundColor: 'white',
+                borderRadius: '12px',
+                border: '2px solid var(--nyt-accent)',
+                textAlign: 'center'
+              }}>
               <div style={{
                 width: '70px',
                 height: '70px',
@@ -239,15 +253,20 @@ export default function QualifiedEntityCertificationPage() {
                 Implementation of comprehensive security measures including encryption, 
                 access controls, and audit logging to protect healthcare data.
               </p>
-            </div>
+            </motion.div>
             
-            <div style={{
-              padding: '35px',
-              backgroundColor: 'white',
-              borderRadius: '12px',
-              border: '2px solid var(--nyt-accent)',
-              textAlign: 'center'
-            }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              style={{
+                gridColumn: 'span 4',
+                padding: '35px',
+                backgroundColor: 'var(--nyt-cream)',
+                borderRadius: '12px',
+                border: '2px solid var(--nyt-accent)',
+                textAlign: 'center'
+              }}>
               <div style={{
                 width: '70px',
                 height: '70px',
@@ -277,15 +296,20 @@ export default function QualifiedEntityCertificationPage() {
                 Strict adherence to HIPAA regulations and federal privacy laws, ensuring 
                 that personal health information is protected and anonymized.
               </p>
-            </div>
+            </motion.div>
             
-            <div style={{
-              padding: '35px',
-              backgroundColor: 'white',
-              borderRadius: '12px',
-              border: '2px solid var(--nyt-accent)',
-              textAlign: 'center'
-            }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              style={{
+                gridColumn: 'span 4',
+                padding: '35px',
+                backgroundColor: 'white',
+                borderRadius: '12px',
+                border: '2px solid var(--nyt-border)',
+                textAlign: 'center'
+              }}>
               <div style={{
                 width: '70px',
                 height: '70px',
@@ -315,7 +339,7 @@ export default function QualifiedEntityCertificationPage() {
                 Comprehensive documentation of policies, procedures, and safeguards 
                 demonstrating ongoing compliance with federal requirements.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -330,13 +354,21 @@ export default function QualifiedEntityCertificationPage() {
         <div className="nyt-container">
           <div style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '60px',
-            alignItems: 'center',
-            maxWidth: '1200px',
-            margin: '0 auto'
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '30px',
+            gridAutoRows: 'minmax(200px, auto)'
           }}>
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{
+                gridColumn: 'span 6',
+                padding: '40px',
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                borderRadius: '12px',
+                backdropFilter: 'blur(10px)'
+              }}>
               <h2 className="nyt-headline large" style={{
                 fontSize: '2.8rem',
                 marginBottom: '25px',
@@ -414,14 +446,19 @@ export default function QualifiedEntityCertificationPage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
             
-            <div style={{
-              backgroundColor: 'rgba(255,255,255,0.1)',
-              padding: '50px',
-              borderRadius: '12px',
-              backdropFilter: 'blur(10px)'
-            }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              style={{
+                gridColumn: 'span 6',
+                padding: '50px',
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                borderRadius: '12px',
+                backdropFilter: 'blur(10px)'
+              }}>
               <h3 style={{
                 fontSize: '1.8rem',
                 fontWeight: '700',
@@ -463,9 +500,8 @@ export default function QualifiedEntityCertificationPage() {
                   healthcare quality improvement initiatives while protecting individual privacy.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
-          
         </div>
       </section>
 

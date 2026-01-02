@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { ArrowLeft, Shield, Lock, Key, CheckCircle, Brain, Cpu, Database, Users, Zap } from 'lucide-react'
 
 export default function ZKSystemsPage() {
@@ -100,19 +101,22 @@ export default function ZKSystemsPage() {
           
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '40px',
-            maxWidth: '1200px',
-            margin: '0 auto'
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '30px',
+            gridAutoRows: 'minmax(200px, auto)'
           }}>
-            <div style={{
-              padding: '40px',
-              backgroundColor: 'var(--nyt-cream)',
-              borderRadius: '12px',
-              border: '2px solid var(--nyt-accent)',
-              textAlign: 'center',
-              transition: 'transform 0.3s ease'
-            }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{
+                gridColumn: 'span 4',
+                padding: '40px',
+                backgroundColor: 'var(--nyt-cream)',
+                borderRadius: '12px',
+                border: '2px solid var(--nyt-accent)',
+                textAlign: 'center'
+              }}>
               <div style={{
                 width: '70px',
                 height: '70px',
@@ -143,15 +147,20 @@ export default function ZKSystemsPage() {
                 without revealing the information itself. The proof is mathematically 
                 verifiable and impossible to forge.
               </p>
-            </div>
+            </motion.div>
             
-            <div style={{
-              padding: '40px',
-              backgroundColor: 'var(--nyt-cream)',
-              borderRadius: '12px',
-              border: '2px solid var(--nyt-accent)',
-              textAlign: 'center'
-            }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              style={{
+                gridColumn: 'span 4',
+                padding: '40px',
+                backgroundColor: 'white',
+                borderRadius: '12px',
+                border: '2px solid var(--nyt-border)',
+                textAlign: 'center'
+              }}>
               <div style={{
                 width: '70px',
                 height: '70px',
@@ -182,15 +191,20 @@ export default function ZKSystemsPage() {
                 about your underlying data, identity, or personal information. 
                 Complete privacy is maintained.
               </p>
-            </div>
+            </motion.div>
             
-            <div style={{
-              padding: '40px',
-              backgroundColor: 'var(--nyt-cream)',
-              borderRadius: '12px',
-              border: '2px solid var(--nyt-accent)',
-              textAlign: 'center'
-            }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              style={{
+                gridColumn: 'span 4',
+                padding: '40px',
+                backgroundColor: 'var(--nyt-cream)',
+                borderRadius: '12px',
+                border: '2px solid var(--nyt-accent)',
+                textAlign: 'center'
+              }}>
               <div style={{
                 width: '70px',
                 height: '70px',
@@ -221,7 +235,7 @@ export default function ZKSystemsPage() {
                 still proving you meet the required criteria. Privacy is 
                 protected by mathematical certainty.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -235,13 +249,21 @@ export default function ZKSystemsPage() {
         <div className="nyt-container">
           <div style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '60px',
-            alignItems: 'center',
-            maxWidth: '1200px',
-            margin: '0 auto'
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '30px',
+            gridAutoRows: 'minmax(200px, auto)'
           }}>
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{
+                gridColumn: 'span 6',
+                padding: '40px',
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                borderRadius: '12px',
+                backdropFilter: 'blur(10px)'
+              }}>
               <h2 className="nyt-headline large" style={{
                 fontSize: '2.8rem',
                 marginBottom: '25px',
@@ -295,14 +317,19 @@ export default function ZKSystemsPage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
             
-            <div style={{
-              backgroundColor: 'rgba(255,255,255,0.1)',
-              padding: '50px',
-              borderRadius: '12px',
-              backdropFilter: 'blur(10px)'
-            }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              style={{
+                gridColumn: 'span 6',
+                padding: '50px',
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                borderRadius: '12px',
+                backdropFilter: 'blur(10px)'
+              }}>
               <h3 style={{
                 fontSize: '1.8rem',
                 fontWeight: '700',
@@ -377,7 +404,7 @@ export default function ZKSystemsPage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -408,18 +435,22 @@ export default function ZKSystemsPage() {
           
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '40px',
-            maxWidth: '1200px',
-            margin: '0 auto'
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '30px',
+            gridAutoRows: 'minmax(200px, auto)'
           }}>
-            <div style={{
-              padding: '40px',
-              backgroundColor: 'white',
-              border: '2px solid var(--nyt-accent)',
-              borderRadius: '12px',
-              textAlign: 'center'
-            }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              style={{
+                gridColumn: 'span 6',
+                padding: '40px',
+                backgroundColor: 'white',
+                border: '2px solid var(--nyt-accent)',
+                borderRadius: '12px',
+                textAlign: 'center'
+              }}>
               <div style={{
                 width: '70px',
                 height: '70px',
@@ -450,15 +481,20 @@ export default function ZKSystemsPage() {
                 allowing for real-time verification without compromising security 
                 or privacy. Proofs are generated and verified in seconds.
               </p>
-            </div>
+            </motion.div>
             
-            <div style={{
-              padding: '40px',
-              backgroundColor: 'white',
-              border: '2px solid var(--nyt-accent)',
-              borderRadius: '12px',
-              textAlign: 'center'
-            }}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              style={{
+                gridColumn: 'span 6',
+                padding: '40px',
+                backgroundColor: 'var(--nyt-cream)',
+                border: '2px solid var(--nyt-accent)',
+                borderRadius: '12px',
+                textAlign: 'center'
+              }}>
               <div style={{
                 width: '70px',
                 height: '70px',
@@ -489,7 +525,7 @@ export default function ZKSystemsPage() {
                 maintaining the highest standards of privacy and security. Our 
                 infrastructure scales seamlessly with demand.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
