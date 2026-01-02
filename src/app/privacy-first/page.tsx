@@ -704,13 +704,13 @@ export default function PrivacyFirstPage() {
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>
-                  <Link href="/anonymous-reviews" style={{
+                  <Link href="/qualified-entity-certification" style={{
                     color: 'var(--nyt-light-gray)',
                     fontSize: '0.85rem',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease'
                   }}>
-                    Anonymous Reviews
+                    Qualified Entity Certification
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>

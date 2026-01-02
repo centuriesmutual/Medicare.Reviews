@@ -2,9 +2,9 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Shield, Lock, Key, CheckCircle, Brain, Cpu, Database, Users, Zap } from 'lucide-react'
+import { ArrowLeft, Shield, CheckCircle, Award, FileText, Lock, Users } from 'lucide-react'
 
-export default function ZKSystemsPage() {
+export default function QualifiedEntityCertificationPage() {
   return (
     <div className="min-h-screen" style={{backgroundColor: '#f8f9fa'}}>
       {/* NYT-Style Header */}
@@ -41,7 +41,7 @@ export default function ZKSystemsPage() {
               margin: '0 auto 30px',
               borderRadius: '50%'
             }}>
-              <Key style={{width: '50px', height: '50px', color: 'white'}} />
+              <Award style={{width: '50px', height: '50px', color: 'white'}} />
             </div>
             
             <h1 className="nyt-headline large" style={{
@@ -49,7 +49,7 @@ export default function ZKSystemsPage() {
               marginBottom: '25px',
               color: 'white'
             }}>
-              Zero-Knowledge Systems
+              Qualified Entity Certification
             </h1>
             
             <p style={{
@@ -58,7 +58,7 @@ export default function ZKSystemsPage() {
               fontWeight: '500',
               color: 'rgba(255,255,255,0.95)'
             }}>
-              Prove you know something without revealing what you know
+              Certified compliance with federal healthcare data access regulations
             </p>
             <p style={{
               color: 'rgba(255,255,255,0.8)',
@@ -67,17 +67,76 @@ export default function ZKSystemsPage() {
               maxWidth: '700px',
               margin: '0 auto'
             }}>
-              Revolutionary cryptographic technology that enables privacy-preserving verification 
-              of age eligibility and healthcare credentials without exposing any personal information.
+              Medicare Reviews operates as a Qualified Entity under federal regulations, 
+              enabling secure, privacy-preserving access to healthcare data for research 
+              and public health purposes.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Core Principles */}
+      {/* What is a Qualified Entity */}
       <section style={{
         padding: '80px 0',
         backgroundColor: 'var(--nyt-white)'
+      }}>
+        <div className="nyt-container">
+          <div style={{maxWidth: '900px', margin: '0 auto'}}>
+            <div style={{textAlign: 'center', marginBottom: '60px'}}>
+              <h2 className="nyt-headline large" style={{
+                fontSize: '2.8rem',
+                marginBottom: '20px',
+                color: 'var(--nyt-black)'
+              }}>
+                What is a Qualified Entity?
+              </h2>
+              <p style={{
+                fontSize: '1.2rem',
+                color: 'var(--nyt-gray)',
+                maxWidth: '700px',
+                margin: '0 auto'
+              }}>
+                A federally recognized designation that enables secure access to healthcare data
+              </p>
+            </div>
+
+            <div style={{
+              padding: '40px',
+              backgroundColor: 'var(--nyt-cream)',
+              borderRadius: '12px',
+              border: '2px solid var(--nyt-accent)',
+              marginBottom: '40px'
+            }}>
+              <p style={{
+                fontSize: '1.1rem',
+                lineHeight: '1.8',
+                color: 'var(--nyt-black)',
+                marginBottom: '25px'
+              }}>
+                A Qualified Entity is an organization that has been certified by the Centers for 
+                Medicare & Medicaid Services (CMS) to receive and analyze Medicare claims data 
+                for the purpose of evaluating provider and supplier performance. This certification 
+                enables organizations to access aggregated healthcare data while maintaining strict 
+                privacy and security standards.
+              </p>
+              <p style={{
+                fontSize: '1.1rem',
+                lineHeight: '1.8',
+                color: 'var(--nyt-black)'
+              }}>
+                Medicare Reviews has achieved Qualified Entity certification, demonstrating our 
+                commitment to privacy-preserving healthcare data analysis and our compliance with 
+                federal regulations governing healthcare information access.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certification Requirements */}
+      <section style={{
+        padding: '80px 0',
+        backgroundColor: '#f8f9fa'
       }}>
         <div className="nyt-container">
           <div style={{textAlign: 'center', marginBottom: '60px'}}>
@@ -86,7 +145,7 @@ export default function ZKSystemsPage() {
               marginBottom: '20px',
               color: 'var(--nyt-black)'
             }}>
-              Core Principles
+              Certification Requirements
             </h2>
             <p style={{
               fontSize: '1.2rem',
@@ -94,60 +153,20 @@ export default function ZKSystemsPage() {
               maxWidth: '700px',
               margin: '0 auto'
             }}>
-              Three fundamental principles that make zero-knowledge systems revolutionary
+              Rigorous standards ensure data security and privacy protection
             </p>
           </div>
           
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '40px',
+            gap: '30px',
             maxWidth: '1200px',
             margin: '0 auto'
           }}>
             <div style={{
-              padding: '40px',
-              backgroundColor: 'var(--nyt-cream)',
-              borderRadius: '12px',
-              border: '2px solid var(--nyt-accent)',
-              textAlign: 'center',
-              transition: 'transform 0.3s ease'
-            }}>
-              <div style={{
-                width: '70px',
-                height: '70px',
-                backgroundColor: 'var(--nyt-accent)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 25px',
-                borderRadius: '50%'
-              }}>
-                <Brain style={{width: '35px', height: '35px', color: 'white'}} />
-              </div>
-              <h3 style={{
-                fontSize: '1.5rem',
-                fontWeight: '700',
-                marginBottom: '15px',
-                color: 'var(--nyt-black)',
-                fontFamily: 'Playfair Display, serif'
-              }}>
-                Mathematical Proof
-              </h3>
-              <p style={{
-                fontSize: '1rem',
-                color: 'var(--nyt-gray)',
-                lineHeight: '1.7'
-              }}>
-                Create a cryptographic proof that you possess certain information 
-                without revealing the information itself. The proof is mathematically 
-                verifiable and impossible to forge.
-              </p>
-            </div>
-            
-            <div style={{
-              padding: '40px',
-              backgroundColor: 'var(--nyt-cream)',
+              padding: '35px',
+              backgroundColor: 'white',
               borderRadius: '12px',
               border: '2px solid var(--nyt-accent)',
               textAlign: 'center'
@@ -165,28 +184,27 @@ export default function ZKSystemsPage() {
                 <Shield style={{width: '35px', height: '35px', color: 'white'}} />
               </div>
               <h3 style={{
-                fontSize: '1.5rem',
+                fontSize: '1.4rem',
                 fontWeight: '700',
                 marginBottom: '15px',
                 color: 'var(--nyt-black)',
                 fontFamily: 'Playfair Display, serif'
               }}>
-                Verification Without Disclosure
+                Security Standards
               </h3>
               <p style={{
                 fontSize: '1rem',
                 color: 'var(--nyt-gray)',
                 lineHeight: '1.7'
               }}>
-                The system verifies your proof is valid without learning anything 
-                about your underlying data, identity, or personal information. 
-                Complete privacy is maintained.
+                Implementation of comprehensive security measures including encryption, 
+                access controls, and audit logging to protect healthcare data.
               </p>
             </div>
             
             <div style={{
-              padding: '40px',
-              backgroundColor: 'var(--nyt-cream)',
+              padding: '35px',
+              backgroundColor: 'white',
               borderRadius: '12px',
               border: '2px solid var(--nyt-accent)',
               textAlign: 'center'
@@ -204,29 +222,66 @@ export default function ZKSystemsPage() {
                 <Lock style={{width: '35px', height: '35px', color: 'white'}} />
               </div>
               <h3 style={{
-                fontSize: '1.5rem',
+                fontSize: '1.4rem',
                 fontWeight: '700',
                 marginBottom: '15px',
                 color: 'var(--nyt-black)',
                 fontFamily: 'Playfair Display, serif'
               }}>
-                Privacy Preserved
+                Privacy Protection
               </h3>
               <p style={{
                 fontSize: '1rem',
                 color: 'var(--nyt-gray)',
                 lineHeight: '1.7'
               }}>
-                Your personal information remains completely private while 
-                still proving you meet the required criteria. Privacy is 
-                protected by mathematical certainty.
+                Strict adherence to HIPAA regulations and federal privacy laws, ensuring 
+                that personal health information is protected and anonymized.
+              </p>
+            </div>
+            
+            <div style={{
+              padding: '35px',
+              backgroundColor: 'white',
+              borderRadius: '12px',
+              border: '2px solid var(--nyt-accent)',
+              textAlign: 'center'
+            }}>
+              <div style={{
+                width: '70px',
+                height: '70px',
+                backgroundColor: 'var(--nyt-accent)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 25px',
+                borderRadius: '50%'
+              }}>
+                <FileText style={{width: '35px', height: '35px', color: 'white'}} />
+              </div>
+              <h3 style={{
+                fontSize: '1.4rem',
+                fontWeight: '700',
+                marginBottom: '15px',
+                color: 'var(--nyt-black)',
+                fontFamily: 'Playfair Display, serif'
+              }}>
+                Compliance Documentation
+              </h3>
+              <p style={{
+                fontSize: '1rem',
+                color: 'var(--nyt-gray)',
+                lineHeight: '1.7'
+              }}>
+                Comprehensive documentation of policies, procedures, and safeguards 
+                demonstrating ongoing compliance with federal requirements.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Applications in Healthcare */}
+      {/* Benefits */}
       <section style={{
         padding: '80px 0',
         backgroundColor: 'var(--nyt-accent)',
@@ -247,24 +302,14 @@ export default function ZKSystemsPage() {
                 marginBottom: '25px',
                 color: 'white'
               }}>
-                Applications in Healthcare
+                Benefits of Qualified Entity Status
               </h2>
               
-              <p style={{
-                fontSize: '1.2rem',
-                lineHeight: '1.8',
-                marginBottom: '30px',
-                color: 'rgba(255,255,255,0.95)'
-              }}>
-                Zero-knowledge systems revolutionize healthcare privacy by enabling verification 
-                of eligibility and credentials without exposing any personal information.
-              </p>
-
               <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '20px',
-                marginTop: '40px'
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '25px',
+                marginTop: '30px'
               }}>
                 <div style={{
                   padding: '25px',
@@ -272,26 +317,60 @@ export default function ZKSystemsPage() {
                   borderRadius: '8px',
                   backdropFilter: 'blur(10px)'
                 }}>
-                  <CheckCircle style={{width: '32px', height: '32px', color: 'white', marginBottom: '12px'}} />
-                  <h4 style={{fontSize: '1.1rem', fontWeight: '600', marginBottom: '8px'}}>
-                    HIPAA Compliant
+                  <CheckCircle style={{width: '28px', height: '28px', color: 'white', marginBottom: '12px'}} />
+                  <h4 style={{
+                    fontSize: '1.2rem',
+                    fontWeight: '600',
+                    marginBottom: '10px',
+                    color: 'white'
+                  }}>
+                    Enhanced Data Access
                   </h4>
-                  <p style={{fontSize: '0.9rem', opacity: 0.9, lineHeight: '1.5'}}>
-                    Meets all federal healthcare data protection standards
+                  <p style={{fontSize: '1rem', opacity: 0.95, lineHeight: '1.6'}}>
+                    Access to aggregated Medicare claims data enables comprehensive analysis 
+                    of healthcare provider performance and outcomes.
                   </p>
                 </div>
+                
                 <div style={{
                   padding: '25px',
                   backgroundColor: 'rgba(255,255,255,0.15)',
                   borderRadius: '8px',
                   backdropFilter: 'blur(10px)'
                 }}>
-                  <Shield style={{width: '32px', height: '32px', color: 'white', marginBottom: '12px'}} />
-                  <h4 style={{fontSize: '1.1rem', fontWeight: '600', marginBottom: '8px'}}>
-                    Anonymous
+                  <CheckCircle style={{width: '28px', height: '28px', color: 'white', marginBottom: '12px'}} />
+                  <h4 style={{
+                    fontSize: '1.2rem',
+                    fontWeight: '600',
+                    marginBottom: '10px',
+                    color: 'white'
+                  }}>
+                    Privacy-Preserving Analysis
                   </h4>
-                  <p style={{fontSize: '0.9rem', opacity: 0.9, lineHeight: '1.5'}}>
-                    No personal information is ever revealed or stored
+                  <p style={{fontSize: '1rem', opacity: 0.95, lineHeight: '1.6'}}>
+                    Zero-knowledge proof technology ensures that data analysis can occur 
+                    without exposing individual patient information or personal identifiers.
+                  </p>
+                </div>
+                
+                <div style={{
+                  padding: '25px',
+                  backgroundColor: 'rgba(255,255,255,0.15)',
+                  borderRadius: '8px',
+                  backdropFilter: 'blur(10px)'
+                }}>
+                  <CheckCircle style={{width: '28px', height: '28px', color: 'white', marginBottom: '12px'}} />
+                  <h4 style={{
+                    fontSize: '1.2rem',
+                    fontWeight: '600',
+                    marginBottom: '10px',
+                    color: 'white'
+                  }}>
+                    Regulatory Compliance
+                  </h4>
+                  <p style={{fontSize: '1rem', opacity: 0.95, lineHeight: '1.6'}}>
+                    Certification demonstrates adherence to federal healthcare regulations 
+                    and commitment to maintaining the highest standards of data protection.
                   </p>
                 </div>
               </div>
@@ -309,318 +388,39 @@ export default function ZKSystemsPage() {
                 marginBottom: '30px',
                 color: 'white'
               }}>
-                Real-World Use Cases
+                Our Commitment
               </h3>
               
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '20px'
-              }}>
-                <div style={{
-                  padding: '25px',
-                  backgroundColor: 'rgba(255,255,255,0.2)',
-                  borderRadius: '8px',
-                  backdropFilter: 'blur(10px)'
-                }}>
-                  <h4 style={{
-                    fontSize: '1.2rem',
-                    fontWeight: '600',
-                    marginBottom: '10px',
-                    color: 'white'
-                  }}>
-                    Age Verification
-                  </h4>
-                  <p style={{fontSize: '1rem', opacity: 0.95, lineHeight: '1.6'}}>
-                    Confirm you meet age requirements (65+) without disclosing your actual 
-                    age, birth date, or any personal identifiers.
-                  </p>
-                </div>
-                
-                <div style={{
-                  padding: '25px',
-                  backgroundColor: 'rgba(255,255,255,0.2)',
-                  borderRadius: '8px',
-                  backdropFilter: 'blur(10px)'
-                }}>
-                  <h4 style={{
-                    fontSize: '1.2rem',
-                    fontWeight: '600',
-                    marginBottom: '10px',
-                    color: 'white'
-                  }}>
-                    Eligibility Verification
-                  </h4>
-                  <p style={{fontSize: '1rem', opacity: 0.95, lineHeight: '1.6'}}>
-                    Prove eligibility for programs and services without revealing 
-                    sensitive personal or financial information.
-                  </p>
-                </div>
-                
-                <div style={{
-                  padding: '25px',
-                  backgroundColor: 'rgba(255,255,255,0.2)',
-                  borderRadius: '8px',
-                  backdropFilter: 'blur(10px)'
-                }}>
-                  <h4 style={{
-                    fontSize: '1.2rem',
-                    fontWeight: '600',
-                    marginBottom: '10px',
-                    color: 'white'
-                  }}>
-                    Credential Verification
-                  </h4>
-                  <p style={{fontSize: '1rem', opacity: 0.95, lineHeight: '1.6'}}>
-                    Verify qualifications and certifications while maintaining 
-                    complete anonymity and privacy.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Technical Benefits */}
-      <section style={{
-        padding: '80px 0',
-        backgroundColor: '#f8f9fa'
-      }}>
-        <div className="nyt-container">
-          <div style={{textAlign: 'center', marginBottom: '60px'}}>
-            <h2 className="nyt-headline large" style={{
-              fontSize: '2.8rem',
-              marginBottom: '20px',
-              color: 'var(--nyt-black)'
-            }}>
-              Technical Advantages
-            </h2>
-            <p style={{
-              fontSize: '1.2rem',
-              color: 'var(--nyt-gray)',
-              maxWidth: '700px',
-              margin: '0 auto'
-            }}>
-              Advanced cryptographic properties that ensure security, privacy, and scalability
-            </p>
-          </div>
-          
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '40px',
-            maxWidth: '1200px',
-            margin: '0 auto'
-          }}>
-            <div style={{
-              padding: '40px',
-              backgroundColor: 'white',
-              border: '2px solid var(--nyt-accent)',
-              borderRadius: '12px',
-              textAlign: 'center'
-            }}>
-              <div style={{
-                width: '70px',
-                height: '70px',
-                backgroundColor: 'var(--nyt-accent)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 25px',
-                borderRadius: '50%'
-              }}>
-                <Cpu style={{width: '35px', height: '35px', color: 'white'}} />
-              </div>
-              <h3 style={{
-                fontSize: '1.6rem',
-                fontWeight: '700',
-                marginBottom: '15px',
-                color: 'var(--nyt-black)',
-                fontFamily: 'Playfair Display, serif'
-              }}>
-                Computational Efficiency
-              </h3>
               <p style={{
-                fontSize: '1rem',
-                color: 'var(--nyt-gray)',
-                lineHeight: '1.7'
-              }}>
-                Modern zero-knowledge proof systems are computationally efficient, 
-                allowing for real-time verification without compromising security 
-                or privacy. Proofs are generated and verified in seconds.
-              </p>
-            </div>
-            
-            <div style={{
-              padding: '40px',
-              backgroundColor: 'white',
-              border: '2px solid var(--nyt-accent)',
-              borderRadius: '12px',
-              textAlign: 'center'
-            }}>
-              <div style={{
-                width: '70px',
-                height: '70px',
-                backgroundColor: 'var(--nyt-accent)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 25px',
-                borderRadius: '50%'
-              }}>
-                <Database style={{width: '35px', height: '35px', color: 'white'}} />
-              </div>
-              <h3 style={{
-                fontSize: '1.6rem',
-                fontWeight: '700',
-                marginBottom: '15px',
-                color: 'var(--nyt-black)',
-                fontFamily: 'Playfair Display, serif'
-              }}>
-                Scalable Architecture
-              </h3>
-              <p style={{
-                fontSize: '1rem',
-                color: 'var(--nyt-gray)',
-                lineHeight: '1.7'
-              }}>
-                Designed to handle millions of verifications simultaneously while 
-                maintaining the highest standards of privacy and security. Our 
-                infrastructure scales seamlessly with demand.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section style={{
-        padding: '80px 0',
-        backgroundColor: 'var(--nyt-black)',
-        color: 'white'
-      }}>
-        <div className="nyt-container">
-          <div style={{textAlign: 'center', maxWidth: '800px', margin: '0 auto'}}>
-            <h2 className="nyt-headline large" style={{
-              fontSize: '3rem',
-              marginBottom: '25px',
-              color: 'white'
-            }}>
-              Experience the Future of Privacy
-            </h2>
-            
-            <p style={{
-              fontSize: '1.3rem',
-              marginBottom: '40px',
-              opacity: 0.9,
-              lineHeight: '1.6'
-            }}>
-              Join the revolution in healthcare privacy with zero-knowledge systems technology.
-            </p>
-            
-            <div style={{
-              display: 'flex',
-              gap: '20px',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              marginBottom: '50px'
-            }}>
-              <Link href="/earning" className="nyt-button" style={{
-                backgroundColor: 'var(--nyt-accent)',
-                color: 'white',
-                padding: '18px 36px',
                 fontSize: '1.1rem',
-                fontWeight: '600',
-                textDecoration: 'none'
+                lineHeight: '1.8',
+                marginBottom: '30px',
+                color: 'rgba(255,255,255,0.95)'
               }}>
-                Start Using ZK Systems
-              </Link>
-              <Link href="/" className="nyt-button" style={{
-                backgroundColor: 'transparent',
-                border: '2px solid white',
-                color: 'white',
-                padding: '18px 36px',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                textDecoration: 'none'
-              }}>
-                Learn More
-              </Link>
-            </div>
-            
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '30px',
-              marginTop: '50px'
-            }}>
-              <div style={{
-                padding: '25px',
-                backgroundColor: 'rgba(255,255,255,0.1)',
-                borderRadius: '8px',
-                textAlign: 'center'
-              }}>
-                <Users style={{width: '36px', height: '36px', color: 'white', margin: '0 auto 15px'}} />
-                <h3 style={{
-                  fontSize: '1.2rem',
-                  fontWeight: '600',
-                  marginBottom: '10px'
-                }}>
-                  Privacy First
-                </h3>
-                <p style={{
-                  fontSize: '0.95rem',
-                  opacity: 0.9,
-                  lineHeight: '1.5'
-                }}>
-                  Your personal information is never exposed or stored
-                </p>
-              </div>
+                As a Qualified Entity, Medicare Reviews is committed to using healthcare data 
+                responsibly and ethically. Our zero-knowledge proof systems ensure that we can 
+                provide valuable insights while maintaining absolute privacy protection.
+              </p>
               
               <div style={{
                 padding: '25px',
-                backgroundColor: 'rgba(255,255,255,0.1)',
+                backgroundColor: 'rgba(255,255,255,0.2)',
                 borderRadius: '8px',
-                textAlign: 'center'
+                backdropFilter: 'blur(10px)',
+                marginTop: '30px'
               }}>
-                <Shield style={{width: '36px', height: '36px', color: 'white', margin: '0 auto 15px'}} />
-                <h3 style={{
+                <Users style={{width: '40px', height: '40px', color: 'white', marginBottom: '15px'}} />
+                <h4 style={{
                   fontSize: '1.2rem',
                   fontWeight: '600',
-                  marginBottom: '10px'
+                  marginBottom: '10px',
+                  color: 'white'
                 }}>
-                  HIPAA Compliant
-                </h3>
-                <p style={{
-                  fontSize: '0.95rem',
-                  opacity: 0.9,
-                  lineHeight: '1.5'
-                }}>
-                  Meets all federal healthcare privacy requirements
-                </p>
-              </div>
-              
-              <div style={{
-                padding: '25px',
-                backgroundColor: 'rgba(255,255,255,0.1)',
-                borderRadius: '8px',
-                textAlign: 'center'
-              }}>
-                <Zap style={{width: '36px', height: '36px', color: 'white', margin: '0 auto 15px'}} />
-                <h3 style={{
-                  fontSize: '1.2rem',
-                  fontWeight: '600',
-                  marginBottom: '10px'
-                }}>
-                  Instant Verification
-                </h3>
-                <p style={{
-                  fontSize: '0.95rem',
-                  opacity: 0.9,
-                  lineHeight: '1.5'
-                }}>
-                  Real-time verification without compromising privacy
+                  Public Health Impact
+                </h4>
+                <p style={{fontSize: '1rem', opacity: 0.95, lineHeight: '1.6'}}>
+                  Our certification enables us to contribute to public health research and 
+                  healthcare quality improvement initiatives while protecting individual privacy.
                 </p>
               </div>
             </div>
@@ -660,7 +460,7 @@ export default function ZKSystemsPage() {
                 marginBottom: '10px',
                 fontSize: '0.9rem'
               }}>
-                The premier platform for anonymous healthcare reviews powered by zero-knowledge systems technology.
+                The premier platform for anonymous healthcare reviews powered by zero-knowledge proof technology.
               </p>
               <p style={{
                 color: 'var(--nyt-light-gray)',
@@ -863,3 +663,4 @@ export default function ZKSystemsPage() {
     </div>
   )
 }
+
