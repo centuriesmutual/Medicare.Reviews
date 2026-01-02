@@ -2,22 +2,10 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FileText, Download, ExternalLink } from 'lucide-react'
+import { FileText, Download, ExternalLink, BookOpen } from 'lucide-react'
 
 export default function WhitepaperPage() {
-  // Replace this with your actual Dropbox file link
-  // Instructions to get a Dropbox embed link:
-  // 1. Upload your PDF file to Dropbox
-  // 2. Right-click the file and select "Share" > "Create a link"
-  // 3. Copy the share link (format: https://www.dropbox.com/s/abc123/filename.pdf?dl=0)
-  // 4. For viewing: Replace "?dl=0" with "?raw=1" (e.g., https://www.dropbox.com/s/abc123/filename.pdf?raw=1)
-  // 5. For downloading: Replace "?dl=0" with "?dl=1" (e.g., https://www.dropbox.com/s/abc123/filename.pdf?dl=1)
-  // 
-  // Alternative: Use Dropbox's embed feature
-  // 1. Get share link: https://www.dropbox.com/s/abc123/filename.pdf?dl=0
-  // 2. For embed: https://www.dropbox.com/s/abc123/filename.pdf?raw=1
-  
-  const dropboxFileUrl = 'https://www.dropbox.com/s/your-file-id/your-filename.pdf?raw=1' // Replace with your actual Dropbox link
+  const dropboxFileUrl = 'https://www.dropbox.com/s/your-file-id/your-filename.pdf?raw=1'
   const dropboxDownloadUrl = dropboxFileUrl.replace('?raw=1', '?dl=1').replace('?raw=0', '?dl=1')
   
   return (
@@ -52,12 +40,22 @@ export default function WhitepaperPage() {
           alignItems: 'center'
         }}>
           <div>
-            <FileText style={{
+            <div style={{
               width: '80px',
               height: '80px',
-              marginBottom: '30px',
-              color: 'var(--nyt-accent)'
-            }} />
+              backgroundColor: 'var(--nyt-cream)',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: '30px'
+            }}>
+              <FileText style={{
+                width: '40px',
+                height: '40px',
+                color: 'var(--nyt-accent)'
+              }} />
+            </div>
             <h1 style={{
               fontFamily: 'Playfair Display, serif',
               fontSize: '3.5rem',
@@ -83,274 +81,231 @@ export default function WhitepaperPage() {
       </div>
 
       {/* Main Content */}
-      <div className="nyt-container">
-        <motion.article 
-          className="nyt-article featured"
+      <div className="nyt-container" style={{marginBottom: '60px'}}>
+        {/* PDF Viewer Section */}
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          style={{
+            border: '2px solid var(--nyt-border)',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+            backgroundColor: 'var(--nyt-white)',
+            marginBottom: '40px'
+          }}
         >
-          <h2 className="nyt-headline large">Technical Whitepaper</h2>
-          <div className="nyt-content">
-            <p style={{marginBottom: '30px'}}>
-              This whitepaper details the patented architecture of the Medicare Reviews platform, 
-              including our zero-knowledge proof system, HIPAA-compliant ad network infrastructure, 
-              and privacy-preserving Medicare eligibility verification process.
-            </p>
-            
-            {/* Dropbox File Viewer */}
-            <div style={{
-              marginTop: '40px',
-              marginBottom: '40px',
-              border: '2px solid var(--nyt-border)',
-              borderRadius: '12px',
-              overflow: 'hidden',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-              backgroundColor: 'var(--nyt-white)'
-            }}>
-              <div style={{
-                backgroundColor: 'var(--nyt-cream)',
-                padding: '20px',
-                borderBottom: '1px solid var(--nyt-border)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '15px'
-              }}>
-                <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
-                  <FileText style={{width: '24px', height: '24px', color: 'var(--nyt-accent)'}} />
-                  <div>
-                    <h3 style={{
-                      fontFamily: 'Playfair Display, serif',
-                      fontSize: '1.2rem',
-                      fontWeight: '600',
-                      color: 'var(--nyt-black)',
-                      margin: 0,
-                      marginBottom: '4px'
-                    }}>
-                      Platform Architecture Whitepaper
-                    </h3>
-                    <p style={{
-                      fontSize: '0.85rem',
-                      color: 'var(--nyt-gray)',
-                      margin: 0
-                    }}>
-                      Read-only document • Patented Technology
-                    </p>
-                  </div>
-                </div>
-                <div style={{display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
-                  <a
-                    href={dropboxDownloadUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      padding: '10px 20px',
-                      backgroundColor: 'var(--nyt-accent)',
-                      color: 'white',
-                      textDecoration: 'none',
-                      borderRadius: '6px',
-                      fontSize: '0.9rem',
-                      fontWeight: '600',
-                      transition: 'background-color 0.2s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#1565c0'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'var(--nyt-accent)'
-                    }}
-                  >
-                    <Download style={{width: '16px', height: '16px'}} />
-                    <span>Download PDF</span>
-                  </a>
-                  <a
-                    href={dropboxFileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      padding: '10px 20px',
-                      backgroundColor: 'var(--nyt-gray)',
-                      color: 'white',
-                      textDecoration: 'none',
-                      borderRadius: '6px',
-                      fontSize: '0.9rem',
-                      fontWeight: '600',
-                      transition: 'background-color 0.2s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#555'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'var(--nyt-gray)'
-                    }}
-                  >
-                    <ExternalLink style={{width: '16px', height: '16px'}} />
-                    <span>Open in New Tab</span>
-                  </a>
-                </div>
-              </div>
-              
-              {/* PDF Viewer */}
-              <div style={{
-                width: '100%',
-                minHeight: '800px',
-                position: 'relative',
-                backgroundColor: '#f5f5f5',
-                borderTop: '1px solid var(--nyt-border)'
-              }}>
-                {/* Check if Dropbox URL is still placeholder */}
-                {dropboxFileUrl.includes('your-file-id') ? (
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexDirection: 'column',
-                    gap: '20px',
-                    padding: '60px 40px',
-                    textAlign: 'center'
-                  }}>
-                    <FileText style={{width: '64px', height: '64px', color: 'var(--nyt-gray)'}} />
-                    <div>
-                      <h3 style={{
-                        fontFamily: 'Playfair Display, serif',
-                        fontSize: '1.4rem',
-                        fontWeight: '600',
-                        color: 'var(--nyt-black)',
-                        marginBottom: '15px'
-                      }}>
-                        Configure Dropbox Link
-                      </h3>
-                      <p style={{
-                        fontSize: '1rem',
-                        color: 'var(--nyt-gray)',
-                        lineHeight: '1.6',
-                        maxWidth: '600px',
-                        margin: '0 auto 20px'
-                      }}>
-                        To view the whitepaper, please update the Dropbox file URL in the page code.
-                      </p>
-                      <div style={{
-                        backgroundColor: 'var(--nyt-cream)',
-                        padding: '20px',
-                        borderRadius: '8px',
-                        textAlign: 'left',
-                        maxWidth: '600px',
-                        margin: '0 auto'
-                      }}>
-                        <strong style={{color: 'var(--nyt-black)'}}>Instructions:</strong>
-                        <ol style={{
-                          paddingLeft: '20px',
-                          color: 'var(--nyt-black)',
-                          lineHeight: '1.8',
-                          marginTop: '10px'
-                        }}>
-                          <li>Upload your PDF file to Dropbox</li>
-                          <li>Right-click the file and select "Share" → "Create a link"</li>
-                          <li>Copy the share link (format: https://www.dropbox.com/s/abc123/filename.pdf?dl=0)</li>
-                          <li>Replace "?dl=0" with "?raw=1" for viewing</li>
-                          <li>Update the <code style={{backgroundColor: '#e0e0e0', padding: '2px 6px', borderRadius: '3px'}}>dropboxFileUrl</code> variable in the code</li>
-                        </ol>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <iframe
-                      src={`${dropboxFileUrl}#toolbar=0&navpanes=0&scrollbar=0`}
-                      style={{
-                        width: '100%',
-                        height: '800px',
-                        border: 'none',
-                        display: 'block'
-                      }}
-                      title="Platform Architecture Whitepaper"
-                      onError={() => {
-                        // Fallback if iframe fails
-                        console.error('Failed to load PDF in iframe')
-                      }}
-                    />
-                    <div style={{
-                      padding: '15px',
-                      backgroundColor: 'var(--nyt-cream)',
-                      borderTop: '1px solid var(--nyt-border)',
-                      textAlign: 'center'
-                    }}>
-                      <p style={{
-                        fontSize: '0.85rem',
-                        color: 'var(--nyt-gray)',
-                        margin: 0
-                      }}>
-                        Having trouble viewing?{' '}
-                        <a
-                          href={dropboxFileUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            color: 'var(--nyt-accent)',
-                            textDecoration: 'none',
-                            fontWeight: '600'
-                          }}
-                        >
-                          Open in new tab
-                        </a>
-                      </p>
-                    </div>
-                  </>
-                )}
+          <div style={{
+            backgroundColor: 'var(--nyt-cream)',
+            padding: '25px 30px',
+            borderBottom: '1px solid var(--nyt-border)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '20px'
+          }}>
+            <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
+              <BookOpen style={{width: '28px', height: '28px', color: 'var(--nyt-accent)'}} />
+              <div>
+                <h3 style={{
+                  fontFamily: 'Playfair Display, serif',
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: 'var(--nyt-black)',
+                  margin: 0,
+                  marginBottom: '4px'
+                }}>
+                  Platform Architecture Whitepaper
+                </h3>
+                <p style={{
+                  fontSize: '0.9rem',
+                  color: 'var(--nyt-gray)',
+                  margin: 0
+                }}>
+                  Patented Technology • Read-only Document
+                </p>
               </div>
             </div>
-
-            <div style={{
-              backgroundColor: 'var(--nyt-cream)',
-              padding: '30px',
-              borderRadius: '8px',
-              border: '1px solid var(--nyt-border)',
-              marginTop: '40px'
-            }}>
-              <h3 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.4rem',
-                fontWeight: '600',
-                color: 'var(--nyt-black)',
-                marginBottom: '15px'
-              }}>
-                About This Document
-              </h3>
-              <p style={{color: 'var(--nyt-black)', lineHeight: '1.6', marginBottom: '15px'}}>
-                This whitepaper provides comprehensive technical documentation of our patented 
-                zero-knowledge architecture, including:
-              </p>
-              <ul style={{
-                paddingLeft: '20px',
-                color: 'var(--nyt-black)',
-                lineHeight: '1.8'
-              }}>
-                <li>Zero-knowledge proof implementation for Medicare eligibility verification</li>
-                <li>HIPAA-compliant ad network infrastructure</li>
-                <li>Privacy-preserving cryptographic protocols</li>
-                <li>System architecture and security measures</li>
-                <li>Patent information and technical specifications</li>
-              </ul>
-              <p style={{
-                color: 'var(--nyt-gray)',
-                fontSize: '0.9rem',
-                marginTop: '20px',
-                fontStyle: 'italic'
-              }}>
-                This document is provided for informational purposes only. All technology described 
-                is protected by applicable patents and intellectual property rights.
-              </p>
+            <div style={{display: 'flex', gap: '12px', flexWrap: 'wrap'}}>
+              <a
+                href={dropboxDownloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nyt-button"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '12px 24px',
+                  backgroundColor: 'var(--nyt-accent)',
+                  color: 'white',
+                  textDecoration: 'none',
+                  fontSize: '0.95rem',
+                  fontWeight: '600'
+                }}
+              >
+                <Download style={{width: '18px', height: '18px'}} />
+                Download PDF
+              </a>
+              <a
+                href={dropboxFileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nyt-button"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '12px 24px',
+                  backgroundColor: 'var(--nyt-gray)',
+                  color: 'white',
+                  textDecoration: 'none',
+                  fontSize: '0.95rem',
+                  fontWeight: '600'
+                }}
+              >
+                <ExternalLink style={{width: '18px', height: '18px'}} />
+                Open in New Tab
+              </a>
             </div>
           </div>
-        </motion.article>
+          
+          {/* PDF Viewer */}
+          <div style={{
+            width: '100%',
+            minHeight: '800px',
+            position: 'relative',
+            backgroundColor: '#f5f5f5'
+          }}>
+            {dropboxFileUrl.includes('your-file-id') ? (
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                gap: '25px',
+                padding: '80px 40px',
+                textAlign: 'center'
+              }}>
+                <div style={{
+                  width: '100px',
+                  height: '100px',
+                  backgroundColor: 'var(--nyt-cream)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <FileText style={{width: '50px', height: '50px', color: 'var(--nyt-gray)'}} />
+                </div>
+                <div>
+                  <h3 style={{
+                    fontFamily: 'Playfair Display, serif',
+                    fontSize: '1.5rem',
+                    fontWeight: '600',
+                    color: 'var(--nyt-black)',
+                    marginBottom: '15px'
+                  }}>
+                    Configure Dropbox Link
+                  </h3>
+                  <p style={{
+                    fontSize: '1rem',
+                    color: 'var(--nyt-gray)',
+                    lineHeight: '1.6',
+                    maxWidth: '500px',
+                    margin: '0 auto'
+                  }}>
+                    Update the Dropbox file URL in the page code to view the whitepaper.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <>
+                <iframe
+                  src={`${dropboxFileUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+                  style={{
+                    width: '100%',
+                    height: '800px',
+                    border: 'none',
+                    display: 'block'
+                  }}
+                  title="Platform Architecture Whitepaper"
+                />
+                <div style={{
+                  padding: '15px 30px',
+                  backgroundColor: 'var(--nyt-cream)',
+                  borderTop: '1px solid var(--nyt-border)',
+                  textAlign: 'center'
+                }}>
+                  <p style={{
+                    fontSize: '0.9rem',
+                    color: 'var(--nyt-gray)',
+                    margin: 0
+                  }}>
+                    Having trouble viewing?{' '}
+                    <a
+                      href={dropboxFileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: 'var(--nyt-accent)',
+                        textDecoration: 'none',
+                        fontWeight: '600'
+                      }}
+                    >
+                      Open in new tab
+                    </a>
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
+        </motion.div>
+
+        {/* About Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          style={{
+            backgroundColor: 'var(--nyt-cream)',
+            padding: '40px',
+            borderRadius: '12px',
+            border: '2px solid var(--nyt-accent)'
+          }}
+        >
+          <h3 style={{
+            fontFamily: 'Playfair Display, serif',
+            fontSize: '1.6rem',
+            fontWeight: '600',
+            color: 'var(--nyt-black)',
+            marginBottom: '20px'
+          }}>
+            About This Document
+          </h3>
+          <p style={{
+            color: 'var(--nyt-black)',
+            lineHeight: '1.7',
+            fontSize: '1.05rem',
+            marginBottom: '20px'
+          }}>
+            This whitepaper provides comprehensive technical documentation of our patented 
+            zero-knowledge architecture, including zero-knowledge proof implementation for Medicare 
+            eligibility verification, HIPAA-compliant ad network infrastructure, privacy-preserving 
+            cryptographic protocols, system architecture, and security measures.
+          </p>
+          <p style={{
+            color: 'var(--nyt-gray)',
+            fontSize: '0.95rem',
+            fontStyle: 'italic',
+            margin: 0
+          }}>
+            This document is provided for informational purposes only. All technology described 
+            is protected by applicable patents and intellectual property rights.
+          </p>
+        </motion.div>
       </div>
 
       {/* Footer */}

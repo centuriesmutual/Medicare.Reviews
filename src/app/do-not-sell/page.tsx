@@ -67,47 +67,58 @@ export default function DoNotSellMyDataPage() {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="nyt-container">
-        <div className="nyt-grid">
-          <div className="nyt-main">
+      {/* Main Content - Full Page Two Column Layout */}
+      <div className="nyt-container" style={{marginBottom: '60px'}}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '50px',
+          alignItems: 'start'
+        }}>
+          {/* Left Column */}
+          <div>
             {/* Zero Data Collection Promise */}
             <motion.article 
               className="nyt-article featured"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              style={{marginBottom: '50px'}}
             >
               <h2 className="nyt-headline large">Our Zero Data Collection Promise</h2>
               <div className="nyt-content">
-                <p>
+                <p style={{fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '20px'}}>
                   Unlike traditional platforms that collect and monetize your personal data, Medicare Reviews 
                   is built on a fundamentally different principle: we don&apos;t collect personal information, 
                   so we can&apos;t sell it. Our revolutionary zero-knowledge proof technology makes data selling 
                   mathematically impossible.
                 </p>
-                <p>
+                <p style={{fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '25px'}}>
                   While other platforms ask you to "opt out" of data selling, we&apos;ve eliminated the problem 
                   at its source. We can verify you're a real user without knowing who you are, where you are, 
                   or any other personal information about you.
                 </p>
                 <div style={{
                   background: 'var(--nyt-cream)',
-                  padding: '25px',
-                  borderRadius: '8px',
-                  border: '1px solid var(--nyt-border)',
+                  padding: '30px',
+                  borderRadius: '12px',
+                  border: '2px solid var(--nyt-accent)',
                   marginTop: '25px'
                 }}>
                   <h3 style={{
                     fontFamily: 'Playfair Display, serif',
-                    fontSize: '1.3rem',
+                    fontSize: '1.4rem',
                     fontWeight: '600',
                     color: 'var(--nyt-red)',
-                    marginBottom: '15px'
+                    marginBottom: '15px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px'
                   }}>
+                    <Lock style={{width: '28px', height: '28px'}} />
                     🔒 Mathematical Privacy Guarantee
                   </h3>
-                  <p style={{color: 'var(--nyt-black)', lineHeight: '1.6'}}>
+                  <p style={{color: 'var(--nyt-black)', lineHeight: '1.7', fontSize: '1rem'}}>
                     Our zero-knowledge proofs provide mathematical certainty that we cannot access, 
                     collect, or sell your personal data because we never have access to it in the first place.
                   </p>
@@ -116,19 +127,24 @@ export default function DoNotSellMyDataPage() {
             </motion.article>
 
             {/* What We Don't Collect */}
-            <article className="nyt-article">
+            <motion.article 
+              className="nyt-article"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              style={{marginBottom: '50px'}}
+            >
               <h2 className="nyt-headline medium">What We Don't Collect (So We Can't Sell)</h2>
               <div className="nyt-content">
-                <p>
+                <p style={{marginBottom: '25px'}}>
                   Traditional data brokers collect and sell hundreds of data points about users. 
                   Here's what we don&apos;t collect, making data selling impossible:
                 </p>
                 
                 <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                  gap: '25px',
-                  marginTop: '30px'
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '20px'
                 }}>
                   <div style={{
                     padding: '25px',
@@ -137,25 +153,20 @@ export default function DoNotSellMyDataPage() {
                     border: '2px solid var(--nyt-border)',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
                   }}>
-                    <XCircle style={{
-                      width: '48px',
-                      height: '48px',
-                      color: 'var(--nyt-red)',
-                      margin: '0 auto 15px'
-                    }} />
-                    <h3 style={{
-                      fontFamily: 'Playfair Display, serif',
-                      fontSize: '1.2rem',
-                      fontWeight: '600',
-                      marginBottom: '10px',
-                      textAlign: 'center'
-                    }}>
-                      Personal Identifiers
-                    </h3>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px'}}>
+                      <XCircle style={{width: '32px', height: '32px', color: 'var(--nyt-red)'}} />
+                      <h3 style={{
+                        fontFamily: 'Playfair Display, serif',
+                        fontSize: '1.2rem',
+                        fontWeight: '600'
+                      }}>
+                        Personal Identifiers
+                      </h3>
+                    </div>
                     <ul style={{
                       color: 'var(--nyt-gray)',
-                      fontSize: '0.9rem',
-                      lineHeight: '1.6',
+                      fontSize: '0.95rem',
+                      lineHeight: '1.8',
                       paddingLeft: '20px'
                     }}>
                       <li>Names</li>
@@ -173,25 +184,20 @@ export default function DoNotSellMyDataPage() {
                     border: '2px solid var(--nyt-border)',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
                   }}>
-                    <XCircle style={{
-                      width: '48px',
-                      height: '48px',
-                      color: 'var(--nyt-red)',
-                      margin: '0 auto 15px'
-                    }} />
-                    <h3 style={{
-                      fontFamily: 'Playfair Display, serif',
-                      fontSize: '1.2rem',
-                      fontWeight: '600',
-                      marginBottom: '10px',
-                      textAlign: 'center'
-                    }}>
-                      Location & Tracking Data
-                    </h3>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px'}}>
+                      <XCircle style={{width: '32px', height: '32px', color: 'var(--nyt-red)'}} />
+                      <h3 style={{
+                        fontFamily: 'Playfair Display, serif',
+                        fontSize: '1.2rem',
+                        fontWeight: '600'
+                      }}>
+                        Location & Tracking Data
+                      </h3>
+                    </div>
                     <ul style={{
                       color: 'var(--nyt-gray)',
-                      fontSize: '0.9rem',
-                      lineHeight: '1.6',
+                      fontSize: '0.95rem',
+                      lineHeight: '1.8',
                       paddingLeft: '20px'
                     }}>
                       <li>IP addresses</li>
@@ -209,25 +215,20 @@ export default function DoNotSellMyDataPage() {
                     border: '2px solid var(--nyt-border)',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
                   }}>
-                    <XCircle style={{
-                      width: '48px',
-                      height: '48px',
-                      color: 'var(--nyt-red)',
-                      margin: '0 auto 15px'
-                    }} />
-                    <h3 style={{
-                      fontFamily: 'Playfair Display, serif',
-                      fontSize: '1.2rem',
-                      fontWeight: '600',
-                      marginBottom: '10px',
-                      textAlign: 'center'
-                    }}>
-                      Behavioral & Health Data
-                    </h3>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px'}}>
+                      <XCircle style={{width: '32px', height: '32px', color: 'var(--nyt-red)'}} />
+                      <h3 style={{
+                        fontFamily: 'Playfair Display, serif',
+                        fontSize: '1.2rem',
+                        fontWeight: '600'
+                      }}>
+                        Behavioral & Health Data
+                      </h3>
+                    </div>
                     <ul style={{
                       color: 'var(--nyt-gray)',
-                      fontSize: '0.9rem',
-                      lineHeight: '1.6',
+                      fontSize: '0.95rem',
+                      lineHeight: '1.8',
                       paddingLeft: '20px'
                     }}>
                       <li>Health conditions</li>
@@ -239,25 +240,31 @@ export default function DoNotSellMyDataPage() {
                   </div>
                 </div>
               </div>
-            </article>
+            </motion.article>
 
             {/* Zero-Knowledge Technology */}
-            <article className="nyt-article">
+            <motion.article 
+              className="nyt-article"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              style={{marginBottom: '50px'}}
+            >
               <h2 className="nyt-headline medium">How Zero-Knowledge Proofs Protect You</h2>
               <div className="nyt-content">
                 <div style={{
                   background: 'var(--nyt-cream)',
-                  padding: '30px',
-                  borderRadius: '8px',
-                  border: '1px solid var(--nyt-border)',
-                  marginTop: '30px'
+                  padding: '35px',
+                  borderRadius: '12px',
+                  border: '2px solid var(--nyt-accent)',
+                  marginTop: '25px'
                 }}>
                   <h3 style={{
                     fontFamily: 'Playfair Display, serif',
                     fontSize: '1.4rem',
                     fontWeight: '600',
                     color: 'var(--nyt-black)',
-                    marginBottom: '20px',
+                    marginBottom: '25px',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '15px'
@@ -266,89 +273,106 @@ export default function DoNotSellMyDataPage() {
                     Revolutionary Privacy Technology
                   </h3>
                   <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                    display: 'flex',
+                    flexDirection: 'column',
                     gap: '20px'
                   }}>
                     <div>
-                      <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)', marginBottom: '8px'}} />
-                      <h4 style={{
-                        fontWeight: '600',
-                        color: 'var(--nyt-black)',
-                        marginBottom: '8px'
-                      }}>
-                        Authentication Without Identity
-                      </h4>
-                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.9rem', lineHeight: '1.5'}}>
+                      <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px'}}>
+                        <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)'}} />
+                        <h4 style={{
+                          fontWeight: '600',
+                          color: 'var(--nyt-black)',
+                          fontSize: '1.05rem'
+                        }}>
+                          Authentication Without Identity
+                        </h4>
+                      </div>
+                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6', paddingLeft: '30px'}}>
                         We can verify you're a real user without knowing who you are through cryptographic proofs
                       </p>
                     </div>
                     <div>
-                      <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)', marginBottom: '8px'}} />
-                      <h4 style={{
-                        fontWeight: '600',
-                        color: 'var(--nyt-black)',
-                        marginBottom: '8px'
-                      }}>
-                        No Data Storage
-                      </h4>
-                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.9rem', lineHeight: '1.5'}}>
+                      <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px'}}>
+                        <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)'}} />
+                        <h4 style={{
+                          fontWeight: '600',
+                          color: 'var(--nyt-black)',
+                          fontSize: '1.05rem'
+                        }}>
+                          No Data Storage
+                        </h4>
+                      </div>
+                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6', paddingLeft: '30px'}}>
                         Personal information never reaches our servers, making data collection impossible
                       </p>
                     </div>
                     <div>
-                      <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)', marginBottom: '8px'}} />
-                      <h4 style={{
-                        fontWeight: '600',
-                        color: 'var(--nyt-black)',
-                        marginBottom: '8px'
-                      }}>
-                        Mathematical Certainty
-                      </h4>
-                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.9rem', lineHeight: '1.5'}}>
+                      <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px'}}>
+                        <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)'}} />
+                        <h4 style={{
+                          fontWeight: '600',
+                          color: 'var(--nyt-black)',
+                          fontSize: '1.05rem'
+                        }}>
+                          Mathematical Certainty
+                        </h4>
+                      </div>
+                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6', paddingLeft: '30px'}}>
                         Privacy protection is guaranteed by cryptography, not just promises or policies
                       </p>
                     </div>
                     <div>
-                      <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)', marginBottom: '8px'}} />
-                      <h4 style={{
-                        fontWeight: '600',
-                        color: 'var(--nyt-black)',
-                        marginBottom: '8px'
-                      }}>
-                        Future-Proof Protection
-                      </h4>
-                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.9rem', lineHeight: '1.5'}}>
+                      <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px'}}>
+                        <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)'}} />
+                        <h4 style={{
+                          fontWeight: '600',
+                          color: 'var(--nyt-black)',
+                          fontSize: '1.05rem'
+                        }}>
+                          Future-Proof Protection
+                        </h4>
+                      </div>
+                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6', paddingLeft: '30px'}}>
                         Even if our policies changed, we couldn't sell data we don&apos;t have
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-            </article>
+            </motion.article>
+          </div>
 
+          {/* Right Column */}
+          <div>
             {/* Comparison with Other Platforms */}
-            <article className="nyt-article">
+            <motion.article 
+              className="nyt-article"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              style={{marginBottom: '50px'}}
+            >
               <h2 className="nyt-headline medium">Medicare Reviews vs. Traditional Platforms</h2>
               <div className="nyt-content">
                 <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                  display: 'flex',
+                  flexDirection: 'column',
                   gap: '25px',
-                  marginTop: '30px'
+                  marginTop: '25px'
                 }}>
                   <div style={{
-                    padding: '25px',
+                    padding: '30px',
                     background: 'var(--nyt-cream)',
-                    borderRadius: '8px',
-                    border: '1px solid var(--nyt-border)'
+                    borderRadius: '12px',
+                    border: '2px solid var(--nyt-border)'
                   }}>
                     <h3 style={{
                       fontFamily: 'Playfair Display, serif',
                       fontSize: '1.3rem',
                       fontWeight: '600',
                       color: 'var(--nyt-red)',
-                      marginBottom: '15px',
+                      marginBottom: '20px',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '10px'
@@ -358,8 +382,8 @@ export default function DoNotSellMyDataPage() {
                     </h3>
                     <ul style={{
                       color: 'var(--nyt-black)',
-                      fontSize: '0.9rem',
-                      lineHeight: '1.6',
+                      fontSize: '0.95rem',
+                      lineHeight: '2',
                       paddingLeft: '20px'
                     }}>
                       <li>Collect hundreds of data points</li>
@@ -372,17 +396,17 @@ export default function DoNotSellMyDataPage() {
                   </div>
 
                   <div style={{
-                    padding: '25px',
+                    padding: '30px',
                     background: 'var(--nyt-cream)',
-                    borderRadius: '8px',
-                    border: '1px solid var(--nyt-border)'
+                    borderRadius: '12px',
+                    border: '2px solid var(--nyt-accent)'
                   }}>
                     <h3 style={{
                       fontFamily: 'Playfair Display, serif',
                       fontSize: '1.3rem',
                       fontWeight: '600',
                       color: 'var(--nyt-accent)',
-                      marginBottom: '15px',
+                      marginBottom: '20px',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '10px'
@@ -392,8 +416,8 @@ export default function DoNotSellMyDataPage() {
                     </h3>
                     <ul style={{
                       color: 'var(--nyt-black)',
-                      fontSize: '0.9rem',
-                      lineHeight: '1.6',
+                      fontSize: '0.95rem',
+                      lineHeight: '2',
                       paddingLeft: '20px'
                     }}>
                       <li>Collect zero personal data</li>
@@ -406,220 +430,121 @@ export default function DoNotSellMyDataPage() {
                   </div>
                 </div>
               </div>
-            </article>
+            </motion.article>
 
             {/* Your Rights */}
-            <article className="nyt-article">
+            <motion.article 
+              className="nyt-article"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              style={{marginBottom: '50px'}}
+            >
               <h2 className="nyt-headline medium">Your Data Rights (That Don't Apply Here)</h2>
               <div className="nyt-content">
-                <p>
+                <p style={{marginBottom: '25px'}}>
                   Under laws like CCPA and GDPR, you have rights regarding your personal data. 
                   Since we don&apos;t collect personal data, these rights don&apos;t apply, but here's how 
                   our approach provides even better protection:
                 </p>
                 
                 <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                  display: 'flex',
+                  flexDirection: 'column',
                   gap: '20px',
-                  marginTop: '30px'
+                  marginTop: '25px'
                 }}>
                   <div style={{
-                    padding: '20px',
+                    padding: '25px',
                     background: 'var(--nyt-white)',
                     borderRadius: '8px',
-                    border: '1px solid var(--nyt-border)',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                    textAlign: 'center'
+                    border: '2px solid var(--nyt-border)',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
                   }}>
-                    <Eye style={{
-                      width: '32px',
-                      height: '32px',
-                      color: 'var(--nyt-accent)',
-                      margin: '0 auto 15px'
-                    }} />
-                    <h3 style={{
-                      fontFamily: 'Playfair Display, serif',
-                      fontSize: '1.1rem',
-                      fontWeight: '600',
-                      marginBottom: '10px'
-                    }}>
-                      Right to Know
-                    </h3>
-                    <p style={{color: 'var(--nyt-gray)', fontSize: '0.9rem', lineHeight: '1.5'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px'}}>
+                      <Eye style={{width: '28px', height: '28px', color: 'var(--nyt-accent)'}} />
+                      <h3 style={{
+                        fontFamily: 'Playfair Display, serif',
+                        fontSize: '1.1rem',
+                        fontWeight: '600'
+                      }}>
+                        Right to Know
+                      </h3>
+                    </div>
+                    <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6'}}>
                       You have the right to know what data we collect: none. We don&apos;t know who you are.
                     </p>
                   </div>
 
                   <div style={{
-                    padding: '20px',
+                    padding: '25px',
                     background: 'var(--nyt-white)',
                     borderRadius: '8px',
-                    border: '1px solid var(--nyt-border)',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                    textAlign: 'center'
+                    border: '2px solid var(--nyt-border)',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
                   }}>
-                    <Database style={{
-                      width: '32px',
-                      height: '32px',
-                      color: 'var(--nyt-accent)',
-                      margin: '0 auto 15px'
-                    }} />
-                    <h3 style={{
-                      fontFamily: 'Playfair Display, serif',
-                      fontSize: '1.1rem',
-                      fontWeight: '600',
-                      marginBottom: '10px'
-                    }}>
-                      Right to Delete
-                    </h3>
-                    <p style={{color: 'var(--nyt-gray)', fontSize: '0.9rem', lineHeight: '1.5'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px'}}>
+                      <Database style={{width: '28px', height: '28px', color: 'var(--nyt-accent)'}} />
+                      <h3 style={{
+                        fontFamily: 'Playfair Display, serif',
+                        fontSize: '1.1rem',
+                        fontWeight: '600'
+                      }}>
+                        Right to Delete
+                      </h3>
+                    </div>
+                    <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6'}}>
                       You have the right to delete your data: there's nothing to delete. We don&apos;t store it.
                     </p>
                   </div>
 
                   <div style={{
-                    padding: '20px',
+                    padding: '25px',
                     background: 'var(--nyt-white)',
                     borderRadius: '8px',
-                    border: '1px solid var(--nyt-border)',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                    textAlign: 'center'
+                    border: '2px solid var(--nyt-border)',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
                   }}>
-                    <XCircle style={{
-                      width: '32px',
-                      height: '32px',
-                      color: 'var(--nyt-red)',
-                      margin: '0 auto 15px'
-                    }} />
-                    <h3 style={{
-                      fontFamily: 'Playfair Display, serif',
-                      fontSize: '1.1rem',
-                      fontWeight: '600',
-                      marginBottom: '10px'
-                    }}>
-                      Right to Opt-Out
-                    </h3>
-                    <p style={{color: 'var(--nyt-gray)', fontSize: '0.9rem', lineHeight: '1.5'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px'}}>
+                      <XCircle style={{width: '28px', height: '28px', color: 'var(--nyt-red)'}} />
+                      <h3 style={{
+                        fontFamily: 'Playfair Display, serif',
+                        fontSize: '1.1rem',
+                        fontWeight: '600'
+                      }}>
+                        Right to Opt-Out
+                      </h3>
+                    </div>
+                    <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6'}}>
                       You have the right to opt-out of data selling: we can&apos;t sell data we don&apos;t have.
                     </p>
                   </div>
 
                   <div style={{
-                    padding: '20px',
+                    padding: '25px',
                     background: 'var(--nyt-white)',
                     borderRadius: '8px',
-                    border: '1px solid var(--nyt-border)',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                    textAlign: 'center'
+                    border: '2px solid var(--nyt-border)',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
                   }}>
-                    <Shield style={{
-                      width: '32px',
-                      height: '32px',
-                      color: 'var(--nyt-accent)',
-                      margin: '0 auto 15px'
-                    }} />
-                    <h3 style={{
-                      fontFamily: 'Playfair Display, serif',
-                      fontSize: '1.1rem',
-                      fontWeight: '600',
-                      marginBottom: '10px'
-                    }}>
-                      Right to Privacy
-                    </h3>
-                    <p style={{color: 'var(--nyt-gray)', fontSize: '0.9rem', lineHeight: '1.5'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px'}}>
+                      <Shield style={{width: '28px', height: '28px', color: 'var(--nyt-accent)'}} />
+                      <h3 style={{
+                        fontFamily: 'Playfair Display, serif',
+                        fontSize: '1.1rem',
+                        fontWeight: '600'
+                      }}>
+                        Right to Privacy
+                      </h3>
+                    </div>
+                    <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6'}}>
                       You have the right to privacy: ours is protected by mathematical certainty, not just promises.
                     </p>
                   </div>
                 </div>
               </div>
-            </article>
+            </motion.article>
           </div>
-
-          {/* Sidebar */}
-          <motion.div 
-            className="nyt-sidebar"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="nyt-sidebar-section">
-              <h3 className="nyt-sidebar-title">Data Selling Status</h3>
-              <div className="nyt-sidebar-item">
-                <div className="nyt-sidebar-item-title">Data Collected</div>
-                <div className="nyt-sidebar-item-content">Zero Personal Data</div>
-              </div>
-              <div className="nyt-sidebar-item">
-                <div className="nyt-sidebar-item-title">Data Sold</div>
-                <div className="nyt-sidebar-item-content">Impossible</div>
-              </div>
-              <div className="nyt-sidebar-item">
-                <div className="nyt-sidebar-item-title">Privacy Level</div>
-                <div className="nyt-sidebar-item-content">Mathematical Certainty</div>
-              </div>
-              <div className="nyt-sidebar-item">
-                <div className="nyt-sidebar-item-title">Opt-Out Required</div>
-                <div className="nyt-sidebar-item-content">No</div>
-              </div>
-            </div>
-
-            <div className="nyt-sidebar-section">
-              <h3 className="nyt-sidebar-title">Related Policies</h3>
-              <div style={{marginTop: '20px'}}>
-                <Link href="/privacy" style={{
-                  color: 'var(--nyt-accent)',
-                  textDecoration: 'none',
-                  fontSize: '0.9rem',
-                  display: 'block',
-                  marginBottom: '10px',
-                  padding: '8px 0',
-                  borderBottom: '1px solid var(--nyt-border)'
-                }}>
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" style={{
-                  color: 'var(--nyt-accent)',
-                  textDecoration: 'none',
-                  fontSize: '0.9rem',
-                  display: 'block',
-                  marginBottom: '10px',
-                  padding: '8px 0',
-                  borderBottom: '1px solid var(--nyt-border)'
-                }}>
-                  Terms of Service
-                </Link>
-                <Link href="/compliance" style={{
-                  color: 'var(--nyt-accent)',
-                  textDecoration: 'none',
-                  fontSize: '0.9rem',
-                  display: 'block',
-                  padding: '8px 0'
-                }}>
-                  HIPAA Compliance
-                </Link>
-              </div>
-            </div>
-
-            <div className="nyt-sidebar-section">
-              <h3 className="nyt-sidebar-title">Privacy Questions?</h3>
-              <p style={{
-                color: 'var(--nyt-gray)',
-                fontSize: '0.9rem',
-                lineHeight: '1.5',
-                marginBottom: '20px'
-              }}>
-                Have questions about our privacy protections or zero-knowledge technology?
-              </p>
-              <Link href="/contact" className="nyt-button" style={{
-                backgroundColor: 'var(--nyt-accent)',
-                width: '100%',
-                textAlign: 'center',
-                display: 'block'
-              }}>
-                Contact Privacy Team
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </div>
 
@@ -654,12 +579,67 @@ export default function DoNotSellMyDataPage() {
             backgroundColor: 'var(--nyt-white)',
             color: 'var(--nyt-black)',
             padding: '15px 30px',
-            fontSize: '1rem'
+            fontSize: '1rem',
+            textDecoration: 'none',
+            display: 'inline-block'
           }}>
             Start Your Anonymous Journey
           </Link>
         </div>
       </div>
+
+      {/* Minimal Footer */}
+      <footer style={{
+        backgroundColor: 'var(--nyt-black)',
+        color: 'var(--nyt-cream)',
+        padding: '30px 0',
+        marginTop: '60px',
+        borderTop: '1px solid var(--nyt-border)'
+      }}>
+        <div className="nyt-container">
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '20px'
+          }}>
+            <div style={{
+              color: 'var(--nyt-light-gray)',
+              fontSize: '0.85rem'
+            }}>
+              © 2025 Medicare Reviews. All rights reserved.
+            </div>
+            <div style={{
+              display: 'flex',
+              gap: '20px',
+              fontSize: '0.85rem'
+            }}>
+              <Link href="/privacy" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Privacy Policy
+              </Link>
+              <Link href="/terms" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Terms of Service
+              </Link>
+              <Link href="/accessibility" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Accessibility
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
