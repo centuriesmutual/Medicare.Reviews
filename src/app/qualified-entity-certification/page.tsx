@@ -31,111 +31,69 @@ export default function QualifiedEntityCertificationPage() {
         color: 'white'
       }}>
         <div className="nyt-container">
-          <div style={{maxWidth: '1200px', margin: '0 auto'}}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '50px',
+            alignItems: 'center',
+            maxWidth: '1200px',
+            margin: '0 auto'
+          }}>
             <div style={{
-              width: '100px',
-              height: '100px',
-              backgroundColor: 'var(--nyt-accent)',
+              gridColumn: 'span 6',
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 30px',
-              borderRadius: '50%'
+              flexDirection: 'column'
             }}>
-              <Award style={{width: '50px', height: '50px', color: 'white'}} />
+              <div style={{
+                width: '100px',
+                height: '100px',
+                backgroundColor: 'var(--nyt-accent)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '30px',
+                borderRadius: '50%'
+              }}>
+                <Award style={{width: '50px', height: '50px', color: 'white'}} />
+              </div>
+              
+              <h1 className="nyt-headline large" style={{
+                fontSize: '3.5rem',
+                marginBottom: '30px',
+                color: 'white',
+                lineHeight: '1.2'
+              }}>
+                Qualified Entity Certification
+              </h1>
+              
+              <p style={{
+                fontSize: '1.3rem',
+                lineHeight: '1.8',
+                color: 'rgba(255,255,255,0.9)',
+                marginBottom: '20px'
+              }}>
+                A federally recognized designation enabling secure, privacy-preserving access to healthcare data for research and public health purposes.
+              </p>
             </div>
             
-            <h1 className="nyt-headline large" style={{
-              fontSize: '3.5rem',
-              marginBottom: '30px',
-              color: 'white',
-              textAlign: 'center'
-            }}>
-              Qualified Entity Certification
-            </h1>
-            
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              gap: '30px',
-              maxWidth: '1200px',
-              margin: '0 auto'
+              gridColumn: 'span 6',
+              position: 'relative',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              height: '500px',
+              backgroundColor: 'rgba(255,255,255,0.1)'
             }}>
-              <div style={{
-                gridColumn: 'span 6',
-                padding: '40px',
-                backgroundColor: 'rgba(255,255,255,0.1)',
-                borderRadius: '12px',
-                backdropFilter: 'blur(10px)',
-                position: 'relative',
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: '200px'
-              }}>
-                <div style={{
-                  position: 'absolute',
-                  top: '-30px',
-                  right: '-30px',
-                  width: '140px',
-                  height: '140px',
-                  backgroundColor: 'rgba(255,255,255,0.08)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  <BadgeCheck style={{width: '70px', height: '70px', color: 'var(--nyt-accent)', opacity: 0.5}} />
-                </div>
-                <div style={{position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                  <h2 style={{
-                    fontSize: '1.6rem',
-                    fontWeight: '700',
-                    marginBottom: '20px',
-                    color: 'white',
-                    fontFamily: 'Playfair Display, serif'
-                  }}>
-                    Certified Compliance
-                  </h2>
-                  <p style={{
-                    fontSize: '1.15rem',
-                    lineHeight: '1.8',
-                    color: 'rgba(255,255,255,0.95)'
-                  }}>
-                    Certified compliance with federal healthcare data access regulations
-                  </p>
-                </div>
-              </div>
-              <div style={{
-                gridColumn: 'span 6',
-                padding: '40px',
-                backgroundColor: 'rgba(255,255,255,0.1)',
-                borderRadius: '12px',
-                backdropFilter: 'blur(10px)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                minHeight: '200px'
-              }}>
-                <h2 style={{
-                  fontSize: '1.6rem',
-                  fontWeight: '700',
-                  marginBottom: '20px',
-                  color: 'white',
-                  fontFamily: 'Playfair Display, serif'
-                }}>
-                  Our Mission
-                </h2>
-                <p style={{
-                  color: 'rgba(255,255,255,0.95)',
-                  fontSize: '1.15rem',
-                  lineHeight: '1.8'
-                }}>
-                  Medicare Reviews operates as a Qualified Entity under federal regulations, 
-                  enabling secure, privacy-preserving access to healthcare data for research 
-                  and public health purposes.
-                </p>
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
+                alt="Healthcare certification and compliance"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '12px'
+                }}
+              />
             </div>
           </div>
         </div>
