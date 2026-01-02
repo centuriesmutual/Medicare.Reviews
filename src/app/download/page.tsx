@@ -38,20 +38,25 @@ export default function DownloadPage() {
             flexDirection: 'column',
             gap: '30px'
           }}>
-            <div>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '20px',
+              marginBottom: '10px'
+            }}>
               <Smartphone style={{
-                width: '60px',
-                height: '60px',
+                width: '50px',
+                height: '50px',
                 color: 'var(--nyt-accent)',
-                marginBottom: '20px'
+                flexShrink: 0
               }} />
               <h1 style={{
                 fontFamily: 'Playfair Display, serif',
-                fontSize: '3rem',
+                fontSize: '2rem',
                 fontWeight: '700',
-                marginBottom: '20px',
                 lineHeight: '1.2',
-                color: 'var(--nyt-black)'
+                color: 'var(--nyt-black)',
+                margin: 0
               }}>
                 Download Medicare Reviews
               </h1>
