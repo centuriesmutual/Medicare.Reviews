@@ -42,49 +42,43 @@ export default function WhitepaperPage() {
       {/* Hero Section */}
       <div className="nyt-container" style={{marginTop: '40px', marginBottom: '60px'}}>
         <div style={{
-          background: 'linear-gradient(135deg, var(--nyt-red) 0%, var(--nyt-accent) 100%)',
+          backgroundColor: 'var(--nyt-white)',
           padding: '80px 60px',
           borderRadius: '12px',
-          color: 'var(--nyt-white)',
-          textAlign: 'center',
-          position: 'relative',
-          overflow: 'hidden'
+          border: '2px solid var(--nyt-border)',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '60px',
+          alignItems: 'center'
         }}>
-          <div style={{
-            position: 'absolute',
-            top: '20px',
-            right: '20px',
-            opacity: '0.1',
-            fontSize: '8rem',
-            fontFamily: 'Playfair Display, serif'
-          }}>
-            &ldquo;
+          <div>
+            <FileText style={{
+              width: '80px',
+              height: '80px',
+              marginBottom: '30px',
+              color: 'var(--nyt-accent)'
+            }} />
+            <h1 style={{
+              fontFamily: 'Playfair Display, serif',
+              fontSize: '3.5rem',
+              fontWeight: '700',
+              marginBottom: '20px',
+              lineHeight: '1.2',
+              color: 'var(--nyt-black)'
+            }}>
+              Platform Architecture Whitepaper
+            </h1>
           </div>
-          <FileText style={{
-            width: '80px',
-            height: '80px',
-            margin: '0 auto 30px',
-            opacity: '0.9'
-          }} />
-          <h1 style={{
-            fontFamily: 'Playfair Display, serif',
-            fontSize: '3.5rem',
-            fontWeight: '700',
-            marginBottom: '20px',
-            lineHeight: '1.2'
-          }}>
-            Platform Architecture Whitepaper
-          </h1>
-          <p style={{
-            fontSize: '1.3rem',
-            lineHeight: '1.6',
-            maxWidth: '800px',
-            margin: '0 auto',
-            opacity: '0.95'
-          }}>
-            Explore the patented zero-knowledge architecture that powers our privacy-preserving 
-            healthcare advertising platform and Medicare eligibility verification system.
-          </p>
+          <div>
+            <p style={{
+              fontSize: '1.3rem',
+              lineHeight: '1.6',
+              color: 'var(--nyt-gray)'
+            }}>
+              Explore the patented zero-knowledge architecture that powers our privacy-preserving 
+              healthcare advertising platform and Medicare eligibility verification system.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -373,166 +367,6 @@ export default function WhitepaperPage() {
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <div className="nyt-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '30px',
-            marginBottom: '25px'
-          }}>
-            <div>
-              <h3 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.4rem',
-                fontWeight: '700',
-                color: 'var(--nyt-cream)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-                margin: 0,
-                marginBottom: '15px'
-              }}>
-                Medicare Reviews
-              </h3>
-              <p style={{
-                color: 'var(--nyt-light-gray)',
-                lineHeight: '1.5',
-                marginBottom: '10px',
-                fontSize: '0.9rem'
-              }}>
-                The premier platform for anonymous healthcare reviews powered by zero-knowledge proof technology.
-              </p>
-            </div>
-            
-            <div>
-              <h4 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                color: 'var(--nyt-cream)',
-                marginBottom: '12px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Platform
-              </h4>
-              <ul style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/no-medical-advice" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    No Medical or Insurance Advice
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/zk-systems" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Zero-Knowledge Systems
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                color: 'var(--nyt-cream)',
-                marginBottom: '12px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Company
-              </h4>
-              <ul style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/whitepaper" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Whitepaper
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/contact" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Contact
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/press" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Press
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                color: 'var(--nyt-cream)',
-                marginBottom: '12px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Legal
-              </h4>
-              <ul style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/hipaa-privacy-notice" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    HIPAA Privacy Notice
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/medicare-disclaimer" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Medicare Disclaimer
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
           <div style={{
             borderTop: '1px solid var(--nyt-border)',
             paddingTop: '20px',
