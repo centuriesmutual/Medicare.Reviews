@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { Plus, Scale, Newspaper, CreditCard } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PostReview from '@/components/PostReview'
-import ZKAuth from '@/components/ZKAuth'
 import MedicareCardModal from '@/components/MedicareCardModal'
+import ZeroKnowledgeModal from '@/components/ZeroKnowledgeModal'
 
 interface Review {
   id: string
@@ -22,6 +22,7 @@ export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [showPostForm, setShowPostForm] = useState(false)
   const [showMedicareCardModal, setShowMedicareCardModal] = useState(false)
+  const [showZeroKnowledgeModal, setShowZeroKnowledgeModal] = useState(false)
 
   useEffect(() => {
     // Load reviews from localStorage or API
@@ -272,71 +273,24 @@ export default function Home() {
                   Your exact age remains completely private.
                 </p>
                 
-                <div style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'center',
-                  gap: '15px',
-                  marginBottom: '30px'
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '10px 16px',
-                    backgroundColor: 'var(--nyt-bg)',
-                    borderRadius: '25px',
-                    border: '1px solid var(--nyt-border)'
-                  }}>
-                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Privacy
-                    </span>
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '10px 16px',
-                    backgroundColor: 'var(--nyt-bg)',
-                    borderRadius: '25px',
-                    border: '1px solid var(--nyt-border)'
-                  }}>
-                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      HIPAA Compliant
-                    </span>
-                  </div>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '10px 16px',
-                    backgroundColor: 'var(--nyt-bg)',
-                    borderRadius: '25px',
-                    border: '1px solid var(--nyt-border)'
-                  }}>
-                    <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Zero-Knowledge Proofs
-                    </span>
-                  </div>
-                </div>
-                
                 {!isAuthenticated ? (
                   <div style={{marginBottom: '20px'}}>
-                    <Link 
-                      href="/verify-age" 
+                    <button 
+                      onClick={() => setShowZeroKnowledgeModal(true)}
                       className="nyt-button" 
                       style={{
                         backgroundColor: 'var(--nyt-accent)',
                         padding: '14px 28px',
                         fontSize: '1rem',
-                        textDecoration: 'none',
                         display: 'inline-block',
                         borderRadius: '6px',
-                        fontWeight: '600'
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        border: 'none'
                       }}
                     >
-                      Verify Your Age Securely
-                    </Link>
+                      Our Zero Knowledge System
+                    </button>
                   </div>
                 ) : (
                   <div style={{
@@ -380,99 +334,9 @@ export default function Home() {
                     fontSize: '0.95rem',
                     marginBottom: '15px'
                   }}>
-                    Our zero-knowledge proof system verifies that you are 65 or older using secure signals 
-                    such as Social Security deposits and retirement income patterns—without ever accessing 
-                    or exposing your actual account information, exact age, or personal details.
+                    Click "Our Zero Knowledge System" to learn more about how we verify your age eligibility 
+                    using secure, privacy-preserving technology.
                   </p>
-                  <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '12px',
-                    marginTop: '20px'
-                  }}>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px',
-                      padding: '12px',
-                      backgroundColor: 'var(--nyt-cream)',
-                      borderRadius: '8px',
-                      border: '1px solid var(--nyt-border)'
-                    }}>
-                      <span style={{fontSize: '1.2rem'}}>🔒</span>
-                      <div>
-                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                          Privacy Protected
-                        </div>
-                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                          Your exact age and personal information remain completely private
-                        </div>
-                      </div>
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px',
-                      padding: '12px',
-                      backgroundColor: 'var(--nyt-cream)',
-                      borderRadius: '8px',
-                      border: '1px solid var(--nyt-border)'
-                    }}>
-                      <span style={{fontSize: '1.2rem'}}>🛡️</span>
-                      <div>
-                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                          HIPAA Compliant
-                        </div>
-                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                          Full compliance with healthcare privacy regulations
-                        </div>
-                      </div>
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px',
-                      padding: '12px',
-                      backgroundColor: 'var(--nyt-cream)',
-                      borderRadius: '8px',
-                      border: '1px solid var(--nyt-border)'
-                    }}>
-                      <span style={{fontSize: '1.2rem'}}>🔐</span>
-                      <div>
-                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                          Zero-Knowledge Proofs
-                        </div>
-                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                          Mathematical certainty protects your privacy
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div style={{
-                  marginTop: '20px',
-                  padding: '15px',
-                  backgroundColor: 'var(--nyt-cream)',
-                  borderRadius: '8px',
-                  border: '1px solid var(--nyt-border)'
-                }}>
-                  <div style={{
-                    fontWeight: '600',
-                    marginBottom: '8px',
-                    color: 'var(--nyt-black)',
-                    fontSize: '0.95rem'
-                  }}>
-                    How It Works
-                  </div>
-                  <div style={{
-                    color: 'var(--nyt-gray)',
-                    lineHeight: '1.6',
-                    fontSize: '0.9rem'
-                  }}>
-                    We use cryptographic zero-knowledge proofs to verify your age eligibility through secure 
-                    signals like Social Security deposit patterns and retirement income indicators. 
-                    No account numbers, balances, or personal details are ever accessed or stored.
-                  </div>
                 </div>
               </div>
             </div>
@@ -567,16 +431,6 @@ export default function Home() {
                     transition: 'color 0.2s ease'
                   }}>
                     Zero-Knowledge Systems
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/zk-systems" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Zero-Knowledge Proofs
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>
@@ -761,6 +615,12 @@ export default function Home() {
       <MedicareCardModal 
         isOpen={showMedicareCardModal}
         onClose={() => setShowMedicareCardModal(false)}
+      />
+
+      {/* Zero Knowledge Modal */}
+      <ZeroKnowledgeModal 
+        isOpen={showZeroKnowledgeModal}
+        onClose={() => setShowZeroKnowledgeModal(false)}
       />
     </div>
   )
