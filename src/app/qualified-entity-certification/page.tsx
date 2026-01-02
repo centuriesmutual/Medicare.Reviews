@@ -85,8 +85,8 @@ export default function QualifiedEntityCertificationPage() {
               backgroundColor: 'rgba(255,255,255,0.1)'
             }}>
               <img
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop"
-                alt="Healthcare certification and compliance"
+                src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop"
+                alt="Family healthcare and wellness"
                 style={{
                   width: '100%',
                   height: '100%',
