@@ -56,24 +56,53 @@ export default function QualifiedEntityCertificationPage() {
             <div style={{
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
-              gap: '40px',
-              alignItems: 'center'
+              gap: '60px',
+              alignItems: 'start',
+              maxWidth: '1000px',
+              margin: '0 auto'
             }}>
-              <div>
+              <div style={{
+                padding: '30px',
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                borderRadius: '12px',
+                backdropFilter: 'blur(10px)'
+              }}>
+                <h2 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  marginBottom: '15px',
+                  color: 'white',
+                  fontFamily: 'Playfair Display, serif'
+                }}>
+                  Certified Compliance
+                </h2>
                 <p style={{
-                  fontSize: '1.4rem',
-                  marginBottom: '20px',
-                  fontWeight: '500',
+                  fontSize: '1.2rem',
+                  lineHeight: '1.7',
                   color: 'rgba(255,255,255,0.95)'
                 }}>
                   Certified compliance with federal healthcare data access regulations
                 </p>
               </div>
-              <div>
+              <div style={{
+                padding: '30px',
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                borderRadius: '12px',
+                backdropFilter: 'blur(10px)'
+              }}>
+                <h2 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  marginBottom: '15px',
+                  color: 'white',
+                  fontFamily: 'Playfair Display, serif'
+                }}>
+                  Our Mission
+                </h2>
                 <p style={{
-                  color: 'rgba(255,255,255,0.8)',
+                  color: 'rgba(255,255,255,0.9)',
                   fontSize: '1.1rem',
-                  lineHeight: '1.6'
+                  lineHeight: '1.7'
                 }}>
                   Medicare Reviews operates as a Qualified Entity under federal regulations, 
                   enabling secure, privacy-preserving access to healthcare data for research 
@@ -295,7 +324,8 @@ export default function QualifiedEntityCertificationPage() {
       <section style={{
         padding: '80px 0',
         backgroundColor: 'var(--nyt-accent)',
-        color: 'white'
+        color: 'white',
+        position: 'relative'
       }}>
         <div className="nyt-container">
           <div style={{
@@ -436,12 +466,20 @@ export default function QualifiedEntityCertificationPage() {
             </div>
           </div>
           
-          {/* Call to Action */}
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section style={{
+        padding: '80px 0',
+        backgroundColor: 'var(--nyt-black)',
+        color: 'white'
+      }}>
+        <div className="nyt-container">
           <div style={{
-            marginTop: '60px',
             textAlign: 'center',
             maxWidth: '800px',
-            margin: '60px auto 0'
+            margin: '0 auto'
           }}>
             <h3 style={{
               fontSize: '2rem',
@@ -456,7 +494,8 @@ export default function QualifiedEntityCertificationPage() {
               fontSize: '1.2rem',
               marginBottom: '30px',
               opacity: 0.95,
-              lineHeight: '1.6'
+              lineHeight: '1.6',
+              color: 'rgba(255,255,255,0.9)'
             }}>
               Join our platform and start earning while contributing to healthcare quality improvement.
             </p>
@@ -467,8 +506,8 @@ export default function QualifiedEntityCertificationPage() {
               flexWrap: 'wrap'
             }}>
               <Link href="/earning" className="nyt-button" style={{
-                backgroundColor: 'white',
-                color: 'var(--nyt-accent)',
+                backgroundColor: 'var(--nyt-accent)',
+                color: 'white',
                 padding: '16px 32px',
                 fontSize: '1.1rem',
                 fontWeight: '600',
