@@ -30,7 +30,7 @@ export default function QualifiedEntityCertificationPage() {
         color: 'white'
       }}>
         <div className="nyt-container">
-          <div style={{textAlign: 'center', maxWidth: '900px', margin: '0 auto'}}>
+          <div style={{maxWidth: '1200px', margin: '0 auto'}}>
             <div style={{
               width: '100px',
               height: '100px',
@@ -46,31 +46,41 @@ export default function QualifiedEntityCertificationPage() {
             
             <h1 className="nyt-headline large" style={{
               fontSize: '3.5rem',
-              marginBottom: '25px',
-              color: 'white'
+              marginBottom: '30px',
+              color: 'white',
+              textAlign: 'center'
             }}>
               Qualified Entity Certification
             </h1>
             
-            <p style={{
-              fontSize: '1.4rem',
-              marginBottom: '20px',
-              fontWeight: '500',
-              color: 'rgba(255,255,255,0.95)'
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '40px',
+              alignItems: 'center'
             }}>
-              Certified compliance with federal healthcare data access regulations
-            </p>
-            <p style={{
-              color: 'rgba(255,255,255,0.8)',
-              fontSize: '1.1rem',
-              lineHeight: '1.6',
-              maxWidth: '700px',
-              margin: '0 auto'
-            }}>
-              Medicare Reviews operates as a Qualified Entity under federal regulations, 
-              enabling secure, privacy-preserving access to healthcare data for research 
-              and public health purposes.
-            </p>
+              <div>
+                <p style={{
+                  fontSize: '1.4rem',
+                  marginBottom: '20px',
+                  fontWeight: '500',
+                  color: 'rgba(255,255,255,0.95)'
+                }}>
+                  Certified compliance with federal healthcare data access regulations
+                </p>
+              </div>
+              <div>
+                <p style={{
+                  color: 'rgba(255,255,255,0.8)',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.6'
+                }}>
+                  Medicare Reviews operates as a Qualified Entity under federal regulations, 
+                  enabling secure, privacy-preserving access to healthcare data for research 
+                  and public health purposes.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -425,6 +435,60 @@ export default function QualifiedEntityCertificationPage() {
               </div>
             </div>
           </div>
+          
+          {/* Call to Action */}
+          <div style={{
+            marginTop: '60px',
+            textAlign: 'center',
+            maxWidth: '800px',
+            margin: '60px auto 0'
+          }}>
+            <h3 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              marginBottom: '20px',
+              color: 'white',
+              fontFamily: 'Playfair Display, serif'
+            }}>
+              Ready to Get Started?
+            </h3>
+            <p style={{
+              fontSize: '1.2rem',
+              marginBottom: '30px',
+              opacity: 0.95,
+              lineHeight: '1.6'
+            }}>
+              Join our platform and start earning while contributing to healthcare quality improvement.
+            </p>
+            <div style={{
+              display: 'flex',
+              gap: '20px',
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}>
+              <Link href="/earning" className="nyt-button" style={{
+                backgroundColor: 'white',
+                color: 'var(--nyt-accent)',
+                padding: '16px 32px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                textDecoration: 'none'
+              }}>
+                Start Earning
+              </Link>
+              <Link href="/" className="nyt-button" style={{
+                backgroundColor: 'transparent',
+                border: '2px solid white',
+                color: 'white',
+                padding: '16px 32px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                textDecoration: 'none'
+              }}>
+                Learn More
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -436,192 +500,6 @@ export default function QualifiedEntityCertificationPage() {
         borderTop: '3px solid var(--nyt-accent)'
       }}>
         <div className="nyt-container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '30px',
-            marginBottom: '25px'
-          }}>
-            <div>
-              <h3 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.4rem',
-                fontWeight: '700',
-                color: 'var(--nyt-cream)',
-                marginBottom: '15px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Medicare Reviews
-              </h3>
-              <p style={{
-                color: 'var(--nyt-light-gray)',
-                lineHeight: '1.5',
-                marginBottom: '10px',
-                fontSize: '0.9rem'
-              }}>
-                The premier platform for anonymous healthcare reviews powered by zero-knowledge proof technology.
-              </p>
-              <p style={{
-                color: 'var(--nyt-light-gray)',
-                fontSize: '0.85rem',
-                lineHeight: '1.4'
-              }}>
-                Your privacy is protected by cryptographic certainty.
-              </p>
-            </div>
-            
-            <div>
-              <h4 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                color: 'var(--nyt-cream)',
-                marginBottom: '12px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Platform
-              </h4>
-              <ul style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/zk-systems" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Zero-Knowledge Systems
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/qualified-entity-certification" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Qualified Entity Certification
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/privacy-first" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Privacy-First Design
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                color: 'var(--nyt-cream)',
-                marginBottom: '12px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Company
-              </h4>
-              <ul style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/about" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    About Us
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/press" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Press
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/contact" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                color: 'var(--nyt-cream)',
-                marginBottom: '12px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Legal
-              </h4>
-              <ul style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-              }}>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/privacy" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/terms" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    Terms of Service
-                  </Link>
-                </li>
-                <li style={{marginBottom: '6px'}}>
-                  <Link href="/compliance" style={{
-                    color: 'var(--nyt-light-gray)',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease'
-                  }}>
-                    HIPAA Compliance
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
           <div style={{
             borderTop: '1px solid var(--nyt-border)',
             paddingTop: '20px',
