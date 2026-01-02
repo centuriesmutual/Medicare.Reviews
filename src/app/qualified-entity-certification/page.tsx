@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Shield, CheckCircle, Award, FileText, Lock, Users } from 'lucide-react'
+import { ArrowLeft, Shield, CheckCircle, Award, FileText, Lock, Users, BadgeCheck } from 'lucide-react'
 
 export default function QualifiedEntityCertificationPage() {
   return (
@@ -66,24 +66,42 @@ export default function QualifiedEntityCertificationPage() {
                 padding: '30px',
                 backgroundColor: 'rgba(255,255,255,0.1)',
                 borderRadius: '12px',
-                backdropFilter: 'blur(10px)'
+                backdropFilter: 'blur(10px)',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <h2 style={{
-                  fontSize: '1.5rem',
-                  fontWeight: '700',
-                  marginBottom: '15px',
-                  color: 'white',
-                  fontFamily: 'Playfair Display, serif'
+                <div style={{
+                  position: 'absolute',
+                  top: '-20px',
+                  right: '-20px',
+                  width: '120px',
+                  height: '120px',
+                  backgroundColor: 'rgba(255,255,255,0.1)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}>
-                  Certified Compliance
-                </h2>
-                <p style={{
-                  fontSize: '1.2rem',
-                  lineHeight: '1.7',
-                  color: 'rgba(255,255,255,0.95)'
-                }}>
-                  Certified compliance with federal healthcare data access regulations
-                </p>
+                  <BadgeCheck style={{width: '60px', height: '60px', color: 'var(--nyt-accent)', opacity: 0.6}} />
+                </div>
+                <div style={{position: 'relative', zIndex: 1}}>
+                  <h2 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    marginBottom: '15px',
+                    color: 'white',
+                    fontFamily: 'Playfair Display, serif'
+                  }}>
+                    Certified Compliance
+                  </h2>
+                  <p style={{
+                    fontSize: '1.2rem',
+                    lineHeight: '1.7',
+                    color: 'rgba(255,255,255,0.95)'
+                  }}>
+                    Certified compliance with federal healthcare data access regulations
+                  </p>
+                </div>
               </div>
               <div style={{
                 padding: '30px',
@@ -150,17 +168,32 @@ export default function QualifiedEntityCertificationPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               style={{
-                gridColumn: 'span 12',
+                gridColumn: 'span 8',
                 padding: '40px',
                 backgroundColor: 'var(--nyt-cream)',
                 borderRadius: '12px',
-                border: '2px solid var(--nyt-accent)'
+                border: '2px solid var(--nyt-accent)',
+                display: 'flex',
+                flexDirection: 'column'
               }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                backgroundColor: 'var(--nyt-accent)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '25px',
+                borderRadius: '12px'
+              }}>
+                <Award style={{width: '30px', height: '30px', color: 'white'}} />
+              </div>
               <p style={{
                 fontSize: '1.1rem',
                 lineHeight: '1.8',
                 color: 'var(--nyt-black)',
-                marginBottom: '25px'
+                marginBottom: '25px',
+                flex: 1
               }}>
                 A Qualified Entity is an organization that has been certified by the Centers for 
                 Medicare & Medicaid Services (CMS) to receive and analyze Medicare claims data 
@@ -168,10 +201,47 @@ export default function QualifiedEntityCertificationPage() {
                 enables organizations to access aggregated healthcare data while maintaining strict 
                 privacy and security standards.
               </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              style={{
+                gridColumn: 'span 4',
+                padding: '40px',
+                backgroundColor: 'white',
+                borderRadius: '12px',
+                border: '2px solid var(--nyt-border)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
+              }}>
+              <div style={{
+                width: '50px',
+                height: '50px',
+                backgroundColor: 'var(--nyt-accent)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '20px',
+                borderRadius: '50%'
+              }}>
+                <Shield style={{width: '25px', height: '25px', color: 'white'}} />
+              </div>
+              <h3 style={{
+                fontSize: '1.3rem',
+                fontWeight: '700',
+                marginBottom: '15px',
+                color: 'var(--nyt-black)',
+                fontFamily: 'Playfair Display, serif'
+              }}>
+                CMS Certified
+              </h3>
               <p style={{
-                fontSize: '1.1rem',
-                lineHeight: '1.8',
-                color: 'var(--nyt-black)'
+                fontSize: '1rem',
+                lineHeight: '1.7',
+                color: 'var(--nyt-gray)'
               }}>
                 Medicare Reviews has achieved Qualified Entity certification, demonstrating our 
                 commitment to privacy-preserving healthcare data analysis and our compliance with 
@@ -217,12 +287,13 @@ export default function QualifiedEntityCertificationPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               style={{
-                gridColumn: 'span 4',
-                padding: '35px',
+                gridColumn: 'span 5',
+                padding: '40px',
                 backgroundColor: 'white',
                 borderRadius: '12px',
                 border: '2px solid var(--nyt-accent)',
-                textAlign: 'center'
+                display: 'flex',
+                flexDirection: 'column'
               }}>
               <div style={{
                 width: '70px',
@@ -231,8 +302,8 @@ export default function QualifiedEntityCertificationPage() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                margin: '0 auto 25px',
-                borderRadius: '50%'
+                marginBottom: '25px',
+                borderRadius: '12px'
               }}>
                 <Shield style={{width: '35px', height: '35px', color: 'white'}} />
               </div>
@@ -248,7 +319,8 @@ export default function QualifiedEntityCertificationPage() {
               <p style={{
                 fontSize: '1rem',
                 color: 'var(--nyt-gray)',
-                lineHeight: '1.7'
+                lineHeight: '1.7',
+                flex: 1
               }}>
                 Implementation of comprehensive security measures including encryption, 
                 access controls, and audit logging to protect healthcare data.
@@ -258,14 +330,15 @@ export default function QualifiedEntityCertificationPage() {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               style={{
                 gridColumn: 'span 4',
-                padding: '35px',
+                padding: '40px',
                 backgroundColor: 'var(--nyt-cream)',
                 borderRadius: '12px',
                 border: '2px solid var(--nyt-accent)',
-                textAlign: 'center'
+                display: 'flex',
+                flexDirection: 'column'
               }}>
               <div style={{
                 width: '70px',
@@ -274,8 +347,8 @@ export default function QualifiedEntityCertificationPage() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                margin: '0 auto 25px',
-                borderRadius: '50%'
+                marginBottom: '25px',
+                borderRadius: '12px'
               }}>
                 <Lock style={{width: '35px', height: '35px', color: 'white'}} />
               </div>
@@ -291,7 +364,8 @@ export default function QualifiedEntityCertificationPage() {
               <p style={{
                 fontSize: '1rem',
                 color: 'var(--nyt-gray)',
-                lineHeight: '1.7'
+                lineHeight: '1.7',
+                flex: 1
               }}>
                 Strict adherence to HIPAA regulations and federal privacy laws, ensuring 
                 that personal health information is protected and anonymized.
@@ -301,40 +375,42 @@ export default function QualifiedEntityCertificationPage() {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               style={{
-                gridColumn: 'span 4',
-                padding: '35px',
+                gridColumn: 'span 3',
+                padding: '40px',
                 backgroundColor: 'white',
                 borderRadius: '12px',
                 border: '2px solid var(--nyt-border)',
-                textAlign: 'center'
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
               }}>
               <div style={{
-                width: '70px',
-                height: '70px',
+                width: '60px',
+                height: '60px',
                 backgroundColor: 'var(--nyt-accent)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                margin: '0 auto 25px',
+                marginBottom: '20px',
                 borderRadius: '50%'
               }}>
-                <FileText style={{width: '35px', height: '35px', color: 'white'}} />
+                <FileText style={{width: '30px', height: '30px', color: 'white'}} />
               </div>
               <h3 style={{
-                fontSize: '1.4rem',
+                fontSize: '1.2rem',
                 fontWeight: '700',
-                marginBottom: '15px',
+                marginBottom: '12px',
                 color: 'var(--nyt-black)',
                 fontFamily: 'Playfair Display, serif'
               }}>
                 Compliance Documentation
               </h3>
               <p style={{
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 color: 'var(--nyt-gray)',
-                lineHeight: '1.7'
+                lineHeight: '1.6'
               }}>
                 Comprehensive documentation of policies, procedures, and safeguards 
                 demonstrating ongoing compliance with federal requirements.
@@ -363,7 +439,7 @@ export default function QualifiedEntityCertificationPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               style={{
-                gridColumn: 'span 6',
+                gridColumn: 'span 7',
                 padding: '40px',
                 backgroundColor: 'rgba(255,255,255,0.1)',
                 borderRadius: '12px',
@@ -378,9 +454,9 @@ export default function QualifiedEntityCertificationPage() {
               </h2>
               
               <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '25px',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '20px',
                 marginTop: '30px'
               }}>
                 <div style={{
@@ -398,7 +474,7 @@ export default function QualifiedEntityCertificationPage() {
                   }}>
                     Enhanced Data Access
                   </h4>
-                  <p style={{fontSize: '1rem', opacity: 0.95, lineHeight: '1.6'}}>
+                  <p style={{fontSize: '0.95rem', opacity: 0.95, lineHeight: '1.6'}}>
                     Access to aggregated Medicare claims data enables comprehensive analysis 
                     of healthcare provider performance and outcomes.
                   </p>
@@ -419,13 +495,14 @@ export default function QualifiedEntityCertificationPage() {
                   }}>
                     Privacy-Preserving Analysis
                   </h4>
-                  <p style={{fontSize: '1rem', opacity: 0.95, lineHeight: '1.6'}}>
+                  <p style={{fontSize: '0.95rem', opacity: 0.95, lineHeight: '1.6'}}>
                     Zero-knowledge proof technology ensures that data analysis can occur 
                     without exposing individual patient information or personal identifiers.
                   </p>
                 </div>
                 
                 <div style={{
+                  gridColumn: 'span 2',
                   padding: '25px',
                   backgroundColor: 'rgba(255,255,255,0.15)',
                   borderRadius: '8px',
@@ -440,7 +517,7 @@ export default function QualifiedEntityCertificationPage() {
                   }}>
                     Regulatory Compliance
                   </h4>
-                  <p style={{fontSize: '1rem', opacity: 0.95, lineHeight: '1.6'}}>
+                  <p style={{fontSize: '0.95rem', opacity: 0.95, lineHeight: '1.6'}}>
                     Certification demonstrates adherence to federal healthcare regulations 
                     and commitment to maintaining the highest standards of data protection.
                   </p>
@@ -451,18 +528,20 @@ export default function QualifiedEntityCertificationPage() {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               style={{
-                gridColumn: 'span 6',
-                padding: '50px',
+                gridColumn: 'span 5',
+                padding: '40px',
                 backgroundColor: 'rgba(255,255,255,0.1)',
                 borderRadius: '12px',
-                backdropFilter: 'blur(10px)'
+                backdropFilter: 'blur(10px)',
+                display: 'flex',
+                flexDirection: 'column'
               }}>
               <h3 style={{
                 fontSize: '1.8rem',
                 fontWeight: '700',
-                marginBottom: '30px',
+                marginBottom: '25px',
                 color: 'white'
               }}>
                 Our Commitment
@@ -472,7 +551,8 @@ export default function QualifiedEntityCertificationPage() {
                 fontSize: '1.1rem',
                 lineHeight: '1.8',
                 marginBottom: '30px',
-                color: 'rgba(255,255,255,0.95)'
+                color: 'rgba(255,255,255,0.95)',
+                flex: 1
               }}>
                 As a Qualified Entity, Medicare Reviews is committed to using healthcare data 
                 responsibly and ethically. Our zero-knowledge proof systems ensure that we can 
@@ -483,8 +563,7 @@ export default function QualifiedEntityCertificationPage() {
                 padding: '25px',
                 backgroundColor: 'rgba(255,255,255,0.2)',
                 borderRadius: '8px',
-                backdropFilter: 'blur(10px)',
-                marginTop: '30px'
+                backdropFilter: 'blur(10px)'
               }}>
                 <Users style={{width: '40px', height: '40px', color: 'white', marginBottom: '15px'}} />
                 <h4 style={{
