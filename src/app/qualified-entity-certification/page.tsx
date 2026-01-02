@@ -56,47 +56,50 @@ export default function QualifiedEntityCertificationPage() {
             
             <div style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '60px',
-              alignItems: 'start',
-              maxWidth: '1000px',
+              gridTemplateColumns: 'repeat(12, 1fr)',
+              gap: '30px',
+              maxWidth: '1200px',
               margin: '0 auto'
             }}>
               <div style={{
-                padding: '30px',
+                gridColumn: 'span 6',
+                padding: '40px',
                 backgroundColor: 'rgba(255,255,255,0.1)',
                 borderRadius: '12px',
                 backdropFilter: 'blur(10px)',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '200px'
               }}>
                 <div style={{
                   position: 'absolute',
-                  top: '-20px',
-                  right: '-20px',
-                  width: '120px',
-                  height: '120px',
-                  backgroundColor: 'rgba(255,255,255,0.1)',
+                  top: '-30px',
+                  right: '-30px',
+                  width: '140px',
+                  height: '140px',
+                  backgroundColor: 'rgba(255,255,255,0.08)',
                   borderRadius: '50%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}>
-                  <BadgeCheck style={{width: '60px', height: '60px', color: 'var(--nyt-accent)', opacity: 0.6}} />
+                  <BadgeCheck style={{width: '70px', height: '70px', color: 'var(--nyt-accent)', opacity: 0.5}} />
                 </div>
-                <div style={{position: 'relative', zIndex: 1}}>
+                <div style={{position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                   <h2 style={{
-                    fontSize: '1.5rem',
+                    fontSize: '1.6rem',
                     fontWeight: '700',
-                    marginBottom: '15px',
+                    marginBottom: '20px',
                     color: 'white',
                     fontFamily: 'Playfair Display, serif'
                   }}>
                     Certified Compliance
                   </h2>
                   <p style={{
-                    fontSize: '1.2rem',
-                    lineHeight: '1.7',
+                    fontSize: '1.15rem',
+                    lineHeight: '1.8',
                     color: 'rgba(255,255,255,0.95)'
                   }}>
                     Certified compliance with federal healthcare data access regulations
@@ -104,24 +107,29 @@ export default function QualifiedEntityCertificationPage() {
                 </div>
               </div>
               <div style={{
-                padding: '30px',
+                gridColumn: 'span 6',
+                padding: '40px',
                 backgroundColor: 'rgba(255,255,255,0.1)',
                 borderRadius: '12px',
-                backdropFilter: 'blur(10px)'
+                backdropFilter: 'blur(10px)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                minHeight: '200px'
               }}>
                 <h2 style={{
-                  fontSize: '1.5rem',
+                  fontSize: '1.6rem',
                   fontWeight: '700',
-                  marginBottom: '15px',
+                  marginBottom: '20px',
                   color: 'white',
                   fontFamily: 'Playfair Display, serif'
                 }}>
                   Our Mission
                 </h2>
                 <p style={{
-                  color: 'rgba(255,255,255,0.9)',
-                  fontSize: '1.1rem',
-                  lineHeight: '1.7'
+                  color: 'rgba(255,255,255,0.95)',
+                  fontSize: '1.15rem',
+                  lineHeight: '1.8'
                 }}>
                   Medicare Reviews operates as a Qualified Entity under federal regulations, 
                   enabling secure, privacy-preserving access to healthcare data for research 
@@ -161,15 +169,15 @@ export default function QualifiedEntityCertificationPage() {
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
             gap: '30px',
-            gridAutoRows: 'minmax(200px, auto)'
+            gridAutoRows: 'minmax(250px, auto)'
           }}>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               style={{
-                gridColumn: 'span 8',
-                padding: '40px',
+                gridColumn: 'span 7',
+                padding: '45px',
                 backgroundColor: 'var(--nyt-cream)',
                 borderRadius: '12px',
                 border: '2px solid var(--nyt-accent)',
@@ -177,20 +185,20 @@ export default function QualifiedEntityCertificationPage() {
                 flexDirection: 'column'
               }}>
               <div style={{
-                width: '60px',
-                height: '60px',
+                width: '70px',
+                height: '70px',
                 backgroundColor: 'var(--nyt-accent)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '25px',
+                marginBottom: '30px',
                 borderRadius: '12px'
               }}>
-                <Award style={{width: '30px', height: '30px', color: 'white'}} />
+                <Award style={{width: '35px', height: '35px', color: 'white'}} />
               </div>
               <p style={{
-                fontSize: '1.1rem',
-                lineHeight: '1.8',
+                fontSize: '1.15rem',
+                lineHeight: '1.9',
                 color: 'var(--nyt-black)',
                 marginBottom: '25px',
                 flex: 1
@@ -208,8 +216,8 @@ export default function QualifiedEntityCertificationPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               style={{
-                gridColumn: 'span 4',
-                padding: '40px',
+                gridColumn: 'span 5',
+                padding: '45px',
                 backgroundColor: 'white',
                 borderRadius: '12px',
                 border: '2px solid var(--nyt-border)',
@@ -218,29 +226,29 @@ export default function QualifiedEntityCertificationPage() {
                 justifyContent: 'center'
               }}>
               <div style={{
-                width: '50px',
-                height: '50px',
+                width: '70px',
+                height: '70px',
                 backgroundColor: 'var(--nyt-accent)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '20px',
-                borderRadius: '50%'
+                marginBottom: '25px',
+                borderRadius: '12px'
               }}>
-                <Shield style={{width: '25px', height: '25px', color: 'white'}} />
+                <Shield style={{width: '35px', height: '35px', color: 'white'}} />
               </div>
               <h3 style={{
-                fontSize: '1.3rem',
+                fontSize: '1.5rem',
                 fontWeight: '700',
-                marginBottom: '15px',
+                marginBottom: '20px',
                 color: 'var(--nyt-black)',
                 fontFamily: 'Playfair Display, serif'
               }}>
                 CMS Certified
               </h3>
               <p style={{
-                fontSize: '1rem',
-                lineHeight: '1.7',
+                fontSize: '1.05rem',
+                lineHeight: '1.8',
                 color: 'var(--nyt-gray)'
               }}>
                 Medicare Reviews has achieved Qualified Entity certification, demonstrating our 
@@ -280,46 +288,47 @@ export default function QualifiedEntityCertificationPage() {
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
             gap: '30px',
-            gridAutoRows: 'minmax(200px, auto)'
+            gridAutoRows: 'minmax(280px, auto)'
           }}>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               style={{
-                gridColumn: 'span 5',
-                padding: '40px',
+                gridColumn: 'span 4',
+                padding: '45px',
                 backgroundColor: 'white',
                 borderRadius: '12px',
                 border: '2px solid var(--nyt-accent)',
                 display: 'flex',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                textAlign: 'center'
               }}>
               <div style={{
-                width: '70px',
-                height: '70px',
+                width: '80px',
+                height: '80px',
                 backgroundColor: 'var(--nyt-accent)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '25px',
+                margin: '0 auto 30px',
                 borderRadius: '12px'
               }}>
-                <Shield style={{width: '35px', height: '35px', color: 'white'}} />
+                <Shield style={{width: '40px', height: '40px', color: 'white'}} />
               </div>
               <h3 style={{
-                fontSize: '1.4rem',
+                fontSize: '1.5rem',
                 fontWeight: '700',
-                marginBottom: '15px',
+                marginBottom: '20px',
                 color: 'var(--nyt-black)',
                 fontFamily: 'Playfair Display, serif'
               }}>
                 Security Standards
               </h3>
               <p style={{
-                fontSize: '1rem',
+                fontSize: '1.05rem',
                 color: 'var(--nyt-gray)',
-                lineHeight: '1.7',
+                lineHeight: '1.8',
                 flex: 1
               }}>
                 Implementation of comprehensive security measures including encryption, 
@@ -333,38 +342,39 @@ export default function QualifiedEntityCertificationPage() {
               transition={{ duration: 0.8, delay: 0.3 }}
               style={{
                 gridColumn: 'span 4',
-                padding: '40px',
+                padding: '45px',
                 backgroundColor: 'var(--nyt-cream)',
                 borderRadius: '12px',
                 border: '2px solid var(--nyt-accent)',
                 display: 'flex',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                textAlign: 'center'
               }}>
               <div style={{
-                width: '70px',
-                height: '70px',
+                width: '80px',
+                height: '80px',
                 backgroundColor: 'var(--nyt-accent)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '25px',
+                margin: '0 auto 30px',
                 borderRadius: '12px'
               }}>
-                <Lock style={{width: '35px', height: '35px', color: 'white'}} />
+                <Lock style={{width: '40px', height: '40px', color: 'white'}} />
               </div>
               <h3 style={{
-                fontSize: '1.4rem',
+                fontSize: '1.5rem',
                 fontWeight: '700',
-                marginBottom: '15px',
+                marginBottom: '20px',
                 color: 'var(--nyt-black)',
                 fontFamily: 'Playfair Display, serif'
               }}>
                 Privacy Protection
               </h3>
               <p style={{
-                fontSize: '1rem',
+                fontSize: '1.05rem',
                 color: 'var(--nyt-gray)',
-                lineHeight: '1.7',
+                lineHeight: '1.8',
                 flex: 1
               }}>
                 Strict adherence to HIPAA regulations and federal privacy laws, ensuring 
@@ -377,40 +387,41 @@ export default function QualifiedEntityCertificationPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               style={{
-                gridColumn: 'span 3',
-                padding: '40px',
+                gridColumn: 'span 4',
+                padding: '45px',
                 backgroundColor: 'white',
                 borderRadius: '12px',
                 border: '2px solid var(--nyt-border)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center'
+                textAlign: 'center'
               }}>
               <div style={{
-                width: '60px',
-                height: '60px',
+                width: '80px',
+                height: '80px',
                 backgroundColor: 'var(--nyt-accent)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '20px',
-                borderRadius: '50%'
+                margin: '0 auto 30px',
+                borderRadius: '12px'
               }}>
-                <FileText style={{width: '30px', height: '30px', color: 'white'}} />
+                <FileText style={{width: '40px', height: '40px', color: 'white'}} />
               </div>
               <h3 style={{
-                fontSize: '1.2rem',
+                fontSize: '1.5rem',
                 fontWeight: '700',
-                marginBottom: '12px',
+                marginBottom: '20px',
                 color: 'var(--nyt-black)',
                 fontFamily: 'Playfair Display, serif'
               }}>
                 Compliance Documentation
               </h3>
               <p style={{
-                fontSize: '0.95rem',
+                fontSize: '1.05rem',
                 color: 'var(--nyt-gray)',
-                lineHeight: '1.6'
+                lineHeight: '1.8',
+                flex: 1
               }}>
                 Comprehensive documentation of policies, procedures, and safeguards 
                 demonstrating ongoing compliance with federal requirements.
