@@ -337,6 +337,70 @@ export default function Home() {
                     Click "Our Zero Knowledge System" to learn more about how we verify your age eligibility 
                     using secure, privacy-preserving technology.
                   </p>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px',
+                    marginTop: '20px'
+                  }}>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      padding: '12px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      borderRadius: '8px',
+                      border: '1px solid var(--nyt-border)'
+                    }}>
+                      <span style={{fontSize: '1.2rem'}}>🔒</span>
+                      <div>
+                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                          Privacy Protected
+                        </div>
+                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                          Your exact age and personal information remain completely private
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      padding: '12px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      borderRadius: '8px',
+                      border: '1px solid var(--nyt-border)'
+                    }}>
+                      <span style={{fontSize: '1.2rem'}}>🛡️</span>
+                      <div>
+                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                          HIPAA Compliant
+                        </div>
+                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                          Full compliance with healthcare privacy regulations
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      padding: '12px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      borderRadius: '8px',
+                      border: '1px solid var(--nyt-border)'
+                    }}>
+                      <span style={{fontSize: '1.2rem'}}>🔐</span>
+                      <div>
+                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                          Zero-Knowledge Proofs
+                        </div>
+                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                          Mathematical certainty protects your privacy
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
