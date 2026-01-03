@@ -191,9 +191,9 @@ export default function Home() {
 
             {/* Your Benefits Are Never Touched Card */}
             <div className="nyt-sidebar-section" style={{
-              marginTop: '60px',
-              paddingTop: '30px',
-              borderTop: '2px solid var(--nyt-border)'
+              marginTop: '100px',
+              paddingTop: '40px',
+              borderTop: 'none'
             }}>
               <h3 className="nyt-sidebar-title">Your Benefits Are Never Touched</h3>
               <div className="nyt-sidebar-item">
