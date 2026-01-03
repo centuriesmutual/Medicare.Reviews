@@ -610,12 +610,19 @@ export default function Home() {
               gap: '20px',
               fontSize: '0.85rem'
             }}>
-              <Link href="/sitemap" style={{
+              <Link href="/privacy" style={{
                 color: 'var(--nyt-light-gray)',
                 textDecoration: 'none',
                 transition: 'color 0.2s ease'
               }}>
-                Sitemap
+                Privacy Policy
+              </Link>
+              <Link href="/terms" style={{
+                color: 'var(--nyt-light-gray)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}>
+                Terms and Conditions
               </Link>
               <Link href="/accessibility" style={{
                 color: 'var(--nyt-light-gray)',
