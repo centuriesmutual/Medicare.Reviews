@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Shield, Lock, FileText, CheckCircle, Key, Eye, EyeOff, Database, XCircle, Zap, Brain, Fingerprint } from 'lucide-react'
+import { ArrowLeft, Shield, Lock, FileText, CheckCircle, Key, Eye, EyeOff, Database, XCircle, Zap, Fingerprint } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 export default function AdNetworkPage() {
@@ -145,7 +145,7 @@ export default function AdNetworkPage() {
                   marginBottom: '40px',
                   borderRadius: '12px'
                 }}>
-                  <Brain style={{width: '40px', height: '40px', color: 'white'}} />
+                  <Key style={{width: '40px', height: '40px', color: 'white'}} />
                 </div>
                 
                 <h2 className="nyt-headline large" style={{
@@ -626,17 +626,9 @@ export default function AdNetworkPage() {
                 <p style={{
                   fontSize: '1.1rem',
                   lineHeight: '1.7',
-                  color: 'var(--nyt-gray)',
-                  marginBottom: '15px'
-                }}>
-                  We don't maintain a database of user accounts, profiles, or personal information. There's no "user table" to hack or leak.
-                </p>
-                <p style={{
-                  fontSize: '1.1rem',
-                  lineHeight: '1.7',
                   color: 'var(--nyt-gray)'
                 }}>
-                  We don't store session cookies, login tokens, or browsing history. Each interaction is independent and anonymous.
+                  We don't maintain a database of user accounts, profiles, or personal information. There's no "user table" to hack or leak.
                 </p>
               </motion.div>
               
