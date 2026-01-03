@@ -126,11 +126,6 @@ export default function NoMedicalAdvicePage() {
                 recommendations. We are not healthcare providers, medical professionals, or licensed medical 
                 practitioners.
               </p>
-              <p style={{marginBottom: '20px'}}>
-                If you have a medical emergency, seek immediate medical attention. For medical questions or 
-                concerns, always consult with a qualified healthcare provider who can assess your individual 
-                situation and provide appropriate medical guidance.
-              </p>
             </div>
           </motion.div>
 

@@ -81,54 +81,88 @@ export default function DocumentsPage() {
           }}>
             {/* Left Column - Header */}
             <div style={{
-              gridColumn: 'span 4'
+              gridColumn: 'span 4',
+              position: 'relative',
+              padding: '35px',
+              backgroundColor: 'var(--nyt-cream)',
+              borderRadius: '12px',
+              border: '2px solid var(--nyt-border)',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)'
             }}>
-              <div style={{
-                width: '60px',
-                height: '60px',
-                backgroundColor: 'var(--nyt-cream)',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '25px'
-              }}>
-                <FileText style={{
-                  width: '30px',
-                  height: '30px',
-                  color: 'var(--nyt-accent)'
-                }} />
-              </div>
-              <h1 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '2.5rem',
-                fontWeight: '700',
-                marginBottom: '15px',
-                lineHeight: '1.2',
-                color: 'var(--nyt-black)'
-              }}>
-                Documents
-              </h1>
-              <p style={{
-                fontSize: '1.1rem',
-                lineHeight: '1.6',
-                color: 'var(--nyt-gray)',
-                marginBottom: '20px'
-              }}>
-                Access technical documentation, compliance materials, and platform specifications
-              </p>
-              <div style={{
-                display: 'inline-block',
-                padding: '6px 14px',
-                backgroundColor: 'var(--nyt-cream)',
-                borderRadius: '4px',
-                fontSize: '0.8rem',
-                fontWeight: '600',
-                color: 'var(--nyt-accent)',
-                textTransform: 'uppercase'
-              }}>
-                Technical
-              </div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  backgroundColor: 'var(--nyt-accent)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '25px',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+                }}>
+                  <FileText style={{
+                    width: '30px',
+                    height: '30px',
+                    color: 'white'
+                  }} />
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h1 style={{
+                  fontFamily: 'Playfair Display, serif',
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  marginBottom: '15px',
+                  lineHeight: '1.2',
+                  color: 'var(--nyt-black)'
+                }}>
+                  Documents
+                </h1>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.7',
+                  color: 'var(--nyt-gray)',
+                  marginBottom: '25px',
+                  fontWeight: '400'
+                }}>
+                  Access technical documentation, compliance materials, and platform specifications
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <div style={{
+                  display: 'inline-block',
+                  padding: '8px 16px',
+                  backgroundColor: 'var(--nyt-accent)',
+                  borderRadius: '6px',
+                  fontSize: '0.8rem',
+                  fontWeight: '700',
+                  color: 'white',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+                }}>
+                  Technical
+                </div>
+              </motion.div>
             </div>
 
             {/* Right Column - Documents List */}
