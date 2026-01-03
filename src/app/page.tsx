@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Plus } from 'lucide-react'
+import { Plus, CheckCircle, Scale } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PostReview from '@/components/PostReview'
+import ZeroKnowledgeModal from '@/components/ZeroKnowledgeModal'
 
 interface Review {
   id: string
@@ -19,6 +20,7 @@ export default function Home() {
   const [reviews, setReviews] = useState<Review[]>([])
   const [isAuthenticated] = useState(true)
   const [showPostForm, setShowPostForm] = useState(false)
+  const [showZKModal, setShowZKModal] = useState(false)
 
   useEffect(() => {
     // Load reviews from localStorage or API
@@ -142,103 +144,100 @@ export default function Home() {
 
             <div className="nyt-divider"></div>
 
-            {/* Authentication Section - Full Width at Bottom */}
+            {/* Age Verification & Eligibility Section */}
             <div style={{width: '100%', marginTop: '40px'}}>
               <article className="nyt-article" style={{maxWidth: 'none', width: '100%'}}>
-                <h2 className="nyt-headline medium" style={{marginBottom: '20px', textAlign: 'center'}}>
-                  Authentication
+                <h2 className="nyt-headline medium" style={{marginBottom: '30px', textAlign: 'left'}}>
+                  Age Verification & Eligibility
                 </h2>
                 
-                <div className="nyt-content" style={{textAlign: 'center', maxWidth: '1200px', margin: '0 auto'}}>
-                  <div style={{marginBottom: '30px'}}>
-                    <h3 style={{
-                      fontFamily: 'Playfair Display, serif',
-                      fontSize: '1.3rem',
-                      fontWeight: '700',
-                      margin: '0 0 10px 0',
-                      color: 'var(--nyt-black)'
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(12, 1fr)',
+                  gap: '40px',
+                  alignItems: 'start'
+                }}>
+                  {/* Left Column */}
+                  <div style={{gridColumn: 'span 6'}}>
+                    <p style={{
+                      fontSize: '1rem',
+                      lineHeight: '1.7',
+                      color: 'var(--nyt-black)',
+                      marginBottom: '20px'
                     }}>
-                      Zero-Knowledge Authentication
-                    </h3>
-                    <p style={{fontSize: '1.1rem', marginBottom: '20px', color: 'var(--nyt-gray)'}}>
-                      Prove your identity without revealing personal information
+                      Verify that you are 65 or older to become eligible to earn within our HIPAA-compliant ad network. Your exact age remains completely private.
                     </p>
                     
                     <div style={{
                       display: 'flex',
                       flexWrap: 'wrap',
-                      justifyContent: 'center',
-                      gap: '15px',
-                      marginBottom: '30px'
+                      gap: '10px',
+                      marginBottom: '25px'
                     }}>
                       <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        padding: '10px 16px',
-                        backgroundColor: 'var(--nyt-bg)',
-                        borderRadius: '25px',
-                        border: '1px solid var(--nyt-border)'
+                        padding: '8px 16px',
+                        backgroundColor: 'var(--nyt-cream)',
+                        borderRadius: '6px',
+                        border: '1px solid var(--nyt-border)',
+                        fontSize: '0.85rem',
+                        fontWeight: '600',
+                        color: 'var(--nyt-black)'
                       }}>
-                        <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                          Privacy First
-                        </span>
+                        AGE 65+
                       </div>
                       <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        padding: '10px 16px',
-                        backgroundColor: 'var(--nyt-bg)',
-                        borderRadius: '25px',
-                        border: '1px solid var(--nyt-border)'
+                        padding: '8px 16px',
+                        backgroundColor: 'var(--nyt-cream)',
+                        borderRadius: '6px',
+                        border: '1px solid var(--nyt-border)',
+                        fontSize: '0.85rem',
+                        fontWeight: '600',
+                        color: 'var(--nyt-black)'
                       }}>
-                        <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                          Anonymous
-                        </span>
+                        PRIVACY PROTECTED
                       </div>
                       <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        padding: '10px 16px',
-                        backgroundColor: 'var(--nyt-bg)',
-                        borderRadius: '25px',
-                        border: '1px solid var(--nyt-border)'
+                        padding: '8px 16px',
+                        backgroundColor: 'var(--nyt-cream)',
+                        borderRadius: '6px',
+                        border: '1px solid var(--nyt-border)',
+                        fontSize: '0.85rem',
+                        fontWeight: '600',
+                        color: 'var(--nyt-black)'
                       }}>
-                        <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                          ZK Protected
-                        </span>
+                        HIPAA COMPLIANT
                       </div>
                     </div>
                     
-                    <div style={{
-                      padding: '20px',
-                      backgroundColor: 'var(--nyt-cream)',
-                      border: '2px solid var(--nyt-accent)',
-                      borderRadius: '8px',
-                      color: 'var(--nyt-accent)',
-                      marginBottom: '20px',
-                      display: 'inline-block'
-                    }}>
-                      ✓ Authenticated with ZK Proofs
-                    </div>
+                    <button
+                      onClick={() => setShowZKModal(true)}
+                      className="nyt-button"
+                      style={{
+                        backgroundColor: 'var(--nyt-accent)',
+                        padding: '14px 28px',
+                        fontSize: '1rem',
+                        fontWeight: '600',
+                        marginBottom: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px'
+                      }}
+                    >
+                      <CheckCircle style={{width: '20px', height: '20px'}} />
+                      ZERO KNOWLEDGE CHECK
+                    </button>
                     
                     <p style={{
-                      fontSize: '0.95rem',
-                      margin: '15px 0 0 0',
-                      color: 'var(--nyt-light-gray)',
-                      fontFamily: 'Georgia, serif'
+                      fontSize: '0.9rem',
+                      color: 'var(--nyt-gray)',
+                      lineHeight: '1.6'
                     }}>
-                      Your identity will be verified using zero-knowledge proofs
+                      Our privacy-preserving verification confirms you are 65+ without revealing your exact age or any personal information
                     </p>
                   </div>
-                  
-                  <div style={{
-                    borderTop: '1px solid var(--nyt-border)',
-                    paddingTop: '30px',
-                    marginTop: '40px'
-                  }}>
+
+                  {/* Right Column */}
+                  <div style={{gridColumn: 'span 6'}}>
                     <h3 style={{
                       fontFamily: 'Playfair Display, serif',
                       fontSize: '1.2rem',
@@ -246,29 +245,78 @@ export default function Home() {
                       margin: '0 0 15px 0',
                       color: 'var(--nyt-black)'
                     }}>
-                      HIPAA-Compliant Ad Network
+                      Privacy-Preserving Age Verification
                     </h3>
-                    <div style={{
-                      textAlign: 'left',
-                      maxWidth: '800px',
-                      margin: '0 auto'
+                    <p style={{
+                      fontSize: '0.95rem',
+                      color: 'var(--nyt-gray)',
+                      lineHeight: '1.6',
+                      marginBottom: '20px'
                     }}>
-                      <div style={{marginBottom: '15px'}}>
-                        <div style={{
-                          fontWeight: '600',
-                          marginBottom: '8px',
-                          color: 'var(--nyt-black)',
-                          fontSize: '1rem'
-                        }}>
-                          Federal Standards
+                      Click "Our Zero Knowledge System" to learn more about how we verify your age eligibility using secure, privacy-preserving technology.
+                    </p>
+                    
+                    <div style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '12px',
+                      marginTop: '20px'
+                    }}>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        padding: '12px',
+                        backgroundColor: 'var(--nyt-cream)',
+                        borderRadius: '8px',
+                        border: '1px solid var(--nyt-border)'
+                      }}>
+                        <span style={{fontSize: '1.2rem'}}>🔐</span>
+                        <div>
+                          <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                            Privacy Protected
+                          </div>
+                          <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                            Your exact age and personal information remain completely private
+                          </div>
                         </div>
-                        <div style={{
-                          color: 'var(--nyt-gray)',
-                          lineHeight: '1.6',
-                          fontSize: '0.95rem'
-                        }}>
-                          All healthcare-related interactions are processed through certified 
-                          privacy-preserving protocols that meet federal healthcare data protection standards.
+                      </div>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        padding: '12px',
+                        backgroundColor: 'var(--nyt-cream)',
+                        borderRadius: '8px',
+                        border: '1px solid var(--nyt-border)'
+                      }}>
+                        <span style={{fontSize: '1.2rem'}}>🛡️</span>
+                        <div>
+                          <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                            HIPAA Compliant
+                          </div>
+                          <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                            Full compliance with healthcare privacy regulations
+                          </div>
+                        </div>
+                      </div>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        padding: '12px',
+                        backgroundColor: 'var(--nyt-cream)',
+                        borderRadius: '8px',
+                        border: '1px solid var(--nyt-border)'
+                      }}>
+                        <span style={{fontSize: '1.2rem'}}>🔐</span>
+                        <div>
+                          <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                            Zero-Knowledge Proofs
+                          </div>
+                          <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                            Mathematical certainty protects your privacy
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -288,7 +336,9 @@ export default function Home() {
           >
             {/* Ad Network Call-to-Action Section */}
             <div className="nyt-sidebar-section">
-              <h3 className="nyt-sidebar-title">Join Our HIPAA-Compliant Ad Network</h3>
+              <h3 className="nyt-sidebar-title" style={{textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em'}}>
+                Join Our HIPAA-Compliant Ad Network
+              </h3>
               <div className="nyt-sidebar-item">
                 <div className="nyt-sidebar-item-content" style={{marginBottom: '20px'}}>
                   Partner with us to reach healthcare communities through our secure, 
@@ -306,9 +356,11 @@ export default function Home() {
                     fontSize: '0.9rem',
                     textAlign: 'center',
                     textDecoration: 'none',
-                    display: 'block'
+                    display: 'block',
+                    fontWeight: '600',
+                    textTransform: 'uppercase'
                   }}>
-                    Learn More About Ad Network
+                    Our Ad Network
                   </Link>
                   <Link href="/earning" className="nyt-button" style={{
                     backgroundColor: 'var(--nyt-gray)',
@@ -316,11 +368,42 @@ export default function Home() {
                     fontSize: '0.9rem',
                     textAlign: 'center',
                     textDecoration: 'none',
-                    display: 'block'
+                    display: 'block',
+                    fontWeight: '600',
+                    textTransform: 'uppercase'
                   }}>
                     Start Earning
                   </Link>
                 </div>
+              </div>
+            </div>
+
+            {/* Your Benefits Are Never Touched Section */}
+            <div className="nyt-sidebar-section" style={{marginTop: '30px'}}>
+              <h3 className="nyt-sidebar-title" style={{textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em'}}>
+                Your Benefits Are Never Touched
+              </h3>
+              <div className="nyt-sidebar-item">
+                <div className="nyt-sidebar-item-content" style={{marginBottom: '20px'}}>
+                  We only verify your Medicare enrollment status. Your Medicare benefits, coverage, and personal information remain completely private and are never accessed or modified.
+                </div>
+                <Link href="/privacy" className="nyt-button" style={{
+                  backgroundColor: 'var(--nyt-accent)',
+                  padding: '12px 20px',
+                  fontSize: '0.9rem',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  marginTop: '15px'
+                }}>
+                  <Scale style={{width: '16px', height: '16px'}} />
+                  Privacy & Compliance
+                </Link>
               </div>
             </div>
 
@@ -618,6 +701,12 @@ export default function Home() {
           onCancel={() => setShowPostForm(false)}
         />
       )}
+
+      {/* Zero Knowledge Modal */}
+      <ZeroKnowledgeModal
+        isOpen={showZKModal}
+        onClose={() => setShowZKModal(false)}
+      />
     </div>
   )
 }
