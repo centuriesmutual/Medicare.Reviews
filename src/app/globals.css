@@ -194,6 +194,10 @@ body {
     order: 1;
   }
   
+  .nyt-grid .nyt-sidebar-container {
+    order: 2;
+  }
+  
   .nyt-grid .nyt-sidebar {
     order: 2;
   }

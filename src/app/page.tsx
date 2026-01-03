@@ -141,7 +141,7 @@ export default function Home() {
           </div>
 
           {/* Sidebar */}
-          <div style={{display: 'flex', flexDirection: 'column', gap: '30px'}}>
+          <div className="nyt-sidebar-container" style={{display: 'flex', flexDirection: 'column', gap: '30px'}}>
             {/* Ad Network Call-to-Action Section */}
             <motion.div 
               className="nyt-sidebar"
