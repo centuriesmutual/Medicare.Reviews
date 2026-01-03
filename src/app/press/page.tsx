@@ -276,6 +276,99 @@ export default function PressPage() {
               </div>
             </motion.article>
           </div>
+
+          {/* Sidebar */}
+          <motion.div 
+            className="nyt-sidebar"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="nyt-sidebar-section">
+              <h3 className="nyt-sidebar-title">Media Kit</h3>
+              <p style={{
+                color: 'var(--nyt-gray)',
+                fontSize: '0.9rem',
+                lineHeight: '1.5',
+                marginBottom: '20px'
+              }}>
+                Download our press kit for logos, product screenshots, and company information.
+              </p>
+              <button className="nyt-button" style={{
+                width: '100%',
+                textAlign: 'center',
+                display: 'block',
+                marginBottom: '15px'
+              }}>
+                Download Press Kit
+              </button>
+              <Link href="/contact" className="nyt-button" style={{
+                backgroundColor: 'var(--nyt-accent)',
+                width: '100%',
+                textAlign: 'center',
+                display: 'block'
+              }}>
+                Media Inquiries
+              </Link>
+            </div>
+
+            <div className="nyt-sidebar-section">
+              <h3 className="nyt-sidebar-title">Key Statistics</h3>
+              <div className="nyt-sidebar-item">
+                <div className="nyt-sidebar-item-title">Users</div>
+                <div className="nyt-sidebar-item-content">10,000+ Active</div>
+              </div>
+              <div className="nyt-sidebar-item">
+                <div className="nyt-sidebar-item-title">Reviews</div>
+                <div className="nyt-sidebar-item-content">50,000+ Anonymous</div>
+              </div>
+              <div className="nyt-sidebar-item">
+                <div className="nyt-sidebar-item-title">Privacy Level</div>
+                <div className="nyt-sidebar-item-content">100% Anonymous</div>
+              </div>
+              <div className="nyt-sidebar-item">
+                <div className="nyt-sidebar-item-title">Compliance</div>
+                <div className="nyt-sidebar-item-content">HIPAA Ready</div>
+              </div>
+            </div>
+
+            <div className="nyt-sidebar-section">
+              <h3 className="nyt-sidebar-title">Press Contact</h3>
+              <div className="nyt-sidebar-item">
+                <div className="nyt-sidebar-item-title">Press Inquiries</div>
+                <div className="nyt-sidebar-item-content">
+                  <a href="mailto:press@medicarereviews.com" style={{
+                    color: 'var(--nyt-accent)',
+                    textDecoration: 'none'
+                  }}>
+                    press@medicarereviews.com
+                  </a>
+                </div>
+              </div>
+              <div className="nyt-sidebar-item">
+                <div className="nyt-sidebar-item-title">Media Relations</div>
+                <div className="nyt-sidebar-item-content">
+                  <a href="mailto:media@medicarereviews.com" style={{
+                    color: 'var(--nyt-accent)',
+                    textDecoration: 'none'
+                  }}>
+                    media@medicarereviews.com
+                  </a>
+                </div>
+              </div>
+              <div className="nyt-sidebar-item">
+                <div className="nyt-sidebar-item-title">General Questions</div>
+                <div className="nyt-sidebar-item-content">
+                  <a href="mailto:hello@medicarereviews.com" style={{
+                    color: 'var(--nyt-accent)',
+                    textDecoration: 'none'
+                  }}>
+                    hello@medicarereviews.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
