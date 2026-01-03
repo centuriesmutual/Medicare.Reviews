@@ -15,11 +15,6 @@ export default function MedicareDisclaimerPage() {
               <Link href="/" className="nyt-logo">Medicare Reviews</Link>
               <div className="nyt-tagline">Anonymous Reviews & Community Stories</div>
             </div>
-            <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
-              <Link href="/login" className="nyt-button" style={{padding: '8px 16px', fontSize: '0.85rem'}}>
-                Login
-              </Link>
-            </div>
           </div>
         </div>
       </header>
