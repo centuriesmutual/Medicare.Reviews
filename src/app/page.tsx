@@ -216,9 +216,9 @@ export default function Home() {
       {/* Age Verification & Eligibility Section - Full Width Under Sidebar */}
       <div className="nyt-container" style={{marginTop: '60px', marginBottom: '60px'}}>
         <article className="nyt-article" style={{maxWidth: 'none', width: '100%'}}>
-          <h2 className="nyt-headline medium" style={{marginBottom: '30px', textAlign: 'left'}}>
-            Age Verification & Eligibility
-          </h2>
+                <h2 className="nyt-headline medium" style={{marginBottom: '30px', textAlign: 'center'}}>
+                  Age Verification & Eligibility
+                </h2>
           
           <div style={{
             display: 'grid',
@@ -317,14 +317,6 @@ export default function Home() {
               }}>
                 Privacy-Preserving Age Verification
               </h3>
-              <p style={{
-                fontSize: '0.95rem',
-                color: 'var(--nyt-gray)',
-                lineHeight: '1.6',
-                marginBottom: '20px'
-              }}>
-                Click "Our Zero Knowledge System" to learn more about how we verify your age eligibility using secure, privacy-preserving technology.
-              </p>
               
               <div style={{
                 display: 'flex',
