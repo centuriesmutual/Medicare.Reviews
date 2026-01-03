@@ -15,11 +15,6 @@ export default function DoNotSellMyDataPage() {
               <Link href="/" className="nyt-logo">Medicare Reviews</Link>
               <div className="nyt-tagline">Anonymous Reviews & Community Stories</div>
             </div>
-            <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
-              <Link href="/login" className="nyt-button" style={{padding: '8px 16px', fontSize: '0.85rem'}}>
-                Login
-              </Link>
-            </div>
           </div>
         </div>
       </header>
@@ -241,106 +236,6 @@ export default function DoNotSellMyDataPage() {
                 </div>
               </div>
             </motion.article>
-
-            {/* Zero-Knowledge Technology */}
-            <motion.article 
-              className="nyt-article"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              style={{marginBottom: '50px'}}
-            >
-              <h2 className="nyt-headline medium">How Zero-Knowledge Proofs Protect You</h2>
-              <div className="nyt-content">
-                <div style={{
-                  background: 'var(--nyt-cream)',
-                  padding: '35px',
-                  borderRadius: '12px',
-                  border: '2px solid var(--nyt-accent)',
-                  marginTop: '25px'
-                }}>
-                  <h3 style={{
-                    fontFamily: 'Playfair Display, serif',
-                    fontSize: '1.4rem',
-                    fontWeight: '600',
-                    color: 'var(--nyt-black)',
-                    marginBottom: '25px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '15px'
-                  }}>
-                    <Lock style={{width: '32px', height: '32px', color: 'var(--nyt-accent)'}} />
-                    Revolutionary Privacy Technology
-                  </h3>
-                  <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '20px'
-                  }}>
-                    <div>
-                      <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px'}}>
-                        <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)'}} />
-                        <h4 style={{
-                          fontWeight: '600',
-                          color: 'var(--nyt-black)',
-                          fontSize: '1.05rem'
-                        }}>
-                          Authentication Without Identity
-                        </h4>
-                      </div>
-                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6', paddingLeft: '30px'}}>
-                        We can verify you're a real user without knowing who you are through cryptographic proofs
-                      </p>
-                    </div>
-                    <div>
-                      <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px'}}>
-                        <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)'}} />
-                        <h4 style={{
-                          fontWeight: '600',
-                          color: 'var(--nyt-black)',
-                          fontSize: '1.05rem'
-                        }}>
-                          No Data Storage
-                        </h4>
-                      </div>
-                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6', paddingLeft: '30px'}}>
-                        Personal information never reaches our servers, making data collection impossible
-                      </p>
-                    </div>
-                    <div>
-                      <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px'}}>
-                        <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)'}} />
-                        <h4 style={{
-                          fontWeight: '600',
-                          color: 'var(--nyt-black)',
-                          fontSize: '1.05rem'
-                        }}>
-                          Mathematical Certainty
-                        </h4>
-                      </div>
-                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6', paddingLeft: '30px'}}>
-                        Privacy protection is guaranteed by cryptography, not just promises or policies
-                      </p>
-                    </div>
-                    <div>
-                      <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px'}}>
-                        <CheckCircle style={{width: '20px', height: '20px', color: 'var(--nyt-accent)'}} />
-                        <h4 style={{
-                          fontWeight: '600',
-                          color: 'var(--nyt-black)',
-                          fontSize: '1.05rem'
-                        }}>
-                          Future-Proof Protection
-                        </h4>
-                      </div>
-                      <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6', paddingLeft: '30px'}}>
-                        Even if our policies changed, we couldn't sell data we don&apos;t have
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.article>
           </div>
 
           {/* Right Column */}
@@ -546,6 +441,113 @@ export default function DoNotSellMyDataPage() {
             </motion.article>
           </div>
         </div>
+
+        {/* How Zero-Knowledge Proofs Protect You - Full Width */}
+        <motion.article 
+          className="nyt-article"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          style={{
+            marginTop: '60px',
+            width: '100%'
+          }}
+        >
+          <h2 className="nyt-headline medium" style={{textAlign: 'center', marginBottom: '40px'}}>
+            How Zero-Knowledge Proofs Protect You
+          </h2>
+          <div className="nyt-content">
+            <div style={{
+              background: 'var(--nyt-cream)',
+              padding: '50px 60px',
+              borderRadius: '12px',
+              border: '2px solid var(--nyt-accent)',
+              maxWidth: '100%'
+            }}>
+              <h3 style={{
+                fontFamily: 'Playfair Display, serif',
+                fontSize: '1.6rem',
+                fontWeight: '600',
+                color: 'var(--nyt-black)',
+                marginBottom: '35px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '15px'
+              }}>
+                <Lock style={{width: '32px', height: '32px', color: 'var(--nyt-accent)'}} />
+                Revolutionary Privacy Technology
+              </h3>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: '30px',
+                maxWidth: '100%'
+              }}>
+                <div>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px'}}>
+                    <CheckCircle style={{width: '24px', height: '24px', color: 'var(--nyt-accent)'}} />
+                    <h4 style={{
+                      fontWeight: '600',
+                      color: 'var(--nyt-black)',
+                      fontSize: '1.1rem'
+                    }}>
+                      Authentication Without Identity
+                    </h4>
+                  </div>
+                  <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6'}}>
+                    We can verify you're a real user without knowing who you are through cryptographic proofs
+                  </p>
+                </div>
+                <div>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px'}}>
+                    <CheckCircle style={{width: '24px', height: '24px', color: 'var(--nyt-accent)'}} />
+                    <h4 style={{
+                      fontWeight: '600',
+                      color: 'var(--nyt-black)',
+                      fontSize: '1.1rem'
+                    }}>
+                      No Data Storage
+                    </h4>
+                  </div>
+                  <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6'}}>
+                    Personal information never reaches our servers, making data collection impossible
+                  </p>
+                </div>
+                <div>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px'}}>
+                    <CheckCircle style={{width: '24px', height: '24px', color: 'var(--nyt-accent)'}} />
+                    <h4 style={{
+                      fontWeight: '600',
+                      color: 'var(--nyt-black)',
+                      fontSize: '1.1rem'
+                    }}>
+                      Mathematical Certainty
+                    </h4>
+                  </div>
+                  <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6'}}>
+                    Privacy protection is guaranteed by cryptography, not just promises or policies
+                  </p>
+                </div>
+                <div>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px'}}>
+                    <CheckCircle style={{width: '24px', height: '24px', color: 'var(--nyt-accent)'}} />
+                    <h4 style={{
+                      fontWeight: '600',
+                      color: 'var(--nyt-black)',
+                      fontSize: '1.1rem'
+                    }}>
+                      Future-Proof Protection
+                    </h4>
+                  </div>
+                  <p style={{color: 'var(--nyt-gray)', fontSize: '0.95rem', lineHeight: '1.6'}}>
+                    Even if our policies changed, we couldn't sell data we don&apos;t have
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.article>
       </div>
 
       {/* Call to Action */}
