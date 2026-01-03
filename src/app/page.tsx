@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Plus, Shield, Scale, CheckCircle } from 'lucide-react'
+import { Plus } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PostReview from '@/components/PostReview'
+import ZKAuth from '@/components/ZKAuth'
 
 interface Review {
   id: string
@@ -142,6 +143,147 @@ export default function Home() {
 
             <div className="nyt-divider"></div>
 
+            {/* Authentication Section - Full Width at Bottom */}
+            <div style={{width: '100%', marginTop: '40px'}}>
+              <article className="nyt-article" style={{maxWidth: 'none', width: '100%'}}>
+                <h2 className="nyt-headline medium" style={{marginBottom: '20px', textAlign: 'center'}}>
+                  Authentication
+                </h2>
+                
+                <div className="nyt-content" style={{textAlign: 'center', maxWidth: '1200px', margin: '0 auto'}}>
+                  <div style={{marginBottom: '30px'}}>
+                    <h3 style={{
+                      fontFamily: 'Playfair Display, serif',
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      margin: '0 0 10px 0',
+                      color: 'var(--nyt-black)'
+                    }}>
+                      Zero-Knowledge Authentication
+                    </h3>
+                    <p style={{fontSize: '1.1rem', marginBottom: '20px', color: 'var(--nyt-gray)'}}>
+                      Prove your identity without revealing personal information
+                    </p>
+                    
+                    <div style={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      justifyContent: 'center',
+                      gap: '15px',
+                      marginBottom: '30px'
+                    }}>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        padding: '10px 16px',
+                        backgroundColor: 'var(--nyt-bg)',
+                        borderRadius: '25px',
+                        border: '1px solid var(--nyt-border)'
+                      }}>
+                        <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
+                          Privacy First
+                        </span>
+                      </div>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        padding: '10px 16px',
+                        backgroundColor: 'var(--nyt-bg)',
+                        borderRadius: '25px',
+                        border: '1px solid var(--nyt-border)'
+                      }}>
+                        <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
+                          Anonymous
+                        </span>
+                      </div>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        padding: '10px 16px',
+                        backgroundColor: 'var(--nyt-bg)',
+                        borderRadius: '25px',
+                        border: '1px solid var(--nyt-border)'
+                      }}>
+                        <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
+                          ZK Protected
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {!isAuthenticated ? (
+                      <div style={{marginBottom: '20px'}}>
+                        <ZKAuth onAuthenticated={() => setIsAuthenticated(true)} />
+                      </div>
+                    ) : (
+                      <div style={{
+                        padding: '20px',
+                        backgroundColor: 'var(--nyt-cream)',
+                        border: '2px solid var(--nyt-accent)',
+                        borderRadius: '8px',
+                        color: 'var(--nyt-accent)',
+                        marginBottom: '20px',
+                        display: 'inline-block'
+                      }}>
+                        ✓ Authenticated with ZK Proofs
+                      </div>
+                    )}
+                    
+                    <p style={{
+                      fontSize: '0.95rem',
+                      margin: '15px 0 0 0',
+                      color: 'var(--nyt-light-gray)',
+                      fontFamily: 'Georgia, serif'
+                    }}>
+                      Your identity will be verified using zero-knowledge proofs
+                    </p>
+                  </div>
+                  
+                  <div style={{
+                    borderTop: '1px solid var(--nyt-border)',
+                    paddingTop: '30px',
+                    marginTop: '40px'
+                  }}>
+                    <h3 style={{
+                      fontFamily: 'Playfair Display, serif',
+                      fontSize: '1.2rem',
+                      fontWeight: '700',
+                      margin: '0 0 15px 0',
+                      color: 'var(--nyt-black)'
+                    }}>
+                      HIPAA-Compliant Ad Network
+                    </h3>
+                    <div style={{
+                      textAlign: 'left',
+                      maxWidth: '800px',
+                      margin: '0 auto'
+                    }}>
+                      <div style={{marginBottom: '15px'}}>
+                        <div style={{
+                          fontWeight: '600',
+                          marginBottom: '8px',
+                          color: 'var(--nyt-black)',
+                          fontSize: '1rem'
+                        }}>
+                          Federal Standards
+                        </div>
+                        <div style={{
+                          color: 'var(--nyt-gray)',
+                          lineHeight: '1.6',
+                          fontSize: '0.95rem'
+                        }}>
+                          All healthcare-related interactions are processed through certified 
+                          privacy-preserving protocols that meet federal healthcare data protection standards.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
           </div>
 
           {/* Sidebar */}
@@ -152,13 +294,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             {/* Ad Network Call-to-Action Section */}
-            <div style={{
-              padding: '25px',
-              backgroundColor: 'var(--nyt-white)',
-              borderRadius: '12px',
-              border: '2px solid var(--nyt-border)',
-              marginBottom: '30px'
-            }}>
+            <div className="nyt-sidebar-section">
               <h3 className="nyt-sidebar-title">Join Our HIPAA-Compliant Ad Network</h3>
               <div className="nyt-sidebar-item">
                 <div className="nyt-sidebar-item-content" style={{marginBottom: '20px'}}>
@@ -179,7 +315,7 @@ export default function Home() {
                     textDecoration: 'none',
                     display: 'block'
                   }}>
-                    Our Ad Network
+                    Learn More About Ad Network
                   </Link>
                   <Link href="/earning" className="nyt-button" style={{
                     backgroundColor: 'var(--nyt-gray)',
@@ -190,42 +326,6 @@ export default function Home() {
                     display: 'block'
                   }}>
                     Start Earning
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Your Benefits Are Never Touched Card */}
-            <div style={{
-              padding: '25px',
-              backgroundColor: 'var(--nyt-white)',
-              borderRadius: '12px',
-              border: '2px solid var(--nyt-border)'
-            }}>
-              <h3 className="nyt-sidebar-title">Your Benefits Are Never Touched</h3>
-              <div className="nyt-sidebar-item">
-                <div className="nyt-sidebar-item-content" style={{marginBottom: '20px'}}>
-                  We only verify your Medicare enrollment status. Your Medicare benefits, coverage, and personal information remain completely private and are never accessed or modified.
-                </div>
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                  marginTop: '20px'
-                }}>
-                  <Link href="/privacy" className="nyt-button" style={{
-                    backgroundColor: 'var(--nyt-accent)',
-                    padding: '12px 20px',
-                    fontSize: '0.9rem',
-                    textAlign: 'center',
-                    textDecoration: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px'
-                  }}>
-                    <Scale style={{width: '16px', height: '16px', flexShrink: 0}} />
-                    <span>Privacy & Compliance</span>
                   </Link>
                 </div>
               </div>
@@ -247,226 +347,6 @@ export default function Home() {
 
           </motion.div>
         </div>
-      </div>
-
-      {/* Age Verification & Eligibility Section - Full Width Horizontal Under Sidebar */}
-      <div className="nyt-container" style={{marginTop: '60px', marginBottom: '60px'}}>
-        <article className="nyt-article" style={{maxWidth: 'none', width: '100%'}}>
-          <h2 className="nyt-headline medium" style={{marginBottom: '30px', textAlign: 'center'}}>
-            Age Verification & Eligibility
-          </h2>
-          
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '50px',
-            width: '100%'
-          }}>
-            {/* Left Column */}
-            <div style={{gridColumn: 'span 6'}}>
-              <p style={{
-                fontSize: '1.1rem',
-                marginBottom: '25px',
-                color: 'var(--nyt-gray)',
-                lineHeight: '1.7',
-                textAlign: 'left'
-              }}>
-                Verify that you are 65 or older to become eligible to earn within our HIPAA-compliant ad network. Your exact age remains completely private.
-              </p>
-              
-              <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '12px',
-                marginBottom: '25px'
-              }}>
-                <div style={{
-                  padding: '10px 16px',
-                  backgroundColor: 'var(--nyt-bg)',
-                  borderRadius: '25px',
-                  border: '1px solid var(--nyt-border)'
-                }}>
-                  <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                    Age 65+
-                  </span>
-                </div>
-                <div style={{
-                  padding: '10px 16px',
-                  backgroundColor: 'var(--nyt-bg)',
-                  borderRadius: '25px',
-                  border: '1px solid var(--nyt-border)'
-                }}>
-                  <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                    Privacy Protected
-                  </span>
-                </div>
-                <div style={{
-                  padding: '10px 16px',
-                  backgroundColor: 'var(--nyt-bg)',
-                  borderRadius: '25px',
-                  border: '1px solid var(--nyt-border)'
-                }}>
-                  <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                    HIPAA Compliant
-                  </span>
-                </div>
-              </div>
-              
-              {!isAuthenticated ? (
-                <div style={{marginBottom: '20px', display: 'flex', justifyContent: 'center'}}>
-                  <button
-                    onClick={() => setIsAuthenticated(true)}
-                    className="nyt-button"
-                    style={{
-                      backgroundColor: 'var(--nyt-accent)',
-                      padding: '14px 28px',
-                      fontSize: '1rem',
-                      fontWeight: '600',
-                      textTransform: 'uppercase',
-                      border: 'none',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px'
-                    }}
-                  >
-                    <CheckCircle style={{width: '20px', height: '20px', flexShrink: 0}} />
-                    Zero Knowledge Check
-                  </button>
-                </div>
-              ) : (
-                <div style={{
-                  padding: '20px',
-                  backgroundColor: 'var(--nyt-cream)',
-                  border: '2px solid var(--nyt-accent)',
-                  borderRadius: '8px',
-                  color: 'var(--nyt-accent)',
-                  marginBottom: '20px',
-                  display: 'inline-block'
-                }}>
-                  ✓ Authenticated with ZK Proofs
-                </div>
-              )}
-              
-              <p style={{
-                fontSize: '0.95rem',
-                margin: '15px 0 0 0',
-                color: 'var(--nyt-light-gray)',
-                fontFamily: 'Georgia, serif',
-                textAlign: 'left'
-              }}>
-                Our privacy-preserving verification confirms you are 65+ without revealing your exact age or any personal information
-              </p>
-            </div>
-
-            {/* Right Column */}
-            <div style={{gridColumn: 'span 6'}}>
-              <h3 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.2rem',
-                fontWeight: '700',
-                margin: '0 0 25px 0',
-                color: 'var(--nyt-black)',
-                textAlign: 'left'
-              }}>
-                Privacy-Preserving Age Verification
-              </h3>
-              
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '15px'
-              }}>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '15px',
-                  padding: '20px',
-                  backgroundColor: 'var(--nyt-cream)',
-                  borderRadius: '8px',
-                  border: '1px solid var(--nyt-border)'
-                }}>
-                  <span style={{fontSize: '1.5rem', lineHeight: '1'}}>🔒</span>
-                  <div>
-                    <div style={{
-                      fontWeight: '600',
-                      marginBottom: '8px',
-                      color: 'var(--nyt-black)',
-                      fontSize: '1rem'
-                    }}>
-                      Privacy Protected
-                    </div>
-                    <div style={{
-                      color: 'var(--nyt-gray)',
-                      fontSize: '0.95rem',
-                      lineHeight: '1.6'
-                    }}>
-                      Your exact age and personal information remain completely private
-                    </div>
-                  </div>
-                </div>
-                
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '15px',
-                  padding: '20px',
-                  backgroundColor: 'var(--nyt-cream)',
-                  borderRadius: '8px',
-                  border: '1px solid var(--nyt-border)'
-                }}>
-                  <span style={{fontSize: '1.5rem', lineHeight: '1'}}>🛡️</span>
-                  <div>
-                    <div style={{
-                      fontWeight: '600',
-                      marginBottom: '8px',
-                      color: 'var(--nyt-black)',
-                      fontSize: '1rem'
-                    }}>
-                      HIPAA Compliant
-                    </div>
-                    <div style={{
-                      color: 'var(--nyt-gray)',
-                      fontSize: '0.95rem',
-                      lineHeight: '1.6'
-                    }}>
-                      Full compliance with healthcare privacy regulations
-                    </div>
-                  </div>
-                </div>
-                
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '15px',
-                  padding: '20px',
-                  backgroundColor: 'var(--nyt-cream)',
-                  borderRadius: '8px',
-                  border: '1px solid var(--nyt-border)'
-                }}>
-                  <span style={{fontSize: '1.5rem', lineHeight: '1'}}>🔐</span>
-                  <div>
-                    <div style={{
-                      fontWeight: '600',
-                      marginBottom: '8px',
-                      color: 'var(--nyt-black)',
-                      fontSize: '1rem'
-                    }}>
-                      Zero-Knowledge Proofs
-                    </div>
-                    <div style={{
-                      color: 'var(--nyt-gray)',
-                      fontSize: '0.95rem',
-                      lineHeight: '1.6'
-                    }}>
-                      Mathematical certainty protects your privacy
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
       </div>
 
       {/* Professional Footer */}
