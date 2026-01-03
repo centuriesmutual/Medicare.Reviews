@@ -29,14 +29,6 @@ export default function DocumentsPage() {
       type: 'PDF',
       dropboxUrl: 'https://www.dropbox.com/s/placeholder/placeholder.pdf?raw=1',
       category: 'Technical'
-    },
-    {
-      id: 4,
-      title: 'Ad Network Specifications',
-      description: 'HIPAA-compliant advertising network architecture and protocols',
-      type: 'PDF',
-      dropboxUrl: 'https://www.dropbox.com/s/placeholder/placeholder.pdf?raw=1',
-      category: 'Technical'
     }
   ]
 
