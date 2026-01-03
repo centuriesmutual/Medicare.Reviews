@@ -101,11 +101,6 @@ export default function Home() {
                   without fear of retribution or privacy breaches. Each review is cryptographically 
                   verified while maintaining complete anonymity.
                 </p>
-                <p>
-                  &ldquo;This represents a paradigm shift in how we think about online privacy and community 
-                  feedback,&rdquo; said a spokesperson for the platform. &ldquo;Users can now share their stories 
-                  with confidence, knowing their identity is protected by mathematical certainty.&rdquo;
-                </p>
               </div>
               <div style={{
                 position: 'absolute',
