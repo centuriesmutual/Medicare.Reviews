@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Plus, CheckCircle, Scale } from 'lucide-react'
+import { CheckCircle, Scale } from 'lucide-react'
 import { motion } from 'framer-motion'
-import PostReview from '@/components/PostReview'
 import ZeroKnowledgeModal from '@/components/ZeroKnowledgeModal'
 
 interface Review {
@@ -19,7 +18,6 @@ interface Review {
 export default function Home() {
   const [reviews, setReviews] = useState<Review[]>([])
   const [isAuthenticated] = useState(true)
-  const [showPostForm, setShowPostForm] = useState(false)
   const [showZKModal, setShowZKModal] = useState(false)
 
   useEffect(() => {
@@ -30,21 +28,6 @@ export default function Home() {
     }
   }, [])
 
-  const handleNewReview = (content: string, proof: string) => {
-    const newReview: Review = {
-      id: Date.now().toString(),
-      content,
-      timestamp: Date.now(),
-      likes: 0,
-      replies: 0,
-      proof
-    }
-    
-    const updatedReviews = [newReview, ...reviews]
-    setReviews(updatedReviews)
-    localStorage.setItem('medithreads-reviews', JSON.stringify(updatedReviews))
-    setShowPostForm(false)
-  }
 
 
   const getCurrentDate = () => {
@@ -226,20 +209,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Post Review Section */}
-            {isAuthenticated && (
-              <div className="nyt-sidebar-section">
-                <button
-                  onClick={() => setShowPostForm(true)}
-                  className="nyt-button"
-                  style={{width: '100%', marginTop: '20px'}}
-                >
-                  <Plus style={{marginRight: '8px', width: '16px', height: '16px'}} />
-                  Post Review
-                </button>
-              </div>
-            )}
-
           </motion.div>
         </div>
       </div>
@@ -309,23 +278,24 @@ export default function Home() {
                 </div>
               </div>
               
-              <button
-                onClick={() => setShowZKModal(true)}
-                className="nyt-button"
-                style={{
-                  backgroundColor: 'var(--nyt-accent)',
-                  padding: '14px 28px',
-                  fontSize: '1rem',
-                  fontWeight: '600',
-                  marginBottom: '20px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px'
-                }}
-              >
-                <CheckCircle style={{width: '20px', height: '20px'}} />
-                ZERO KNOWLEDGE CHECK
-              </button>
+              <div style={{display: 'flex', justifyContent: 'center', marginBottom: '20px'}}>
+                <button
+                  onClick={() => setShowZKModal(true)}
+                  className="nyt-button"
+                  style={{
+                    backgroundColor: 'var(--nyt-accent)',
+                    padding: '14px 28px',
+                    fontSize: '1rem',
+                    fontWeight: '600',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px'
+                  }}
+                >
+                  <CheckCircle style={{width: '20px', height: '20px'}} />
+                  ZERO KNOWLEDGE CHECK
+                </button>
+              </div>
               
               <p style={{
                 fontSize: '0.9rem',
@@ -673,14 +643,6 @@ export default function Home() {
           </div>
         </div>
       </motion.footer>
-
-      {/* Post Review Modal */}
-      {showPostForm && (
-        <PostReview 
-          onPost={handleNewReview}
-          onCancel={() => setShowPostForm(false)}
-        />
-      )}
 
       {/* Zero Knowledge Modal */}
       <ZeroKnowledgeModal
