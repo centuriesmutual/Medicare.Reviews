@@ -187,21 +187,6 @@ export default function DownloadPage() {
                 }}>
                   <CheckCircle style={{width: '24px', height: '24px', color: 'var(--nyt-accent)', marginBottom: '12px'}} />
                   <h3 style={{fontSize: '1.2rem', fontWeight: '600', marginBottom: '10px', color: 'var(--nyt-black)'}}>
-                    Anonymous Reviews
-                  </h3>
-                  <p style={{fontSize: '1rem', color: 'var(--nyt-gray)', lineHeight: '1.6'}}>
-                    Share honest healthcare reviews while maintaining complete anonymity
-                  </p>
-                </div>
-                
-                <div style={{
-                  padding: '25px',
-                  backgroundColor: 'var(--nyt-cream)',
-                  borderRadius: '12px',
-                  border: '1px solid var(--nyt-border)'
-                }}>
-                  <CheckCircle style={{width: '24px', height: '24px', color: 'var(--nyt-accent)', marginBottom: '12px'}} />
-                  <h3 style={{fontSize: '1.2rem', fontWeight: '600', marginBottom: '10px', color: 'var(--nyt-black)'}}>
                     Medicare Verification
                   </h3>
                   <p style={{fontSize: '1rem', color: 'var(--nyt-gray)', lineHeight: '1.6'}}>

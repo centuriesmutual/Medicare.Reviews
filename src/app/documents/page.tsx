@@ -68,154 +68,178 @@ export default function DocumentsPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           style={{
             backgroundColor: 'var(--nyt-white)',
-            padding: '60px 50px',
+            padding: '50px 40px',
             borderRadius: '12px',
-            border: '2px solid var(--nyt-border)',
-            minHeight: 'calc(100vh - 200px)'
+            border: '2px solid var(--nyt-border)'
           }}
         >
-          {/* Header */}
-          <div style={{textAlign: 'center', marginBottom: '50px'}}>
-            <div style={{
-              width: '80px',
-              height: '80px',
-              backgroundColor: 'var(--nyt-cream)',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 30px'
-            }}>
-              <FileText style={{
-                width: '40px',
-                height: '40px',
-                color: 'var(--nyt-accent)'
-              }} />
-            </div>
-            <h1 style={{
-              fontFamily: 'Playfair Display, serif',
-              fontSize: '3rem',
-              fontWeight: '700',
-              marginBottom: '20px',
-              lineHeight: '1.2',
-              color: 'var(--nyt-black)'
-            }}>
-              Documents
-            </h1>
-            <p style={{
-              fontSize: '1.2rem',
-              lineHeight: '1.6',
-              color: 'var(--nyt-gray)',
-              maxWidth: '700px',
-              margin: '0 auto'
-            }}>
-              Access technical documentation, compliance materials, and platform specifications
-            </p>
-          </div>
-
-          {/* Documents List */}
           <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '25px'
+            display: 'grid',
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '40px',
+            alignItems: 'start'
           }}>
-            {documents.map((doc, index) => (
-              <motion.div
-                key={doc.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                style={{
-                  padding: '30px',
-                  backgroundColor: 'var(--nyt-cream)',
-                  borderRadius: '12px',
-                  border: '1px solid var(--nyt-border)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '30px',
-                  flexWrap: 'wrap'
-                }}
-              >
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '20px',
-                  flex: 1,
-                  minWidth: '300px'
-                }}>
-                  <div style={{
-                    width: '50px',
-                    height: '50px',
-                    backgroundColor: 'white',
-                    borderRadius: '10px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0
-                  }}>
-                    <FileCheck style={{
-                      width: '25px',
-                      height: '25px',
-                      color: 'var(--nyt-accent)'
-                    }} />
-                  </div>
-                  <div style={{flex: 1}}>
+            {/* Left Column - Header */}
+            <div style={{
+              gridColumn: 'span 4'
+            }}>
+              <div style={{
+                width: '60px',
+                height: '60px',
+                backgroundColor: 'var(--nyt-cream)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '25px'
+              }}>
+                <FileText style={{
+                  width: '30px',
+                  height: '30px',
+                  color: 'var(--nyt-accent)'
+                }} />
+              </div>
+              <h1 style={{
+                fontFamily: 'Playfair Display, serif',
+                fontSize: '2.5rem',
+                fontWeight: '700',
+                marginBottom: '15px',
+                lineHeight: '1.2',
+                color: 'var(--nyt-black)'
+              }}>
+                Documents
+              </h1>
+              <p style={{
+                fontSize: '1.1rem',
+                lineHeight: '1.6',
+                color: 'var(--nyt-gray)',
+                marginBottom: '20px'
+              }}>
+                Access technical documentation, compliance materials, and platform specifications
+              </p>
+              <div style={{
+                display: 'inline-block',
+                padding: '6px 14px',
+                backgroundColor: 'var(--nyt-cream)',
+                borderRadius: '4px',
+                fontSize: '0.8rem',
+                fontWeight: '600',
+                color: 'var(--nyt-accent)',
+                textTransform: 'uppercase'
+              }}>
+                Technical
+              </div>
+            </div>
+
+            {/* Right Column - Documents List */}
+            <div style={{
+              gridColumn: 'span 8'
+            }}>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '15px'
+              }}>
+                {documents.map((doc, index) => (
+                  <motion.div
+                    key={doc.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 + index * 0.05 }}
+                    style={{
+                      padding: '20px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      borderRadius: '10px',
+                      border: '1px solid var(--nyt-border)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: '20px',
+                      flexWrap: 'wrap'
+                    }}
+                  >
                     <div style={{
-                      display: 'inline-block',
-                      padding: '4px 12px',
-                      backgroundColor: 'white',
-                      borderRadius: '4px',
-                      fontSize: '0.75rem',
-                      fontWeight: '600',
-                      color: 'var(--nyt-accent)',
-                      marginBottom: '10px',
-                      textTransform: 'uppercase'
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '15px',
+                      flex: 1,
+                      minWidth: '200px'
                     }}>
-                      {doc.category}
+                      <div style={{
+                        width: '40px',
+                        height: '40px',
+                        backgroundColor: 'white',
+                        borderRadius: '8px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0
+                      }}>
+                        <FileCheck style={{
+                          width: '20px',
+                          height: '20px',
+                          color: 'var(--nyt-accent)'
+                        }} />
+                      </div>
+                      <div style={{flex: 1}}>
+                        <div style={{
+                          display: 'inline-block',
+                          padding: '3px 10px',
+                          backgroundColor: 'white',
+                          borderRadius: '4px',
+                          fontSize: '0.7rem',
+                          fontWeight: '600',
+                          color: 'var(--nyt-accent)',
+                          marginBottom: '8px',
+                          textTransform: 'uppercase'
+                        }}>
+                          {doc.category}
+                        </div>
+                        <h3 style={{
+                          fontFamily: 'Playfair Display, serif',
+                          fontSize: '1.1rem',
+                          fontWeight: '700',
+                          color: 'var(--nyt-black)',
+                          marginBottom: '6px',
+                          lineHeight: '1.3'
+                        }}>
+                          {doc.title}
+                        </h3>
+                        <p style={{
+                          fontSize: '0.85rem',
+                          color: 'var(--nyt-gray)',
+                          lineHeight: '1.5',
+                          margin: 0
+                        }}>
+                          {doc.description}
+                        </p>
+                      </div>
                     </div>
-                    <h3 style={{
-                      fontFamily: 'Playfair Display, serif',
-                      fontSize: '1.3rem',
-                      fontWeight: '700',
-                      color: 'var(--nyt-black)',
-                      marginBottom: '8px',
-                      lineHeight: '1.3'
-                    }}>
-                      {doc.title}
-                    </h3>
-                    <p style={{
-                      fontSize: '0.95rem',
-                      color: 'var(--nyt-gray)',
-                      lineHeight: '1.6',
-                      margin: 0
-                    }}>
-                      {doc.description}
-                    </p>
-                  </div>
-                </div>
-                
-                <a
-                  href={doc.dropboxUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    padding: '10px 20px',
-                    backgroundColor: 'var(--nyt-accent)',
-                    color: 'white',
-                    textDecoration: 'none',
-                    fontSize: '0.9rem',
-                    fontWeight: '600',
-                    borderRadius: '6px',
-                    transition: 'background-color 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--nyt-gray)'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--nyt-accent)'}
-                >
-                  View
-                </a>
-              </motion.div>
-            ))}
+                    
+                    <a
+                      href={doc.dropboxUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        padding: '8px 16px',
+                        backgroundColor: 'var(--nyt-accent)',
+                        color: 'white',
+                        textDecoration: 'none',
+                        fontSize: '0.85rem',
+                        fontWeight: '600',
+                        borderRadius: '6px',
+                        transition: 'background-color 0.2s ease',
+                        whiteSpace: 'nowrap'
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--nyt-gray)'}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--nyt-accent)'}
+                    >
+                      View
+                    </a>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
