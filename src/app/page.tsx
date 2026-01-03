@@ -338,10 +338,10 @@ export default function Home() {
                   <span style={{fontSize: '1.2rem'}}>🔐</span>
                   <div>
                     <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                      Zero-Knowledge System Benefits
+                      Zero-Knowledge System
                     </div>
                     <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                      Revolutionary cryptographic technology ensures complete privacy protection
+                      Cryptographic technology ensures privacy protection
                     </div>
                   </div>
                 </div>
