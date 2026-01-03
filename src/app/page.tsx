@@ -501,7 +501,6 @@ export default function Home() {
                 fontSize: '0.85rem',
                 lineHeight: '1.4'
               }}>
-                Your privacy is protected by cryptographic certainty.
               </p>
             </div>
             

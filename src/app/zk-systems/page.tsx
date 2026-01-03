@@ -31,46 +31,78 @@ export default function ZKSystemsPage() {
         color: 'white'
       }}>
         <div className="nyt-container">
-          <div style={{textAlign: 'center', maxWidth: '900px', margin: '0 auto'}}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '50px',
+            alignItems: 'center'
+          }}>
+            {/* Left Column */}
             <div style={{
-              width: '100px',
-              height: '100px',
-              backgroundColor: 'var(--nyt-accent)',
+              gridColumn: 'span 6',
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 30px',
-              borderRadius: '50%'
+              flexDirection: 'column'
             }}>
-              <Key style={{width: '50px', height: '50px', color: 'white'}} />
+              <div style={{
+                width: '100px',
+                height: '100px',
+                backgroundColor: 'var(--nyt-accent)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '30px',
+                borderRadius: '50%'
+              }}>
+                <Key style={{width: '50px', height: '50px', color: 'white'}} />
+              </div>
+              
+              <h1 className="nyt-headline large" style={{
+                fontSize: '3.5rem',
+                marginBottom: '25px',
+                color: 'white',
+                lineHeight: '1.2'
+              }}>
+                Zero-Knowledge Systems
+              </h1>
+              
+              <p style={{
+                fontSize: '1.4rem',
+                marginBottom: '20px',
+                fontWeight: '500',
+                color: 'rgba(255,255,255,0.95)',
+                lineHeight: '1.4'
+              }}>
+                Prove you know something without revealing what you know
+              </p>
+              <p style={{
+                color: 'rgba(255,255,255,0.8)',
+                fontSize: '1.1rem',
+                lineHeight: '1.7'
+              }}>
+                Your privacy is protected by cryptographic certainty.
+              </p>
             </div>
-            
-            <h1 className="nyt-headline large" style={{
-              fontSize: '3.5rem',
-              marginBottom: '25px',
-              color: 'white'
+
+            {/* Right Column - Image */}
+            <div style={{
+              gridColumn: 'span 6',
+              position: 'relative',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              height: '450px',
+              backgroundColor: 'rgba(255,255,255,0.1)'
             }}>
-              Zero-Knowledge Systems
-            </h1>
-            
-            <p style={{
-              fontSize: '1.4rem',
-              marginBottom: '20px',
-              fontWeight: '500',
-              color: 'rgba(255,255,255,0.95)'
-            }}>
-              Prove you know something without revealing what you know
-            </p>
-            <p style={{
-              color: 'rgba(255,255,255,0.8)',
-              fontSize: '1.1rem',
-              lineHeight: '1.6',
-              maxWidth: '700px',
-              margin: '0 auto'
-            }}>
-              Revolutionary cryptographic technology that enables privacy-preserving verification 
-              of age eligibility and healthcare credentials without exposing any personal information.
-            </p>
+              <img
+                src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=600&fit=crop"
+                alt="Zero-knowledge cryptographic technology"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '12px'
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
