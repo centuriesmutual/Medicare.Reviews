@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/whitepaper`,
+      url: `${baseUrl}/documents`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
