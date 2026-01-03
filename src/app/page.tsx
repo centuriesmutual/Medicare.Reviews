@@ -190,7 +190,7 @@ export default function Home() {
             </div>
 
             {/* Your Benefits Are Never Touched Card */}
-            <div className="nyt-sidebar-section" style={{marginTop: '40px'}}>
+            <div className="nyt-sidebar-section" style={{marginTop: '50px'}}>
               <h3 className="nyt-sidebar-title">Your Benefits Are Never Touched</h3>
               <div className="nyt-sidebar-item">
                 <div className="nyt-sidebar-item-content" style={{marginBottom: '20px'}}>
@@ -453,7 +453,7 @@ export default function Home() {
                       fontSize: '0.95rem',
                       lineHeight: '1.6'
                     }}>
-                      Certified Qualified Entity by Centers for Medicare & Medicaid Services
+                      Certified Qualified Entity by CMS
                     </div>
                   </div>
                 </div>
@@ -482,7 +482,7 @@ export default function Home() {
                       fontSize: '0.95rem',
                       lineHeight: '1.6'
                     }}>
-                      Participate in our ad network and earn income through ad engagement
+                      Earn income through our privacy-preserving ad network
                     </div>
                   </div>
                 </div>
