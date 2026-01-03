@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Shield, CheckCircle, Award, FileText, Lock, Users, BadgeCheck } from 'lucide-react'
+import { ArrowLeft, Shield, CheckCircle, Award, FileText, Lock, Users } from 'lucide-react'
 
 export default function QualifiedEntityCertificationPage() {
   return (

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { X, ArrowRight, ArrowLeft, Shield, Lock, CheckCircle, Building2, CreditCard, Eye, Key } from 'lucide-react'
+import { X, ArrowRight, ArrowLeft, Shield, Lock, CheckCircle, Building2, Eye, Key } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface ZeroKnowledgeModalProps {

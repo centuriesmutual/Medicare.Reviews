@@ -17,7 +17,7 @@ interface Review {
 
 export default function Home() {
   const [reviews, setReviews] = useState<Review[]>([])
-  const [isAuthenticated, setIsAuthenticated] = useState(true)
+  const [isAuthenticated] = useState(true)
   const [showPostForm, setShowPostForm] = useState(false)
 
   useEffect(() => {
