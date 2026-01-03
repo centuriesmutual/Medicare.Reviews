@@ -241,7 +241,8 @@ export default function Home() {
                 display: 'flex',
                 flexWrap: 'wrap',
                 gap: '10px',
-                marginBottom: '25px'
+                marginBottom: '25px',
+                justifyContent: 'center'
               }}>
                 <div style={{
                   padding: '8px 16px',
@@ -252,7 +253,7 @@ export default function Home() {
                   fontWeight: '600',
                   color: 'var(--nyt-black)'
                 }}>
-                  AGE 65+
+                  PATENT PENDING
                 </div>
                 <div style={{
                   padding: '8px 16px',
@@ -263,7 +264,7 @@ export default function Home() {
                   fontWeight: '600',
                   color: 'var(--nyt-black)'
                 }}>
-                  PRIVACY PROTECTED
+                  AWARD WINNING
                 </div>
                 <div style={{
                   padding: '8px 16px',
@@ -300,7 +301,8 @@ export default function Home() {
               <p style={{
                 fontSize: '0.9rem',
                 color: 'var(--nyt-gray)',
-                lineHeight: '1.6'
+                lineHeight: '1.6',
+                textAlign: 'center'
               }}>
                 Our privacy-preserving verification confirms you are 65+ without revealing your exact age or any personal information
               </p>
@@ -336,10 +338,10 @@ export default function Home() {
                   <span style={{fontSize: '1.2rem'}}>🔐</span>
                   <div>
                     <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                      Privacy Protected
+                      Zero-Knowledge System Benefits
                     </div>
                     <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                      Your exact age and personal information remain completely private
+                      Revolutionary cryptographic technology ensures complete privacy protection
                     </div>
                   </div>
                 </div>
@@ -352,13 +354,13 @@ export default function Home() {
                   borderRadius: '8px',
                   border: '1px solid var(--nyt-border)'
                 }}>
-                  <span style={{fontSize: '1.2rem'}}>🛡️</span>
+                  <span style={{fontSize: '1.2rem'}}>✅</span>
                   <div>
                     <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                      HIPAA Compliant
+                      CMS Approved
                     </div>
                     <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                      Full compliance with healthcare privacy regulations
+                      Certified Qualified Entity by Centers for Medicare & Medicaid Services
                     </div>
                   </div>
                 </div>
@@ -371,13 +373,13 @@ export default function Home() {
                   borderRadius: '8px',
                   border: '1px solid var(--nyt-border)'
                 }}>
-                  <span style={{fontSize: '1.2rem'}}>🔐</span>
+                  <span style={{fontSize: '1.2rem'}}>💰</span>
                   <div>
                     <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                      Zero-Knowledge Proofs
+                      Earn Rewards
                     </div>
                     <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                      Mathematical certainty protects your privacy
+                      Participate in our ad network and earn income through ad engagement
                     </div>
                   </div>
                 </div>
