@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { Plus } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PostReview from '@/components/PostReview'
-import ZKAuth from '@/components/ZKAuth'
 
 interface Review {
   id: string
@@ -18,7 +17,7 @@ interface Review {
 
 export default function Home() {
   const [reviews, setReviews] = useState<Review[]>([])
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(true)
   const [showPostForm, setShowPostForm] = useState(false)
 
   useEffect(() => {
@@ -213,23 +212,17 @@ export default function Home() {
                       </div>
                     </div>
                     
-                    {!isAuthenticated ? (
-                      <div style={{marginBottom: '20px'}}>
-                        <ZKAuth onAuthenticated={() => setIsAuthenticated(true)} />
-                      </div>
-                    ) : (
-                      <div style={{
-                        padding: '20px',
-                        backgroundColor: 'var(--nyt-cream)',
-                        border: '2px solid var(--nyt-accent)',
-                        borderRadius: '8px',
-                        color: 'var(--nyt-accent)',
-                        marginBottom: '20px',
-                        display: 'inline-block'
-                      }}>
-                        ✓ Authenticated with ZK Proofs
-                      </div>
-                    )}
+                    <div style={{
+                      padding: '20px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      border: '2px solid var(--nyt-accent)',
+                      borderRadius: '8px',
+                      color: 'var(--nyt-accent)',
+                      marginBottom: '20px',
+                      display: 'inline-block'
+                    }}>
+                      ✓ Authenticated with ZK Proofs
+                    </div>
                     
                     <p style={{
                       fontSize: '0.95rem',
