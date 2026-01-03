@@ -25,54 +25,88 @@ export default function AdNetworkPage() {
 
       {/* Hero Section */}
       <section style={{
-        minHeight: '100vh',
-        backgroundColor: '#f8f9fa',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
+        padding: '80px 0',
+        backgroundColor: '#f8f9fa'
       }}>
         <div className="nyt-container">
-          <div style={{textAlign: 'center', maxWidth: '800px', margin: '0 auto'}}>
-            <h1 className="nyt-headline large" style={{
-              fontSize: '4rem',
-              marginBottom: '30px',
-              color: 'var(--nyt-black)'
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '50px',
+            alignItems: 'center'
+          }}>
+            {/* Left Column */}
+            <div style={{
+              gridColumn: 'span 6',
+              display: 'flex',
+              flexDirection: 'column'
             }}>
-              Earn Money from Your Reviews
-            </h1>
-            
-            <div className="nyt-content" style={{marginBottom: '50px'}}>
-              <p style={{fontSize: '1.5rem', marginBottom: '25px', fontWeight: '500'}}>
-                Get paid for writing anonymous Medicare reviews while viewing targeted healthcare ads.
-              </p>
-              <p style={{color: 'var(--nyt-gray)', fontSize: '1.2rem', lineHeight: '1.6'}}>
-                Our HIPAA-compliant platform pays you for your reviews and ad engagement while keeping your identity completely anonymous.
-              </p>
+              <h1 className="nyt-headline large" style={{
+                fontSize: '3.5rem',
+                marginBottom: '30px',
+                color: 'var(--nyt-black)',
+                lineHeight: '1.2'
+              }}>
+                Earn Money from Your Reviews
+              </h1>
+              
+              <div className="nyt-content" style={{marginBottom: '40px'}}>
+                <p style={{fontSize: '1.3rem', marginBottom: '25px', fontWeight: '500', lineHeight: '1.8'}}>
+                  Get paid for viewing targeted healthcare ads through our HIPAA-compliant ad sharing network.
+                </p>
+                <p style={{color: 'var(--nyt-gray)', fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '20px'}}>
+                  Our platform pays you for engaging with relevant healthcare advertisements while keeping your identity completely anonymous. You earn rewards through our privacy-preserving ad network, not for writing reviews.
+                </p>
+                <p style={{color: 'var(--nyt-gray)', fontSize: '1.1rem', lineHeight: '1.7'}}>
+                  Your income comes from participating in our ad sharing network, where you view targeted healthcare ads and earn rewards for your engagement.
+                </p>
+              </div>
+
+              <div style={{
+                display: 'flex',
+                gap: '20px',
+                flexWrap: 'wrap'
+              }}>
+                <Link href="/earning" className="nyt-button" style={{
+                  backgroundColor: 'var(--nyt-accent)',
+                  padding: '18px 36px',
+                  fontSize: '1.1rem',
+                  textDecoration: 'none',
+                  display: 'inline-block'
+                }}>
+                  Start Earning
+                </Link>
+                <Link href="/" className="nyt-button" style={{
+                  backgroundColor: 'var(--nyt-gray)',
+                  padding: '18px 36px',
+                  fontSize: '1.1rem',
+                  textDecoration: 'none',
+                  display: 'inline-block'
+                }}>
+                  View Platform
+                </Link>
+              </div>
             </div>
 
+            {/* Right Column - Image */}
             <div style={{
-              display: 'flex',
-              gap: '30px',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              marginTop: '50px'
+              gridColumn: 'span 6',
+              position: 'relative',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              height: '450px',
+              backgroundColor: 'var(--nyt-cream)'
             }}>
-              <Link href="/earning" className="nyt-button" style={{
-                backgroundColor: 'var(--nyt-accent)',
-                padding: '20px 40px',
-                fontSize: '1.2rem',
-                transform: 'translateY(0)',
-                transition: 'all 0.3s ease'
-              }}>
-                Start Earning
-              </Link>
-              <Link href="/" className="nyt-button" style={{
-                backgroundColor: 'var(--nyt-gray)',
-                padding: '20px 40px',
-                fontSize: '1.2rem'
-              }}>
-                View Platform
-              </Link>
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                alt="Earning through ad network"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '12px'
+                }}
+              />
             </div>
           </div>
         </div>
