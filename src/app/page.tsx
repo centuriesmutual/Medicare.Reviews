@@ -424,13 +424,13 @@ export default function Home() {
                       borderRadius: '8px',
                       border: '1px solid var(--nyt-border)'
                     }}>
-                      <span style={{fontSize: '1.2rem'}}>💰</span>
+                      <span style={{fontSize: '1.2rem'}}>✅</span>
                       <div>
                         <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                          Earn Rewards
+                          CMS Approved
                         </div>
                         <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                          Participate in our ad network and earn income through ad engagement
+                          Certified Qualified Entity by Centers for Medicare & Medicaid Services
                         </div>
                       </div>
                     </div>
@@ -443,13 +443,13 @@ export default function Home() {
                       borderRadius: '8px',
                       border: '1px solid var(--nyt-border)'
                     }}>
-                      <span style={{fontSize: '1.2rem'}}>✅</span>
+                      <span style={{fontSize: '1.2rem'}}>💰</span>
                       <div>
                         <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                          CMS Approved
+                          Earn Rewards
                         </div>
                         <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                          Certified Qualified Entity by Centers for Medicare & Medicaid Services
+                          Participate in our ad network and earn income through ad engagement
                         </div>
                       </div>
                     </div>
