@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { CheckCircle, Scale } from 'lucide-react'
+import { CheckCircle, Scale, Newspaper } from 'lucide-react'
 import { motion } from 'framer-motion'
 import ZeroKnowledgeModal from '@/components/ZeroKnowledgeModal'
 
@@ -46,9 +46,12 @@ export default function Home() {
       <header className="nyt-header">
         <div className="nyt-container">
           <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-            <div>
-              <Link href="/" className="nyt-logo">Medicare Reviews</Link>
-              <div className="nyt-tagline">Anonymous Reviews & Community Stories</div>
+            <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+              <Newspaper style={{width: '32px', height: '32px', color: 'var(--nyt-accent)'}} />
+              <div>
+                <Link href="/" className="nyt-logo">Medicare Reviews</Link>
+                <div className="nyt-tagline">Anonymous Reviews & Community Stories</div>
+              </div>
             </div>
             <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
               <Link href="/login" className="nyt-button" style={{padding: '8px 16px', fontSize: '0.85rem'}}>
@@ -162,7 +165,7 @@ export default function Home() {
                     fontWeight: '600',
                     textTransform: 'uppercase'
                   }}>
-                    Our Ad Network
+                    Write A Review
                   </Link>
                   <Link href="/earning" className="nyt-button" style={{
                     backgroundColor: 'var(--nyt-gray)',
@@ -341,7 +344,7 @@ export default function Home() {
                       Zero-Knowledge System
                     </div>
                     <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                      Cryptographic technology ensures privacy protection
+                      Cryptographic technology ensuring complete privacy protection
                     </div>
                   </div>
                 </div>
@@ -410,17 +413,20 @@ export default function Home() {
             marginBottom: '25px'
           }}>
             <div>
-              <h3 style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '1.4rem',
-                fontWeight: '700',
-                color: 'var(--nyt-cream)',
-                marginBottom: '15px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                Medicare Reviews
-              </h3>
+              <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '15px'}}>
+                <Newspaper style={{width: '28px', height: '28px', color: 'var(--nyt-cream)'}} />
+                <h3 style={{
+                  fontFamily: 'Playfair Display, serif',
+                  fontSize: '1.4rem',
+                  fontWeight: '700',
+                  color: 'var(--nyt-cream)',
+                  margin: 0,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}>
+                  Medicare Reviews
+                </h3>
+              </div>
               <p style={{
                 color: 'var(--nyt-light-gray)',
                 lineHeight: '1.5',
@@ -505,7 +511,7 @@ export default function Home() {
                     textDecoration: 'none',
                     transition: 'color 0.2s ease'
                   }}>
-                    Whitepaper
+                    Documents
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>
