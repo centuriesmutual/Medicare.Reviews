@@ -120,12 +120,6 @@ export default function Home() {
                   or identity details. This cryptographic approach protects users from data breaches, identity 
                   theft, and unauthorized access by malicious actors.
                 </p>
-                <p>
-                  &ldquo;Our Zero Knowledge System represents a fundamental shift in how advertising can be delivered 
-                  while maintaining absolute privacy. Users can participate in our ad network and earn rewards with 
-                  complete confidence, knowing their personal information is protected by mathematical certainty from 
-                  insurers, advertisers, and any form of malfeasance.&rdquo;
-                </p>
                 <div style={{marginTop: '25px'}}>
                   <Link href="/read-more" className="nyt-button" style={{
                     backgroundColor: 'var(--nyt-accent)',
@@ -289,7 +283,7 @@ export default function Home() {
                     border: '1px solid var(--nyt-border)'
                   }}>
                     <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      CMS Approved
+                      HIPAA Compliant
                     </span>
                   </div>
                   <div style={{
@@ -336,7 +330,20 @@ export default function Home() {
                         border: 'none'
                       }}
                     >
-                      ✓ Zero Knowledge Check
+                      <span style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '24px',
+                        height: '24px',
+                        borderRadius: '50%',
+                        backgroundColor: 'white',
+                        color: 'var(--nyt-accent)',
+                        marginRight: '8px',
+                        fontSize: '14px',
+                        fontWeight: 'bold'
+                      }}>✓</span>
+                      Zero Knowledge Check
                     </button>
                   </div>
                 ) : (
@@ -405,6 +412,44 @@ export default function Home() {
                         </div>
                         <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
                           Mathematical certainty protects your privacy while earning rewards
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      padding: '12px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      borderRadius: '8px',
+                      border: '1px solid var(--nyt-border)'
+                    }}>
+                      <span style={{fontSize: '1.2rem'}}>💰</span>
+                      <div>
+                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                          Earn Rewards
+                        </div>
+                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                          Participate in our ad network and earn income through ad engagement
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      padding: '12px',
+                      backgroundColor: 'var(--nyt-cream)',
+                      borderRadius: '8px',
+                      border: '1px solid var(--nyt-border)'
+                    }}>
+                      <span style={{fontSize: '1.2rem'}}>✅</span>
+                      <div>
+                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
+                          CMS Approved
+                        </div>
+                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
+                          Certified Qualified Entity by Centers for Medicare & Medicaid Services
                         </div>
                       </div>
                     </div>
