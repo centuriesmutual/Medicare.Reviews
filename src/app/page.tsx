@@ -152,7 +152,13 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             {/* Ad Network Call-to-Action Section */}
-            <div className="nyt-sidebar-section">
+            <div style={{
+              padding: '25px',
+              backgroundColor: 'var(--nyt-white)',
+              borderRadius: '12px',
+              border: '2px solid var(--nyt-border)',
+              marginBottom: '30px'
+            }}>
               <h3 className="nyt-sidebar-title">Join Our HIPAA-Compliant Ad Network</h3>
               <div className="nyt-sidebar-item">
                 <div className="nyt-sidebar-item-content" style={{marginBottom: '20px'}}>
@@ -190,10 +196,11 @@ export default function Home() {
             </div>
 
             {/* Your Benefits Are Never Touched Card */}
-            <div className="nyt-sidebar-section" style={{
-              marginTop: '100px',
-              paddingTop: '40px',
-              borderTop: 'none'
+            <div style={{
+              padding: '25px',
+              backgroundColor: 'var(--nyt-white)',
+              borderRadius: '12px',
+              border: '2px solid var(--nyt-border)'
             }}>
               <h3 className="nyt-sidebar-title">Your Benefits Are Never Touched</h3>
               <div className="nyt-sidebar-item">
