@@ -110,126 +110,6 @@ export default function AdNetworkPage() {
         </div>
       </section>
 
-      {/* How our Zero-Knowledge Review System Works Section */}
-      <section style={{
-        minHeight: '100vh',
-        backgroundColor: 'var(--nyt-white)',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '80px 0'
-      }}>
-        <div className="nyt-container">
-          <div style={{textAlign: 'center', marginBottom: '60px'}}>
-            <h2 className="nyt-headline large" style={{
-              fontSize: '3.5rem',
-              marginBottom: '30px',
-              color: 'var(--nyt-black)'
-            }}>
-              How our Zero-Knowledge Review System Works
-            </h2>
-          </div>
-          
-          <div style={{
-            maxWidth: '900px',
-            margin: '0 auto'
-          }}>
-            <div className="nyt-content" style={{fontSize: '1.2rem', lineHeight: '1.9', marginBottom: '40px'}}>
-              <p style={{marginBottom: '25px', color: 'var(--nyt-black)'}}>
-                Reviews are submitted using a privacy-preserving verification process that confirms plan usage without revealing identity. Before writing a review, eligibility is checked using experience-based signals—such as geographic consistency, Medicare-eligible financial patterns, and access to plan-specific benefits.
-              </p>
-              <p style={{marginBottom: '25px', color: 'var(--nyt-black)'}}>
-                No personal information, medical records, bank details, or carrier logins are stored or shared. Each review is cryptographically bound to a specific plan, can only be submitted once per eligible user, and remains fully anonymous.
-              </p>
-              <p style={{color: 'var(--nyt-black)'}}>
-                This system ensures reviews come from people who have actually used the plan, while protecting privacy and avoiding any claim of carrier or CMS endorsement.
-              </p>
-            </div>
-
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '30px',
-              marginTop: '50px'
-            }}>
-              <div style={{
-                padding: '30px',
-                backgroundColor: 'var(--nyt-cream)',
-                borderRadius: '12px',
-                border: '2px solid var(--nyt-border)',
-                textAlign: 'center'
-              }}>
-                <Key style={{width: '40px', height: '40px', color: 'var(--nyt-accent)', margin: '0 auto 20px'}} />
-                <h3 style={{
-                  fontSize: '1.3rem',
-                  fontWeight: '700',
-                  marginBottom: '15px',
-                  color: 'var(--nyt-black)'
-                }}>
-                  Privacy-Preserving Verification
-                </h3>
-                <p style={{
-                  fontSize: '1rem',
-                  color: 'var(--nyt-gray)',
-                  lineHeight: '1.6'
-                }}>
-                  Confirms plan usage without revealing identity
-                </p>
-              </div>
-              
-              <div style={{
-                padding: '30px',
-                backgroundColor: 'var(--nyt-cream)',
-                borderRadius: '12px',
-                border: '2px solid var(--nyt-border)',
-                textAlign: 'center'
-              }}>
-                <Shield style={{width: '40px', height: '40px', color: 'var(--nyt-accent)', margin: '0 auto 20px'}} />
-                <h3 style={{
-                  fontSize: '1.3rem',
-                  fontWeight: '700',
-                  marginBottom: '15px',
-                  color: 'var(--nyt-black)'
-                }}>
-                  No Data Storage
-                </h3>
-                <p style={{
-                  fontSize: '1rem',
-                  color: 'var(--nyt-gray)',
-                  lineHeight: '1.6'
-                }}>
-                  Personal information, medical records, and bank details are never stored or shared
-                </p>
-              </div>
-              
-              <div style={{
-                padding: '30px',
-                backgroundColor: 'var(--nyt-cream)',
-                borderRadius: '12px',
-                border: '2px solid var(--nyt-border)',
-                textAlign: 'center'
-              }}>
-                <Lock style={{width: '40px', height: '40px', color: 'var(--nyt-accent)', margin: '0 auto 20px'}} />
-                <h3 style={{
-                  fontSize: '1.3rem',
-                  fontWeight: '700',
-                  marginBottom: '15px',
-                  color: 'var(--nyt-black)'
-                }}>
-                  Cryptographically Bound
-                </h3>
-                <p style={{
-                  fontSize: '1rem',
-                  color: 'var(--nyt-gray)',
-                  lineHeight: '1.6'
-                }}>
-                  Each review is bound to a specific plan and remains fully anonymous
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Zero-Knowledge Identity: How It Works - Full Page Section */}
       <section style={{
         minHeight: '100vh',
@@ -741,14 +621,22 @@ export default function AdNetworkPage() {
                   marginBottom: '20px',
                   color: 'var(--nyt-black)'
                 }}>
-                  No User Database
+                  No User Database or Session Data
                 </h3>
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.7',
+                  color: 'var(--nyt-gray)',
+                  marginBottom: '15px'
+                }}>
+                  We don't maintain a database of user accounts, profiles, or personal information. There's no "user table" to hack or leak.
+                </p>
                 <p style={{
                   fontSize: '1.1rem',
                   lineHeight: '1.7',
                   color: 'var(--nyt-gray)'
                 }}>
-                  We don't maintain a database of user accounts, profiles, or personal information. There's no "user table" to hack or leak.
+                  We don't store session cookies, login tokens, or browsing history. Each interaction is independent and anonymous.
                 </p>
               </motion.div>
               
@@ -791,48 +679,6 @@ export default function AdNetworkPage() {
                   color: 'var(--nyt-gray)'
                 }}>
                   Reviews are published anonymously with no connection to the author. We can't track who wrote what, even if we wanted to.
-                </p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                style={{
-                  padding: '40px',
-                  backgroundColor: 'var(--nyt-cream)',
-                  borderRadius: '16px',
-                  border: '3px solid var(--nyt-accent)',
-                  textAlign: 'center'
-                }}
-              >
-                <div style={{
-                  width: '80px',
-                  height: '80px',
-                  backgroundColor: 'var(--nyt-accent)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 30px',
-                  borderRadius: '12px'
-                }}>
-                  <XCircle style={{width: '40px', height: '40px', color: 'white'}} />
-                </div>
-                <h3 style={{
-                  fontSize: '1.6rem',
-                  fontWeight: '700',
-                  marginBottom: '20px',
-                  color: 'var(--nyt-black)'
-                }}>
-                  No Session Data
-                </h3>
-                <p style={{
-                  fontSize: '1.1rem',
-                  lineHeight: '1.7',
-                  color: 'var(--nyt-gray)'
-                }}>
-                  We don't store session cookies, login tokens, or browsing history. Each interaction is independent and anonymous.
                 </p>
               </motion.div>
               
