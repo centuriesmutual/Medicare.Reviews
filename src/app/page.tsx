@@ -382,14 +382,6 @@ export default function Home() {
                   Privacy-Preserving Age Verification
                 </h3>
                 <div style={{marginBottom: '20px'}}>
-                  <p style={{
-                    color: 'var(--nyt-gray)',
-                    lineHeight: '1.6',
-                    fontSize: '0.95rem',
-                    marginBottom: '15px'
-                  }}>
-                    Our privacy-preserving verification confirms you are 65+ without revealing your exact age or any personal information
-                  </p>
                   <div style={{
                     display: 'flex',
                     flexDirection: 'column',
