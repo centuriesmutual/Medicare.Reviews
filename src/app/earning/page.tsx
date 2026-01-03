@@ -38,46 +38,82 @@ export default function EarningPage() {
         </div>
       </header>
 
-      {/* Main Content - Simple Landing */}
-      <div className="nyt-container" style={{paddingTop: '80px', paddingBottom: '80px'}}>
-        <div style={{maxWidth: '600px', margin: '0 auto', textAlign: 'center'}}>
-          <h1 className="nyt-headline large" style={{marginBottom: '30px'}}>
-            Start Earning from Your Reviews
-          </h1>
-          
-          <div className="nyt-content" style={{marginBottom: '40px'}}>
-            <p style={{fontSize: '1.2rem', marginBottom: '20px'}}>
-              Join our HIPAA-compliant platform to earn money from anonymous Medicare reviews and ad engagement.
-            </p>
-            <p style={{color: 'var(--nyt-gray)', fontSize: '1.1rem'}}>
-              Your identity is protected by zero-knowledge proofs while you earn through your virtual wallet.
-            </p>
+      {/* Main Content - Two Column Layout */}
+      <div className="nyt-container" style={{paddingTop: '40px', paddingBottom: '80px'}}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(12, 1fr)',
+          gap: '50px',
+          alignItems: 'center'
+        }}>
+          {/* Left Column */}
+          <div style={{
+            gridColumn: 'span 6',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <h1 className="nyt-headline large" style={{marginBottom: '30px'}}>
+              Earn Money from Your Reviews
+            </h1>
+            
+            <div className="nyt-content" style={{marginBottom: '40px'}}>
+              <p style={{fontSize: '1.2rem', marginBottom: '20px', lineHeight: '1.8'}}>
+                Get paid for viewing targeted healthcare ads through our HIPAA-compliant ad sharing network.
+              </p>
+              <p style={{color: 'var(--nyt-gray)', fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '20px'}}>
+                Our platform pays you for engaging with relevant healthcare advertisements while keeping your identity completely anonymous. You earn rewards through our privacy-preserving ad network, not for writing reviews.
+              </p>
+              <p style={{color: 'var(--nyt-gray)', fontSize: '1.1rem', lineHeight: '1.7'}}>
+                Your identity is protected by zero-knowledge proofs while you earn through your virtual wallet.
+              </p>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              gap: '20px',
+              flexWrap: 'wrap'
+            }}>
+              <button 
+                onClick={() => setShowSignupModal(true)}
+                className="nyt-button" 
+                style={{
+                  backgroundColor: 'var(--nyt-accent)',
+                  padding: '20px 40px',
+                  fontSize: '1.1rem'
+                }}
+              >
+                Start Earning
+              </button>
+              <Link href="/" className="nyt-button" style={{
+                backgroundColor: 'var(--nyt-gray)',
+                padding: '20px 40px',
+                fontSize: '1.1rem',
+                textDecoration: 'none'
+              }}>
+                View Platform
+              </Link>
+            </div>
           </div>
 
+          {/* Right Column - Image */}
           <div style={{
-            display: 'flex',
-            gap: '20px',
-            justifyContent: 'center',
-            flexWrap: 'wrap'
+            gridColumn: 'span 6',
+            position: 'relative',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            height: '400px',
+            backgroundColor: 'var(--nyt-cream)'
           }}>
-            <button 
-              onClick={() => setShowSignupModal(true)}
-              className="nyt-button" 
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+              alt="Earning through ad network"
               style={{
-                backgroundColor: 'var(--nyt-accent)',
-                padding: '20px 40px',
-                fontSize: '1.1rem'
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '12px'
               }}
-            >
-              Sign Up to Start Earning
-            </button>
-            <Link href="/" className="nyt-button" style={{
-              backgroundColor: 'var(--nyt-gray)',
-              padding: '20px 40px',
-              fontSize: '1.1rem'
-            }}>
-              Learn More
-            </Link>
+            />
           </div>
         </div>
       </div>

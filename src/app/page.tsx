@@ -100,7 +100,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Anonymous Reviews Revolutionize Community Feedback
+                Groundbreaking Technology Revolutionizes Medicare Plan Reviews
               </motion.h1>
               <div className="nyt-byline">
                 By Centuries Mutual • {getCurrentDate()}
@@ -122,10 +122,9 @@ export default function Home() {
                 </p>
                 <p>
                   &ldquo;Our Zero Knowledge System represents a fundamental shift in how advertising can be delivered 
-                  while maintaining absolute privacy,&rdquo; said a spokesperson for the platform. &ldquo;Users can 
-                  participate in our ad network and earn rewards with complete confidence, knowing their personal 
-                  information is protected by mathematical certainty from insurers, advertisers, and any form 
-                  of malfeasance.&rdquo;
+                  while maintaining absolute privacy. Users can participate in our ad network and earn rewards with 
+                  complete confidence, knowing their personal information is protected by mathematical certainty from 
+                  insurers, advertisers, and any form of malfeasance.&rdquo;
                 </p>
                 <div style={{marginTop: '25px'}}>
                   <Link href="/read-more" className="nyt-button" style={{
@@ -290,7 +289,7 @@ export default function Home() {
                     border: '1px solid var(--nyt-border)'
                   }}>
                     <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Age 65+
+                      CMS Approved
                     </span>
                   </div>
                   <div style={{
@@ -303,7 +302,7 @@ export default function Home() {
                     border: '1px solid var(--nyt-border)'
                   }}>
                     <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      Privacy Protected
+                      Patent Pending
                     </span>
                   </div>
                   <div style={{
@@ -316,7 +315,7 @@ export default function Home() {
                     border: '1px solid var(--nyt-border)'
                   }}>
                     <span style={{fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--nyt-black)'}}>
-                      HIPAA Compliant
+                      Award-Winning
                     </span>
                   </div>
                 </div>
@@ -337,7 +336,7 @@ export default function Home() {
                         border: 'none'
                       }}
                     >
-                      Zero Knowledge Check
+                      ✓ Zero Knowledge Check
                     </button>
                   </div>
                 ) : (
@@ -382,8 +381,7 @@ export default function Home() {
                     fontSize: '0.95rem',
                     marginBottom: '15px'
                   }}>
-                    Click "Our Zero Knowledge System" to learn more about how we verify your age eligibility 
-                    using secure, privacy-preserving technology.
+                    Our privacy-preserving verification confirms you are 65+ without revealing your exact age or any personal information
                   </p>
                   <div style={{
                     display: 'flex',
@@ -400,51 +398,13 @@ export default function Home() {
                       borderRadius: '8px',
                       border: '1px solid var(--nyt-border)'
                     }}>
-                      <span style={{fontSize: '1.2rem'}}>🔒</span>
-                      <div>
-                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                          Privacy Protected
-                        </div>
-                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                          Your exact age and personal information remain completely private
-                        </div>
-                      </div>
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px',
-                      padding: '12px',
-                      backgroundColor: 'var(--nyt-cream)',
-                      borderRadius: '8px',
-                      border: '1px solid var(--nyt-border)'
-                    }}>
-                      <span style={{fontSize: '1.2rem'}}>🛡️</span>
-                      <div>
-                        <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
-                          HIPAA Compliant
-                        </div>
-                        <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                          Full compliance with healthcare privacy regulations
-                        </div>
-                      </div>
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px',
-                      padding: '12px',
-                      backgroundColor: 'var(--nyt-cream)',
-                      borderRadius: '8px',
-                      border: '1px solid var(--nyt-border)'
-                    }}>
                       <span style={{fontSize: '1.2rem'}}>🔐</span>
                       <div>
                         <div style={{fontWeight: '600', marginBottom: '4px', color: 'var(--nyt-black)', fontSize: '0.95rem'}}>
                           Zero-Knowledge Proofs
                         </div>
                         <div style={{color: 'var(--nyt-gray)', fontSize: '0.85rem'}}>
-                          Mathematical certainty protects your privacy
+                          Mathematical certainty protects your privacy while earning rewards
                         </div>
                       </div>
                     </div>
@@ -576,13 +536,13 @@ export default function Home() {
                 margin: 0
               }}>
                 <li style={{marginBottom: '6px'}}>
-                  <Link href="/whitepaper" style={{
+                  <Link href="/documents" style={{
                     color: 'var(--nyt-light-gray)',
                     fontSize: '0.85rem',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease'
                   }}>
-                    Whitepaper
+                    Documents
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>
