@@ -365,21 +365,12 @@ export default function Home() {
                 fontFamily: 'Playfair Display, serif',
                 fontSize: '1.2rem',
                 fontWeight: '700',
-                margin: '0 0 15px 0',
+                margin: '0 0 25px 0',
                 color: 'var(--nyt-black)',
                 textAlign: 'left'
               }}>
                 Privacy-Preserving Age Verification
               </h3>
-              <p style={{
-                fontSize: '1rem',
-                marginBottom: '25px',
-                color: 'var(--nyt-gray)',
-                lineHeight: '1.7',
-                textAlign: 'left'
-              }}>
-                Click <Link href="/zk-systems" style={{color: 'var(--nyt-accent)', textDecoration: 'underline'}}>"Our Zero Knowledge System"</Link> to learn more about how we verify your age eligibility using secure, privacy-preserving technology.
-              </p>
               
               <div style={{
                 display: 'flex',
