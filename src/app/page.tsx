@@ -435,13 +435,6 @@ export default function Home() {
               }}>
                 The premier platform for anonymous healthcare reviews powered by zero-knowledge proof technology.
               </p>
-              <p style={{
-                color: 'var(--nyt-light-gray)',
-                fontSize: '0.85rem',
-                lineHeight: '1.4'
-              }}>
-                Your privacy is protected by cryptographic certainty.
-              </p>
             </div>
             
             <div>
@@ -482,13 +475,13 @@ export default function Home() {
                   </Link>
                 </li>
                 <li style={{marginBottom: '6px'}}>
-                  <Link href="/read-more" style={{
+                  <Link href="/qualified-entity-certification" style={{
                     color: 'var(--nyt-light-gray)',
                     fontSize: '0.85rem',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease'
                   }}>
-                    Anonymous Reviews
+                    Qualified Entity Certification
                   </Link>
                 </li>
               </ul>
