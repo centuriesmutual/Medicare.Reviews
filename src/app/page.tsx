@@ -223,14 +223,14 @@ export default function Home() {
                   Age Verification & Eligibility
                 </h2>
           
-          <div style={{
+          <div className="age-verification-grid" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
             gap: '40px',
             alignItems: 'start'
           }}>
             {/* Left Column */}
-            <div style={{gridColumn: 'span 6'}}>
+            <div className="age-verification-left" style={{gridColumn: 'span 6'}}>
               <p style={{
                 fontSize: '1rem',
                 lineHeight: '1.7',
@@ -312,7 +312,7 @@ export default function Home() {
             </div>
 
             {/* Right Column */}
-            <div style={{gridColumn: 'span 6'}}>
+            <div className="age-verification-right" style={{gridColumn: 'span 6'}}>
               <h3 style={{
                 fontFamily: 'Playfair Display, serif',
                 fontSize: '1.2rem',

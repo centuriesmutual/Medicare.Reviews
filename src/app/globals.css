@@ -494,10 +494,20 @@ body {
   }
   
   /* Age Verification section specific mobile fixes */
-  .nyt-container article.nyt-article > div[style*="gridTemplateColumns: 'repeat(12, 1fr)'"] {
+  .age-verification-grid {
     display: flex !important;
     flex-direction: column !important;
     gap: 30px !important;
+  }
+  
+  .age-verification-left {
+    order: 1 !important;
+    width: 100% !important;
+  }
+  
+  .age-verification-right {
+    order: 2 !important;
+    width: 100% !important;
   }
   
   /* Right column cards mobile */
