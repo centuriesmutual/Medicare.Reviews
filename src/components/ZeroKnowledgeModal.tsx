@@ -7,9 +7,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 interface ZeroKnowledgeModalProps {
   isOpen: boolean
   onClose: () => void
+  onAuthenticated?: () => void
 }
 
-export default function ZeroKnowledgeModal({ isOpen, onClose }: ZeroKnowledgeModalProps) {
+export default function ZeroKnowledgeModal({ isOpen, onClose, onAuthenticated }: ZeroKnowledgeModalProps) {
   const [currentStep, setCurrentStep] = useState(0)
 
   const steps = [
@@ -56,6 +57,7 @@ export default function ZeroKnowledgeModal({ isOpen, onClose }: ZeroKnowledgeMod
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1)
     } else {
+      onAuthenticated?.()
       onClose()
     }
   }
