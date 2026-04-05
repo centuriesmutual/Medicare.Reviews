@@ -2,6 +2,7 @@ import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import HeroSection from '@/components/landing/HeroSection'
 import NewsletterHighlightsSection from '@/components/landing/NewsletterHighlightsSection'
+import MedicareIntroSection from '@/components/landing/MedicareIntroSection'
 import PayoutExplainer from '@/components/landing/PayoutExplainer'
 import DashboardPreview from '@/components/landing/DashboardPreview'
 import NewsletterContent from '@/components/landing/NewsletterContent'
@@ -14,6 +15,7 @@ export default function Home() {
       <main className="site-main">
         <HeroSection />
         <NewsletterHighlightsSection />
+        <MedicareIntroSection />
         <PayoutExplainer />
         <DashboardPreview />
         <NewsletterContent />
