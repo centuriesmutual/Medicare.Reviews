@@ -3,8 +3,6 @@ import SiteFooter from '@/components/SiteFooter'
 import HeroSection from '@/components/landing/HeroSection'
 import NewsletterHighlightsSection from '@/components/landing/NewsletterHighlightsSection'
 import PayoutExplainer from '@/components/landing/PayoutExplainer'
-import NewsletterContent from '@/components/landing/NewsletterContent'
-import CTASection from '@/components/landing/CTASection'
 
 export default function Home() {
   return (
@@ -14,8 +12,6 @@ export default function Home() {
         <HeroSection />
         <NewsletterHighlightsSection />
         <PayoutExplainer />
-        <NewsletterContent />
-        <CTASection />
       </main>
       <SiteFooter />
     </div>
