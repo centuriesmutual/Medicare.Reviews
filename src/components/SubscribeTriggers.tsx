@@ -15,19 +15,6 @@ export function SubscribeHeroButton({ className = '' }: { className?: string }) 
   )
 }
 
-export function SubscribeNavButton({ className = '' }: { className?: string }) {
-  const { openSubscribeModal } = useSubscribeModal()
-  return (
-    <button
-      type="button"
-      className={`cursor-pointer border-0 bg-transparent p-0 text-[0.8rem] font-semibold uppercase tracking-wide text-[var(--nyt-black)] underline-offset-4 hover:underline ${className}`}
-      onClick={openSubscribeModal}
-    >
-      Start earning
-    </button>
-  )
-}
-
 export function SubscribeTextLink({
   children,
   className = '',
