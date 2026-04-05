@@ -9,6 +9,8 @@ export type EmailSignupFormProps = {
   defaultFrequency?: NewsletterFrequency
   submitLabel?: string
   idPrefix?: string
+  /** Stack frequency rows vertically for narrow hero sidebar. */
+  sidebarLayout?: boolean
 }
 
 export default function EmailSignupForm({
@@ -16,6 +18,7 @@ export default function EmailSignupForm({
   defaultFrequency = 'TWICE_MONTHLY',
   submitLabel = 'Start Earning',
   idPrefix = 'signup',
+  sidebarLayout = false,
 }: EmailSignupFormProps) {
   const [email, setEmail] = useState('')
   const [coinbaseEmail, setCoinbaseEmail] = useState('')
@@ -70,7 +73,7 @@ export default function EmailSignupForm({
             autoComplete="email"
             inputMode="email"
             required
-            className="nyt-input max-w-full md:max-w-md"
+            className={`nyt-input max-w-full ${sidebarLayout ? '' : 'md:max-w-md'}`}
             placeholder="you@example.com"
             value={email}
             onChange={(ev) => setEmail(ev.target.value)}
@@ -84,6 +87,7 @@ export default function EmailSignupForm({
           disabled={busy}
           options={['TWICE_MONTHLY', 'MONTHLY']}
           variant="row"
+          rowStacked={sidebarLayout}
           showLegend={false}
           showDisclaimer={false}
         />
@@ -92,7 +96,13 @@ export default function EmailSignupForm({
           Estimates vary by season and sponsor demand. Payouts are small and are not guaranteed.
         </p>
 
-        <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end">
+        <div
+          className={
+            sidebarLayout
+              ? 'mt-5 flex flex-col gap-4'
+              : 'mt-5 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end'
+          }
+        >
           <div className="min-w-0 flex-1 sm:min-w-[220px] sm:max-w-md">
             <label className="nyt-form-label" htmlFor={`${idPrefix}-coinbase`}>
               Coinbase email{' '}
@@ -127,6 +137,7 @@ export default function EmailSignupForm({
           disabled={busy}
           options={['DAILY', 'WEEKLY', 'BIWEEKLY']}
           variant="row"
+          rowStacked={sidebarLayout}
           showLegend={false}
           showDisclaimer={false}
         />

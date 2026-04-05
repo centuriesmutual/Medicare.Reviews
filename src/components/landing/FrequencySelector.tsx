@@ -13,6 +13,8 @@ export type FrequencySelectorProps = {
   showDisclaimer?: boolean
   showLegend?: boolean
   legendText?: string
+  /** In row mode, stack choice cards vertically (narrow sidebar). */
+  rowStacked?: boolean
 }
 
 function optionFor(v: NewsletterFrequency) {
@@ -29,6 +31,7 @@ export default function FrequencySelector({
   showDisclaimer = true,
   showLegend = true,
   legendText = 'How often should we email you?',
+  rowStacked = false,
 }: FrequencySelectorProps) {
   const list = options?.length
     ? options.map(optionFor)
@@ -42,14 +45,18 @@ export default function FrequencySelector({
       <div
         className={
           row
-            ? 'flex flex-wrap gap-3'
+            ? rowStacked
+              ? 'flex flex-col gap-3'
+              : 'flex flex-wrap gap-3'
             : 'grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3 xl:grid-cols-5'
         }
       >
         {list.map((opt) => {
           const selected = opt.value === value
           const base = row
-            ? 'min-w-[10.5rem] max-w-[14rem] flex-1 rounded-lg border-2 p-3 text-left transition-all cursor-pointer bg-[var(--nyt-white)] sm:min-w-[11rem] sm:p-3.5'
+            ? rowStacked
+              ? 'w-full max-w-none rounded-lg border-2 p-3 text-left transition-all cursor-pointer bg-[var(--nyt-white)]'
+              : 'min-w-[10.5rem] max-w-[14rem] flex-1 rounded-lg border-2 p-3 text-left transition-all cursor-pointer bg-[var(--nyt-white)] sm:min-w-[11rem] sm:p-3.5'
             : 'rounded-xl border-2 p-4 text-left transition-all cursor-pointer bg-[var(--nyt-white)]'
           const ring = selected
             ? 'border-[var(--nyt-accent)] shadow-[0_0_0_3px_rgba(25,118,210,0.15)]'
@@ -72,7 +79,9 @@ export default function FrequencySelector({
               <div
                 className={
                   row
-                    ? 'flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-2'
+                    ? rowStacked
+                      ? 'flex flex-row items-start justify-between gap-2'
+                      : 'flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-2'
                     : 'flex items-start justify-between gap-3'
                 }
               >

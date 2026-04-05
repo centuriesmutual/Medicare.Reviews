@@ -910,7 +910,12 @@ body {
 
 @media (min-width: 900px) {
   .site-hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 400px);
     gap: 2.5rem;
   }
+}
+
+/* Signup column: form can use full sidebar width */
+.site-hero-sidebar {
+  min-width: 0;
 }
