@@ -46,13 +46,7 @@ export default function HeroSection() {
               Short reads (~2 minutes), one simple signup, written for people navigating Medicare.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <SubscribeHeroButton />
-              <p className="m-0 max-w-md text-sm text-[var(--nyt-gray)]">
-                Use the subscribe button to open the signup form—email, cadence, and optional Coinbase—in one
-                place.
-              </p>
-            </div>
+            <SubscribeHeroButton />
           </div>
 
           <div className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">

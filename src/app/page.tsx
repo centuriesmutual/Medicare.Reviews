@@ -2,6 +2,8 @@ import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import HeroSection from '@/components/landing/HeroSection'
 import PayoutExplainer from '@/components/landing/PayoutExplainer'
+import PlatformNarrativeSection from '@/components/landing/PlatformNarrativeSection'
+import HomePreFooterCTA from '@/components/landing/HomePreFooterCTA'
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <main className="site-main">
         <HeroSection />
         <PayoutExplainer />
+        <PlatformNarrativeSection />
+        <HomePreFooterCTA />
       </main>
       <SiteFooter />
     </div>
