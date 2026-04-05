@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Mail, RefreshCw, Wallet } from 'lucide-react'
 import { SubscribeHeroButton } from '@/components/SubscribeTriggers'
 import EarningsSnapshotSidebar from '@/components/landing/EarningsSnapshotSidebar'
@@ -46,7 +47,15 @@ export default function HeroSection() {
               Short reads (~2 minutes), one simple signup, written for people navigating Medicare.
             </p>
 
-            <SubscribeHeroButton />
+            <div className="flex flex-wrap items-center gap-3">
+              <SubscribeHeroButton />
+              <Link
+                href="/what-people-are-saying"
+                className="inline-flex min-h-[48px] items-center justify-center border-2 border-[var(--nyt-black)] bg-[var(--nyt-white)] px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-[var(--nyt-black)] no-underline transition-colors hover:bg-[var(--nyt-black)] hover:text-[var(--nyt-white)] sm:px-8 sm:text-base"
+              >
+                What People Are Saying
+              </Link>
+            </div>
           </div>
 
           <div className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
