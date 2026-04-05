@@ -13,7 +13,7 @@ export type EmailSignupFormProps = {
 
 export default function EmailSignupForm({
   className = '',
-  defaultFrequency = 'WEEKLY',
+  defaultFrequency = 'TWICE_MONTHLY',
   submitLabel = 'Start Earning',
   idPrefix = 'signup',
 }: EmailSignupFormProps) {
@@ -56,61 +56,81 @@ export default function EmailSignupForm({
 
   return (
     <form className={className} onSubmit={onSubmit} noValidate>
-      <div className="nyt-form-group mb-4">
-        <label className="nyt-form-label" htmlFor={`${idPrefix}-email`}>
-          Email
-        </label>
-        <input
-          id={`${idPrefix}-email`}
-          name="email"
-          type="email"
-          autoComplete="email"
-          inputMode="email"
-          required
-          className="nyt-input"
-          placeholder="you@example.com"
-          value={email}
-          onChange={(ev) => setEmail(ev.target.value)}
-          disabled={busy}
-        />
-      </div>
+      <fieldset className="m-0 border-0 p-0" disabled={busy}>
+        <legend className="sr-only">Newsletter signup and email frequency</legend>
 
-      <div className="nyt-form-group mb-4">
+        <div className="nyt-form-group mb-5">
+          <label className="nyt-form-label" htmlFor={`${idPrefix}-email`}>
+            Email
+          </label>
+          <input
+            id={`${idPrefix}-email`}
+            name="email"
+            type="email"
+            autoComplete="email"
+            inputMode="email"
+            required
+            className="nyt-input max-w-full md:max-w-md"
+            placeholder="you@example.com"
+            value={email}
+            onChange={(ev) => setEmail(ev.target.value)}
+          />
+        </div>
+
         <FrequencySelector
           idPrefix={idPrefix}
           value={frequency}
           onChange={setFrequency}
           disabled={busy}
+          options={['TWICE_MONTHLY', 'MONTHLY']}
+          variant="row"
+          showLegend={false}
+          showDisclaimer={false}
         />
-      </div>
 
-      <div className="nyt-form-group mb-6">
-        <label className="nyt-form-label" htmlFor={`${idPrefix}-coinbase`}>
-          Coinbase email <span className="font-normal normal-case text-[var(--nyt-gray)]">(optional)</span>
-        </label>
-        <input
-          id={`${idPrefix}-coinbase`}
-          name="coinbaseEmail"
-          type="email"
-          autoComplete="email"
-          className="nyt-input"
-          placeholder="Same email you use for Coinbase"
-          value={coinbaseEmail}
-          onChange={(ev) => setCoinbaseEmail(ev.target.value)}
-          disabled={busy}
-        />
-        <p className="mt-1.5 text-sm text-[var(--nyt-gray)]">
-          We use this to route payouts. You can add it later if you prefer.
+        <p className="mt-2 text-sm text-[var(--nyt-gray)]">
+          Estimates vary by season and sponsor demand. Payouts are small and are not guaranteed.
         </p>
-      </div>
 
-      <button
-        type="submit"
-        className="nyt-button w-full max-w-none py-4 text-base sm:w-auto sm:px-10"
-        disabled={busy}
-      >
-        {busy ? 'Saving…' : submitLabel}
-      </button>
+        <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end">
+          <div className="min-w-0 flex-1 sm:min-w-[220px] sm:max-w-md">
+            <label className="nyt-form-label" htmlFor={`${idPrefix}-coinbase`}>
+              Coinbase email{' '}
+              <span className="font-normal normal-case text-[var(--nyt-gray)]">(optional)</span>
+            </label>
+            <input
+              id={`${idPrefix}-coinbase`}
+              name="coinbaseEmail"
+              type="email"
+              autoComplete="email"
+              className="nyt-input"
+              placeholder="Same email you use for Coinbase"
+              value={coinbaseEmail}
+              onChange={(ev) => setCoinbaseEmail(ev.target.value)}
+            />
+            <p className="mt-1.5 text-sm text-[var(--nyt-gray)]">
+              We use this to route payouts. You can add it later if you prefer.
+            </p>
+          </div>
+          <div className="shrink-0 sm:pt-6">
+            <button type="submit" className="nyt-button w-full px-8 py-3.5 sm:w-auto">
+              {busy ? 'Saving…' : submitLabel}
+            </button>
+          </div>
+        </div>
+
+        <p className="nyt-form-label mb-2 mt-8">How often should we email you?</p>
+        <FrequencySelector
+          idPrefix={idPrefix}
+          value={frequency}
+          onChange={setFrequency}
+          disabled={busy}
+          options={['DAILY', 'WEEKLY', 'BIWEEKLY']}
+          variant="row"
+          showLegend={false}
+          showDisclaimer={false}
+        />
+      </fieldset>
 
       {message && (
         <p
