@@ -698,6 +698,30 @@ body {
   font-style: italic;
 }
 
+.nyt-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--nyt-border);
+  border-radius: 10px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  background: var(--nyt-white);
+  color: var(--nyt-black);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.nyt-input:focus {
+  outline: none;
+  border-color: var(--nyt-accent);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.12);
+}
+
+.nyt-input::placeholder {
+  color: var(--nyt-light-gray);
+}
+
 /* Button Variants */
 .nyt-button.secondary {
   background: var(--nyt-gray);

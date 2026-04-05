@@ -5,24 +5,19 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Medicare Reviews',
+    default: 'Medicare Reviews — Get paid to read Medicare insights',
     template: '%s | Medicare Reviews'
   },
-  description: 'Privacy-preserving Medicare eligibility verification and HIPAA-compliant ad network powered by zero-knowledge proof technology. Verify your Medicare Part A and Part B enrollment securely without compromising your personal information.',
+  description:
+    'Medicare Reviews sends curated Medicare insights and occasional sponsored messages. Choose your frequency and receive small payouts to your Coinbase account. No spam—just clear guidance and simple cash rewards.',
   keywords: [
-    'Medicare reviews',
-    'Medicare eligibility verification',
-    'HIPAA compliant ad network',
-    'zero-knowledge proofs',
-    'privacy-preserving healthcare',
-    'Medicare Part A',
-    'Medicare Part B',
-    'anonymous healthcare reviews',
-    'cryptographic privacy',
-    'Medicare benefits',
-    'healthcare advertising',
-    'privacy-first healthcare',
-    'Centuries Mutual'
+    'Medicare newsletter',
+    'Medicare insights',
+    'Coinbase payouts',
+    'Medicare tips',
+    'Medicare plan comparison',
+    'sponsored Medicare ads',
+    'Centuries Mutual',
   ],
   authors: [{ name: 'Centuries Mutual', url: 'https://www.medicare.reviews' }],
   creator: 'Centuries Mutual',
@@ -49,8 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Medicare Reviews - Privacy-Preserving Medicare Eligibility',
-    description: 'HIPAA-compliant ad network powered by zero-knowledge proof technology. Verify Medicare enrollment securely.',
+    title: 'Medicare Reviews — Paid Medicare insights inbox',
+    description:
+      'Short-form Medicare guidance plus sponsored offers. Payouts route through Coinbase with the email you provide.',
     images: ['/og-image.jpg'],
   },
   robots: {

@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// Signup / newsletter participant. Use PostgreSQL in production by changing
+/// the datasource provider and DATABASE_URL (see `.env.example`).
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  frequency     String
+  coinbaseEmail String?
+  createdAt     DateTime @default(now())
+  adViews       AdView[]
+  payouts       Payout[]
+}
+
+model AdView {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  timestamp    DateTime @default(now())
+  payoutAmount Float    @default(0)
+}
+
+model Payout {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount    Float
+  status    String
+  createdAt DateTime @default(now())
+}

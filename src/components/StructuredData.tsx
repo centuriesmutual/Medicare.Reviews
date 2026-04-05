@@ -5,7 +5,8 @@ export default function StructuredData() {
     name: 'Medicare Reviews',
     url: 'https://www.medicare.reviews',
     logo: 'https://www.medicare.reviews/logo.png',
-    description: 'Privacy-preserving Medicare eligibility verification and HIPAA-compliant ad network powered by zero-knowledge proof technology.',
+    description:
+      'Medicare Reviews delivers curated Medicare insights, sponsored opportunities, and optional Coinbase payouts for engaged readers.',
     founder: {
       '@type': 'Organization',
       name: 'Centuries Mutual'
@@ -22,7 +23,7 @@ export default function StructuredData() {
     '@type': 'WebSite',
     name: 'Medicare Reviews',
     url: 'https://www.medicare.reviews',
-    description: 'Privacy-preserving Medicare eligibility verification and HIPAA-compliant ad network.',
+    description: 'Newsletter and education platform focused on Medicare with optional Coinbase payouts.',
     publisher: {
       '@type': 'Organization',
       name: 'Centuries Mutual'
@@ -32,15 +33,16 @@ export default function StructuredData() {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Medicare Eligibility Verification',
-    description: 'Secure, privacy-preserving Medicare Part A and Part B eligibility verification using zero-knowledge proof technology.',
+    name: 'Medicare Reviews Newsletter',
+    description:
+      'Curated Medicare education emails with reader-controlled frequency and Coinbase payout routing for qualifying engagement.',
     provider: {
       '@type': 'Organization',
       name: 'Medicare Reviews',
       url: 'https://www.medicare.reviews'
     },
     areaServed: 'US',
-    serviceType: 'Healthcare Technology'
+    serviceType: 'Healthcare publishing',
   }
 
   return (
