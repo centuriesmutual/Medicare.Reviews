@@ -743,3 +743,74 @@ body {
 .animate-spin {
   animation: spin 1s linear infinite;
 }
+
+/* Landing — dense 12-column grid + filled surfaces (Medicare Reviews home) */
+.landing-texture {
+  background-color: var(--nyt-white);
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    radial-gradient(ellipse 85% 65% at 100% -10%, rgba(25, 118, 210, 0.12), transparent 52%),
+    radial-gradient(ellipse 75% 55% at -5% 110%, rgba(211, 47, 47, 0.08), transparent 48%);
+  background-size:
+    48px 48px,
+    48px 48px,
+    100% 100%,
+    100% 100%;
+}
+
+.landing-texture-muted {
+  background-color: var(--nyt-bg);
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, var(--nyt-cream) 0%, var(--nyt-bg) 38%, var(--nyt-bg) 100%);
+  background-size:
+    40px 40px,
+    40px 40px,
+    100% 100%;
+}
+
+.landing-grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.8vw, 1.35rem);
+}
+
+@media (min-width: 1024px) {
+  .landing-grid-12 {
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+}
+
+.landing-panel {
+  background: var(--nyt-white);
+  border: 1px solid var(--nyt-border);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);
+}
+
+.landing-panel-accent {
+  border-left: 4px solid var(--nyt-red);
+}
+
+.landing-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--nyt-border);
+  background: linear-gradient(180deg, #ffffff 0%, var(--nyt-cream) 100%);
+  padding: 0.55rem 0.85rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--nyt-black);
+}
+
+@media (min-width: 1024px) {
+  .landing-signup-sticky {
+    position: sticky;
+    top: 6.25rem;
+    align-self: start;
+  }
+}

@@ -8,9 +8,9 @@ import CTASection from '@/components/landing/CTASection'
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[var(--nyt-bg)]">
       <SiteHeader />
-      <main>
+      <main className="bg-[var(--nyt-bg)]">
         <HeroSection />
         <PayoutExplainer />
         <DashboardPreview />
