@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import StructuredData from '@/components/StructuredData'
+import { SubscribeModalProvider } from '@/components/SubscribeModalProvider'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -83,9 +84,9 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="magazine-body">
         <StructuredData />
-        <div className="min-h-screen">
-          {children}
-        </div>
+        <SubscribeModalProvider>
+          <div className="min-h-screen">{children}</div>
+        </SubscribeModalProvider>
         <Analytics />
       </body>
     </html>

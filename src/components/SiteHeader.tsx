@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Newspaper } from 'lucide-react'
+import { SubscribeNavButton } from '@/components/SubscribeTriggers'
 
 export default function SiteHeader() {
   return (
@@ -16,12 +17,7 @@ export default function SiteHeader() {
             </div>
           </div>
           <div className="flex shrink-0 items-center gap-3">
-            <Link
-              href="#start-earning"
-              className="text-[0.8rem] font-semibold uppercase tracking-wide text-[var(--nyt-black)] underline-offset-4 hover:underline"
-            >
-              Start earning
-            </Link>
+            <SubscribeNavButton />
             <Link
               href="/download"
               className="nyt-button px-3 py-1.5 text-[0.75rem] whitespace-nowrap"

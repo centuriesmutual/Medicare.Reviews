@@ -1,5 +1,5 @@
 import { CheckCircle2 } from 'lucide-react'
-import EmailSignupForm from '@/components/landing/EmailSignupForm'
+import { SubscribeHeroButton } from '@/components/SubscribeTriggers'
 
 const BULLETS = [
   'Sponsors and disclaimers stay visible.',
@@ -11,8 +11,8 @@ export default function CTASection() {
   return (
     <section className="site-section site-section--gray" aria-labelledby="final-cta-heading">
       <div className="site-container">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10 xl:gap-12">
-          <div className="max-w-xl shrink-0 lg:max-w-[280px] xl:max-w-xs">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+          <div className="max-w-xl">
             <h2
               id="final-cta-heading"
               className="mb-2 mt-0 border-b-2 border-[var(--nyt-red)] pb-2 text-2xl font-bold text-[var(--nyt-black)] md:text-[1.85rem]"
@@ -21,7 +21,8 @@ export default function CTASection() {
               Start earning from your inbox
             </h2>
             <p className="site-lead !mb-4">
-              Same fields as above: email, frequency (in two rows), optional Coinbase, then submit.
+              Open subscribe to enter your email, pick how often we write, and add Coinbase when you want
+              payouts.
             </p>
             <ul className="m-0 flex list-none flex-wrap gap-x-6 gap-y-2 p-0 text-sm text-[var(--nyt-gray)]">
               {BULLETS.map((line) => (
@@ -32,12 +33,8 @@ export default function CTASection() {
               ))}
             </ul>
           </div>
-
-          <div className="min-w-0 flex-1">
-            <div className="site-box">
-              <h3 className="site-box__title">Sign up again</h3>
-              <EmailSignupForm idPrefix="footer-cta" submitLabel="Start earning" />
-            </div>
+          <div className="shrink-0">
+            <SubscribeHeroButton />
           </div>
         </div>
       </div>

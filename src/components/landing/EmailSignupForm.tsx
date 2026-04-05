@@ -11,6 +11,8 @@ export type EmailSignupFormProps = {
   idPrefix?: string
   /** Stack frequency rows vertically for narrow hero sidebar. */
   sidebarLayout?: boolean
+  /** Called after a successful signup (e.g. close modal). */
+  onSuccess?: () => void
 }
 
 export default function EmailSignupForm({
@@ -19,6 +21,7 @@ export default function EmailSignupForm({
   submitLabel = 'Start Earning',
   idPrefix = 'signup',
   sidebarLayout = false,
+  onSuccess,
 }: EmailSignupFormProps) {
   const [email, setEmail] = useState('')
   const [coinbaseEmail, setCoinbaseEmail] = useState('')
@@ -49,6 +52,9 @@ export default function EmailSignupForm({
       setMessage(data.message ?? 'You are on the list.')
       setEmail('')
       setCoinbaseEmail('')
+      if (onSuccess) {
+        window.setTimeout(() => onSuccess(), 2000)
+      }
     } catch {
       setStatus('error')
       setMessage('Network error. Check your connection and try again.')
