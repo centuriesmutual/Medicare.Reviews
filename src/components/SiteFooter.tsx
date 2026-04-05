@@ -129,22 +129,6 @@ export default function SiteFooter() {
                   Medicare Disclaimer
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-[0.85rem] text-[var(--nyt-light-gray)] no-underline transition-colors hover:text-white"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-[0.85rem] text-[var(--nyt-light-gray)] no-underline transition-colors hover:text-white"
-                >
-                  Terms and Conditions
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
@@ -154,12 +138,6 @@ export default function SiteFooter() {
         >
           <div>© 2026 Medicare Reviews. All rights reserved.</div>
           <div className="flex flex-wrap gap-5">
-            <Link href="/privacy" className="text-[var(--nyt-light-gray)] no-underline hover:text-white">
-              Privacy
-            </Link>
-            <Link href="/terms" className="text-[var(--nyt-light-gray)] no-underline hover:text-white">
-              Terms
-            </Link>
             <Link
               href="/medicare-disclaimer"
               className="text-[var(--nyt-light-gray)] no-underline hover:text-white"
