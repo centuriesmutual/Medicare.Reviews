@@ -26,24 +26,26 @@ export default function PayoutExplainer() {
             How you get paid
           </h2>
           <p className="site-lead !mb-0">
-            Four steps from signup to payout. No crypto jargon—just email, preferences, and Coinbase.
+            From signup to payout—no crypto jargon, just email, preferences, and Coinbase.
           </p>
         </div>
 
         <div className="overflow-hidden rounded-lg border border-[var(--nyt-border)] bg-[var(--nyt-white)] shadow-sm">
-          <ol className="m-0 grid list-none divide-y divide-[var(--nyt-border)] p-0 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
-            {STEPS.map((step, i) => (
-              <li key={step.title} className="relative flex flex-col p-5 sm:p-6">
-                <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full border border-[var(--nyt-border)] bg-[var(--nyt-cream)] text-xs font-bold tabular-nums text-[var(--nyt-black)]">
-                  {i + 1}
-                </span>
-                <h3 className="mb-2 mt-0 text-[0.95rem] font-bold leading-snug tracking-tight text-[var(--nyt-black)]">
+          <ul className="m-0 grid list-none divide-y divide-[var(--nyt-border)] p-0 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+            {STEPS.map((step) => (
+              <li
+                key={step.title}
+                className="flex flex-col justify-start px-4 py-5 sm:px-5 sm:py-6 lg:px-5 lg:py-6 xl:py-7"
+              >
+                <h3 className="mb-2 mt-0 text-[0.9rem] font-bold leading-snug tracking-tight text-[var(--nyt-black)] lg:text-[0.95rem]">
                   {step.title}
                 </h3>
-                <p className="m-0 flex-1 text-sm leading-relaxed text-[var(--nyt-gray)]">{step.body}</p>
+                <p className="m-0 flex-1 text-[0.8125rem] leading-relaxed text-[var(--nyt-gray)] lg:text-sm">
+                  {step.body}
+                </p>
               </li>
             ))}
-          </ol>
+          </ul>
         </div>
       </div>
     </section>
