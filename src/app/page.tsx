@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--nyt-bg)]">
       <SiteHeader />
-      <main className="newsletter-home">
+      <main className="site-main">
         <HeroSection />
         <NewsletterHighlightsSection />
         <PayoutExplainer />

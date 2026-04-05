@@ -9,35 +9,24 @@ const HIGHLIGHTS = [
 
 export default function NewsletterHighlightsSection() {
   return (
-    <section className="newsletter-section newsletter-section--cream border-b border-[var(--nyt-border)]" aria-labelledby="highlights-heading">
-      <div className="nyt-container newsletter-section-inner py-10 md:py-12">
-        <header className="mb-8 max-w-2xl md:mb-10">
-          <p className="newsletter-kicker">This week&apos;s lens</p>
-          <h2
-            id="highlights-heading"
-            className="nyt-headline medium !mb-2 !mt-0"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            What every send is built around
-          </h2>
-          <p className="newsletter-dek !mb-0">
-            Six standing columns—like a print section front—so you always know what you are opting into.
-          </p>
-        </header>
+    <section className="site-section site-section--gray" aria-labelledby="highlights-heading">
+      <div className="site-container">
+        <h2 id="highlights-heading" className="site-section-title">
+          What you get with each send
+        </h2>
+        <p className="site-lead">
+          The same ideas every time: useful Medicare context, clearly marked sponsor space, and simple payout
+          mechanics.
+        </p>
 
-        <ul className="m-0 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {HIGHLIGHTS.map((item) => (
-            <li
-              key={item.title}
-              className="newsletter-inset-card border border-[var(--nyt-border)] bg-[var(--nyt-white)] p-4 md:p-5"
-            >
-              <p className="m-0 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-[var(--nyt-accent)]">
-                {item.title}
-              </p>
-              <p className="mt-2 m-0 text-sm leading-relaxed text-[var(--nyt-gray)]">{item.body}</p>
-            </li>
+            <div key={item.title} className="site-box">
+              <h3 className="mb-2 mt-0 text-base font-bold text-[var(--nyt-black)]">{item.title}</h3>
+              <p className="m-0 text-sm leading-relaxed text-[var(--nyt-gray)]">{item.body}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   )

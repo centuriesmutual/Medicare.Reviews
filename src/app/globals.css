@@ -815,76 +815,102 @@ body {
   }
 }
 
-/* Newsletter layout — distinct sections, no stretched grid holes */
-.newsletter-home {
+/* Traditional page layout — centered column, stacked sections */
+.site-main {
   background: var(--nyt-bg);
 }
 
-.newsletter-section-inner {
+/* Matches .nyt-container so header, main, and footer line up */
+.site-container {
+  width: 100%;
   max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.newsletter-section--hero {
-  background: linear-gradient(180deg, var(--nyt-white) 0%, var(--nyt-cream) 55%, var(--nyt-bg) 100%);
+.site-section {
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
+  border-bottom: 1px solid var(--nyt-border);
 }
 
-.newsletter-section--paper {
+@media (min-width: 768px) {
+  .site-section {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+}
+
+.site-section--white {
   background: var(--nyt-white);
 }
 
-.newsletter-section--cream {
+.site-section--gray {
   background: var(--nyt-cream);
 }
 
-.newsletter-section--cta {
-  background: linear-gradient(180deg, var(--nyt-white) 0%, var(--nyt-cream) 100%);
+.site-section-title {
+  margin: 0 0 0.5rem 0;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid var(--nyt-red);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--nyt-black);
+  line-height: 1.2;
 }
 
-.newsletter-kicker {
+@media (min-width: 768px) {
+  .site-section-title {
+    font-size: 1.85rem;
+  }
+}
+
+.site-label {
   margin: 0 0 0.35rem 0;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--nyt-gray);
 }
 
-.newsletter-dek {
-  margin: 0 0 0.75rem 0;
-  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+.site-lead {
+  margin: 0 0 1.25rem 0;
+  max-width: 38rem;
+  font-size: 1.05rem;
   line-height: 1.65;
   color: var(--nyt-gray);
 }
 
-.newsletter-subscribe-card {
-  border-radius: 14px;
+.site-box {
   border: 1px solid var(--nyt-border);
+  border-radius: 6px;
   background: var(--nyt-white);
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.08);
-  padding: 1.25rem 1.35rem 1.5rem;
+  padding: 1.35rem 1.35rem 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-@media (min-width: 768px) {
-  .newsletter-subscribe-card {
-    padding: 1.5rem 1.65rem 1.65rem;
+.site-box__title {
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--nyt-border);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--nyt-black);
+}
+
+.site-hero-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .site-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
+    gap: 2.5rem;
   }
-}
-
-.newsletter-subscribe-card::before {
-  content: "";
-  display: block;
-  height: 3px;
-  margin: -1.25rem -1.35rem 1rem -1.35rem;
-  border-radius: 14px 14px 0 0;
-  background: linear-gradient(90deg, var(--nyt-red), var(--nyt-accent));
-}
-
-@media (min-width: 768px) {
-  .newsletter-subscribe-card::before {
-    margin: -1.5rem -1.65rem 1.1rem -1.65rem;
-  }
-}
-
-.newsletter-inset-card {
-  border-radius: 12px;
 }

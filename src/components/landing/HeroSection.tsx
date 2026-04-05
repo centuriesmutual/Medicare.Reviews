@@ -1,58 +1,62 @@
-import type { ReactNode } from 'react'
 import { Mail, RefreshCw, Wallet } from 'lucide-react'
 import EmailSignupForm from '@/components/landing/EmailSignupForm'
 
 export default function HeroSection() {
   return (
-    <section className="newsletter-section newsletter-section--hero border-b border-[var(--nyt-border)]" aria-labelledby="hero-heading">
-      <div className="nyt-container newsletter-section-inner py-8 md:py-10 lg:py-12">
-        <div className="grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-10 xl:gap-12">
-          <div className="lg:col-span-6 xl:col-span-7">
-            <p className="newsletter-kicker">Medicare Reviews</p>
+    <section className="site-section site-section--white" aria-labelledby="hero-heading">
+      <div className="site-container">
+        <div className="site-hero-grid">
+          <div>
+            <p className="site-label">Medicare Reviews</p>
             <h1
               id="hero-heading"
-              className="nyt-headline large mb-3 !mt-0 max-w-[20ch] leading-[1.12] sm:text-[2.35rem] md:max-w-none md:text-[2.65rem] lg:mb-4"
-              style={{ fontFamily: 'Playfair Display, serif' }}
+              className="mb-3 mt-0 text-3xl font-bold leading-tight text-[var(--nyt-black)] sm:text-4xl md:text-[2.35rem]"
+              style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
             >
               Get paid to read Medicare insights.
             </h1>
-            <p className="newsletter-dek mb-5 max-w-xl md:mb-6">
+            <p className="site-lead">
               Choose how often you receive curated updates and sponsored opportunities. Earn small payouts
               directly to your Coinbase account.
             </p>
 
-            <div className="mb-5 flex flex-wrap gap-2 md:mb-6">
-              <TrustChip icon={<Mail className="h-3.5 w-3.5 text-[var(--nyt-accent)]" />} text="No spam" />
-              <TrustChip icon={<RefreshCw className="h-3.5 w-3.5 text-[var(--nyt-accent)]" />} text="You control frequency" />
-              <TrustChip icon={<Wallet className="h-3.5 w-3.5 text-[var(--nyt-accent)]" />} text="Payouts via Coinbase" />
-            </div>
+            <ul className="mb-6 list-none space-y-2.5 p-0 text-sm text-[var(--nyt-black)]">
+              <li className="flex items-start gap-2">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[var(--nyt-accent)]" aria-hidden />
+                <span>
+                  <strong>No spam.</strong> Unsubscribe anytime.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <RefreshCw className="mt-0.5 h-4 w-4 shrink-0 text-[var(--nyt-accent)]" aria-hidden />
+                <span>
+                  <strong>You choose the frequency</strong>—daily through monthly.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Wallet className="mt-0.5 h-4 w-4 shrink-0 text-[var(--nyt-accent)]" aria-hidden />
+                <span>
+                  <strong>Payouts via Coinbase</strong> using the email on your account.
+                </span>
+              </li>
+            </ul>
 
-            <p className="m-0 max-w-xl border-l-2 border-[var(--nyt-red)] pl-4 text-sm leading-relaxed text-[var(--nyt-gray)]">
-              <span className="font-semibold text-[var(--nyt-black)]">At a glance:</span> ~2 min reads · one simple signup ·
-              Coinbase-friendly cash · written with Medicare readers in mind.
+            <p className="m-0 max-w-xl border-l-4 border-[var(--nyt-red)] pl-4 text-sm leading-relaxed text-[var(--nyt-gray)]">
+              Short reads (~2 minutes), one simple signup, written for people navigating Medicare.
             </p>
           </div>
 
-          <div className="lg:col-span-6 xl:col-span-5">
-            <div className="newsletter-subscribe-card">
-              <p className="newsletter-kicker !mb-3">Subscribe</p>
-              <p className="mt-0 mb-4 text-sm font-medium text-[var(--nyt-gray)]">
-                Free to join. Pick your cadence, add Coinbase when you are ready.
+          <aside>
+            <div className="site-box">
+              <h2 className="site-box__title">Sign up</h2>
+              <p className="mb-4 mt-0 text-sm text-[var(--nyt-gray)]">
+                Enter your email, pick how often we write, and add Coinbase when you are ready.
               </p>
               <EmailSignupForm idPrefix="hero" />
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
-  )
-}
-
-function TrustChip({ icon, text }: { icon: ReactNode; text: string }) {
-  return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--nyt-border)] bg-[var(--nyt-white)] px-3 py-1.5 text-[0.8125rem] font-semibold text-[var(--nyt-black)] shadow-sm">
-      {icon}
-      {text}
-    </span>
   )
 }
