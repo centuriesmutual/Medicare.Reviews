@@ -522,6 +522,12 @@ body {
     max-width: 300px;
     margin: 0 auto;
   }
+
+  .nyt-header button.nyt-button {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
   
   /* Icon sizes mobile */
   svg[style*="width: '20px'"],
